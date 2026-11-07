@@ -1,0 +1,33 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='color-scheme' content='light'><title>Incident report portscan_demo</title><style>html{background:#fff;color-scheme:light}body{background:#fff;font:13px/1.5 Segoe UI,Arial,sans-serif;color:#1a2230;max-width:900px;margin:24px auto;padding:0 20px}
+h1{font-size:22px;margin:0}h2{font-size:15px;border-bottom:2px solid #1a2230;padding-bottom:3px;margin-top:26px}
+h3{font-size:13px;margin:14px 0 4px}table{border-collapse:collapse;width:100%;margin:6px 0}
+th,td{border:1px solid #c9d1dd;padding:4px 8px;text-align:left;vertical-align:top;font-size:12px}th{background:#eef1f6}
+pre{background:#f3f5f8;border:1px solid #c9d1dd;padding:8px;font-size:11px;overflow-x:auto;white-space:pre-wrap}
+.sev{display:inline-block;padding:1px 9px;border-radius:4px;font-weight:700;color:#fff}.High{background:#b3261e}.Medium{background:#b26a00}.Low{background:#2e7d32}
+.meta{color:#566277;font-size:12px}code{font-family:Consolas,monospace;font-size:12px}</style></head><body>
+<h1>Incident report</h1><p class='meta'>Incident ID <code>portscan_demo</code> · generated 2026-10-18 19:41:48 UTC+04:00 by the Deception Platform</p>
+<h2>Incident: 10.10.10.10 <span class='sev Medium'>Medium</span></h2>
+<p><b>Stage reached:</b> reconnaissance · <b>Confidence:</b> 95% · <b>Techniques:</b> T1595.001, T1595</p>
+<h3>1. Summary</h3><p>10.10.10.10 sent 3,952 bare SYNs to 1,996 ports in 16 seconds, sequentially probing honeypot services without completing any application session. Pure SYN port scan; no credential or web activity observed.</p>
+<h3>2. Timeline</h3><table><thead><tr><th>Time (local)</th><th>Event</th></tr></thead><tbody><tr><td>2026-10-13 15:33:24 UTC+04:00</td><td>Capture started (first packet on the lab network)</td></tr><tr><td>2026-10-13 15:33:24 UTC+04:00</td><td>First packet from 10.10.10.10</td></tr><tr><td>2026-10-13 15:33:40 UTC+04:00</td><td>Last packet from 10.10.10.10 in this capture</td></tr></tbody></table>
+<h3>3. Attacker profile</h3><table><thead><tr><th>Property</th><th>Observed (recomputed from the pcap)</th></tr></thead><tbody><tr><td>Source IP</td><td>10.10.10.10</td></tr><tr><td>Targets</td><td>10.10.10.1</td></tr><tr><td>Activity window</td><td>2026-10-13 15:33:24 UTC+04:00 to 2026-10-13 15:33:40 UTC+04:00 (16 s)</td></tr><tr><td>Packets sent</td><td>3,973</td></tr><tr><td>New connection attempts (bare SYN)</td><td>3,952 to 1996 distinct ports</td></tr><tr><td>Most probed ports</td><td>8080 (5), 21 (2), 554 (2), 445 (2), 1720 (2), 25 (2), 1025 (2), 993 (2)</td></tr><tr><td>HTTP requests</td><td>0</td></tr><tr><td>SSH client banner(s)</td><td>none</td></tr><tr><td>HTTP user agents</td><td>none</td></tr></tbody></table>
+<h3>4. Proof</h3>
+<p class='meta'>Computed from the capture and honeypot logs, independent of the analysis text above.</p>
+<p><b>First packets from the attacker (raw tshark output):</b></p><pre>3 0.000716800  10.10.10.10 â†’ 10.10.10.1   ICMP 98     Echo (ping) request  id=0x45cf, seq=1/256, ttl=64
+5 1.001557200  10.10.10.10 â†’ 10.10.10.1   ICMP 98     Echo (ping) request  id=0x45cf, seq=2/512, ttl=64
+9 5.842533900  10.10.10.10 â†’ 10.10.10.1   TCP 74 40056 2222   40056 â†’ 2222 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM TSval=4081329302 TSecr=0 WS=512
+11 5.842942300  10.10.10.10 â†’ 10.10.10.1   TCP 66 40056 2222   40056 â†’ 2222 [ACK] Seq=1 Ack=1 Win=64512 Len=0 TSval=4081329302 TSecr=11520469
+12 5.843057800  10.10.10.10 â†’ 10.10.10.1   TCP 66 40056 2222   40056 â†’ 2222 [FIN, ACK] Seq=1 Ack=1 Win=64512 Len=0 TSval=4081329302 TSecr=11520469
+13 5.843227200  10.10.10.10 â†’ 10.10.10.1   TCP 74 43430 8080   43430 â†’ 8080 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 SACK_PERM TSval=3931843347 TSecr=0 WS=512
+16 5.843659600  10.10.10.10 â†’ 10.10.10.1   TCP 66 43430 8080   43430 â†’ 8080 [ACK] Seq=1 Ack=1 Win=64512 Len=0 TSval=3931843347 TSecr=11520470
+17 5.843880200  10.10.10.10 â†’ 10.10.10.1   TCP 66 43430 8080   43430 â†’ 8080 [FIN, ACK] Seq=1 Ack=1 Win=64512 Len=0 TSval=3931843347 TSecr=11520470</pre>
+<p class='meta'>No honeypot session or request is attributed to this source: the capture shows connection attempts only. Honeypot logs show the Docker gateway as the source address because Docker relays published ports; the pcap is the source of truth for the attacker IP.</p>
+<h3>5. MITRE ATT&amp;CK mapping</h3><table><thead><tr><th>Technique</th><th>Name</th><th>Tactic</th></tr></thead><tbody><tr><td>T1595.001</td><td>Scanning IP Blocks</td><td>Reconnaissance</td></tr><tr><td>T1595</td><td>Active Scanning</td><td>Reconnaissance</td></tr></tbody></table>
+<p><b>Evidence cited by the analysis agent:</b></p><ul><li>3,952 bare SYNs to 1,996 distinct ports in 16 s</li><li>Open ports answered: 8080, 21, 2222, 4445, 23, 135</li><li>No payload packets from source; zero HTTP requests</li><li>No logins or application sessions in capture or logs</li></ul>
+<h3>6. Response taken</h3>
+<p>No decoy was spawned for this incident.</p>
+<p class='meta'>Recommended decoys by the analysis: ftp_decoy, admin_panel_decoy. The controller only starts templates from a fixed allowlist.</p>
+<h3>7. Recommendations</h3><ul><li>Rate-limit or block the scanning source at the perimeter; expose only the services that must be reachable; keep honeypots on addresses no legitimate user needs.</li></ul>
+<h3>8. Indicators of compromise</h3><table><thead><tr><th>Type</th><th>Value</th></tr></thead><tbody><tr><td>IPv4</td><td>10.10.10.10</td></tr><tr><td>Targeted port</td><td>8080</td></tr><tr><td>Targeted port</td><td>21</td></tr><tr><td>Targeted port</td><td>554</td></tr><tr><td>Targeted port</td><td>445</td></tr><tr><td>Targeted port</td><td>1720</td></tr></tbody></table>
+<h2>Evidence integrity</h2><table><thead><tr><th>Capture file</th><th>SHA-256</th></tr></thead><tbody><tr><td>portscan_first4000.pcap</td><td>963b29474abcb06bdc6010d738e1cd674274b53fc0ade4c12ccb01a16cf0b1d2</td></tr></tbody></table>
+<h2>Method and limits</h2><ul><li>The analysis agent (Claude, read-only Wireshark tools) proposed these findings; the validator confirmed the schema, that the attacker IP appears in the capture, and that decoys are on the allowlist.</li><li>Counts in sections 3 and 4 were recomputed from the capture and logs for this report.</li><li>Captured content is attacker-controlled and is shown as escaped text only.</li><li>Limits: lab network, a single capture window, simple attacks; confidence values are the agent's own estimate.</li></ul></body></html>

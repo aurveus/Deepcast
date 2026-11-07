@@ -1,0 +1,55 @@
+{
+  "summary": [
+    {
+      "scenario": "Manual session (a person)",
+      "runs": 2,
+      "gate_triggered": "2/2",
+      "claude_detected": "2/2",
+      "ttd_s": 356.2,
+      "gate_s": 334.1,
+      "decoy_deployed": "2/2",
+      "false_alarms": 0,
+      "excluded": 0
+    }
+  ],
+  "runs": [
+    {
+      "n": 1,
+      "scenario": "manual",
+      "t0": 1792953863.0,
+      "t1": 1792954475.0,
+      "start": "2026-10-25T18:44:23Z",
+      "trigger": 1792953978.458,
+      "detected": 1792954000.557,
+      "decoy": 1792954003.286,
+      "false_alarms": 0,
+      "analysis_error": false,
+      "merged": false,
+      "manually_excluded": false,
+      "excluded": false,
+      "ttd_s": 137.6,
+      "gate_s": 115.5
+    },
+    {
+      "n": 2,
+      "scenario": "manual",
+      "t0": 1792957189.0,
+      "t1": 1792959948.0,
+      "start": "2026-10-25T19:39:49Z",
+      "trigger": 1792957741.776,
+      "detected": 1792957763.808,
+      "decoy": 1792957766.517,
+      "false_alarms": 0,
+      "analysis_error": false,
+      "merged": false,
+      "manually_excluded": false,
+      "excluded": false,
+      "ttd_s": 574.8,
+      "gate_s": 552.8
+    }
+  ],
+  "unassigned": 1,
+  "source": [
+    "campaign_manual_20261025.jsonl"
+  ]
+}

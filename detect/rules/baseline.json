@@ -1,0 +1,11 @@
+{
+  "_comment": "The three fixed-threshold rules of eval/rule_detector.py, written in the detection-rule format. This is the hand-written baseline the learning loop has to beat; the numbers are the same as in that script.",
+  "rules": [
+    {"id": "BASE-PORTSCAN", "name": "Many distinct ports from one source", "technique": "T1046", "origin": "baseline", "window_s": 10,
+     "all_of": [{"kind": "syn", "measure": "distinct_dport", "op": ">=", "value": 15}]},
+    {"id": "BASE-SSHBRUTE", "name": "Many new SSH connections from one source", "technique": "T1110", "origin": "baseline", "window_s": 30,
+     "all_of": [{"kind": "syn", "dport_in": [22, 2222], "measure": "count", "op": ">=", "value": 10}]},
+    {"id": "BASE-WEBPROBE", "name": "Many HTTP requests from one source", "technique": "T1595.002", "origin": "baseline", "window_s": 30,
+     "all_of": [{"kind": "http_req", "measure": "count", "op": ">=", "value": 50}]}
+  ]
+}

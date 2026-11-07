@@ -1,0 +1,26 @@
+{
+  "run_id": "sshbrute_demo",
+  "analyses": [
+    {
+      "attacker_ip": "10.10.10.10",
+      "stage": "credential_access",
+      "techniques": [
+        {
+          "id": "T1110.001",
+          "name": "Password Guessing"
+        }
+      ],
+      "evidence": [
+        "25 separate TCP connections to SSH port 2222 in 1.4 s",
+        "Only one destination port targeted; all 25 connections answered",
+        "Client banner SSH-2.0-libssh_0.12.2, consistent with automated tooling",
+        "571 packets in 1.43 s, about 398 packets/s"
+      ],
+      "confidence": 0.8,
+      "recommended_decoys": [
+        "ssh_decoy"
+      ],
+      "summary": "10.10.10.10 opened 25 rapid SSH connections to port 2222 in 1.4 s using a libssh-based client. This matches automated SSH password guessing. No other services were touched, and the log digest was empty, so credential counts are unconfirmed."
+    }
+  ]
+}

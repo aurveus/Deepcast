@@ -1,0 +1,75 @@
+{
+  "_comment": "The ONLY things the controller can ever start. Claude names a template; everything else here is fixed. Template names must match the enum in agent/schema.json.",
+  "min_confidence": 0.5,
+  "max_live_decoys": 3,
+  "lure_chain_policy": {
+    "_comment": "Foothold detected (the attacker is inside an honeypot): also start the internal servers its breadcrumbs point at (hosts file, history, arp).",
+    "when_stage": ["initial_access"],
+    "when_technique": ["T1552.001", "T1078"],
+    "also_spawn": ["db_decoy", "smb_decoy"]
+  },
+  "fast_path": {
+    "_comment": "No-AI shortcut: a planted SSH credential (honeytoken) used inside the SSH honeypot means a foothold, so start the internal servers its breadcrumbs name within seconds. Same decoys as lure_chain_policy; Claude still analyzes afterwards.",
+    "on_tokens": ["HT-001"],
+    "spawn": ["db_decoy", "smb_decoy"],
+    "on_reads": {"it-notes.txt": ["db_decoy"]},
+    "_comment_reads": "The lure note that names the database host was opened on the SMB share before any credential was used: start the database it points at, or the attacker reaches a closed port."
+  },
+  "ttl_minutes": 30,
+  "network_name": "deception_decoys",
+  "templates": {
+    "ssh_decoy": {
+      "pool_slot": 0,
+      "image": "cowrie/cowrie:3.1.2",
+      "container_port": 2222,
+      "host_port": 22,
+      "log_mount": "/cowrie/cowrie-git/var/log/cowrie",
+      "state_mount": "/cowrie/cowrie-git/var/lib/cowrie",
+      "extra_mounts": [{"host": "lab/cowrie_custom/out", "container": "/custom", "ro": true},
+                       {"host": "lab/cowrie_custom/commands/find.py", "container": "/cowrie/cowrie-git/src/cowrie/commands/find.py", "ro": true}],
+      "env": {"COWRIE_HONEYPOT_CONTENTS_PATH": "/custom/honeyfs", "COWRIE_HONEYPOT_TXTCMDS_PATH": "/custom/txtcmds",
+              "COWRIE_SHELL_FILESYSTEM": "/custom/fs.pickle"},
+      "mem": "512m", "cpus": "1.0"
+    },
+    "ftp_decoy": {
+      "pool_slot": 3,
+      "image": "thinkst/opencanary:0.9.10",
+      "container_port": 21,
+      "host_port": 21,
+      "config_file": "lab/opencanary/opencanary.conf",
+      "log_mount": "/logs",
+      "extra_caps": ["SETUID", "SETGID"],
+      "mem": "256m", "cpus": "0.5"
+    },
+    "db_decoy": {
+      "pool_slot": 1,
+      "image": "thinkst/opencanary:0.9.10",
+      "container_port": 3306,
+      "host_port": 3306,
+      "config_file": "lab/opencanary/db.conf",
+      "extra_mounts": [{"host": "lab/opencanary/mysql_patched.py", "container": "/opencanary/opencanary/modules/mysql.py", "ro": true}],
+      "show_client_as_host": true,
+      "log_mount": "/logs",
+      "extra_caps": ["SETUID", "SETGID"],
+      "mem": "256m", "cpus": "0.5"
+    },
+    "admin_panel_decoy": {
+      "pool_slot": 4,
+      "build_context": "lab/webadmin",
+      "image": "deception-webadmin:latest",
+      "container_port": 8080,
+      "host_port": 80,
+      "log_mount": "/logs",
+      "mem": "256m", "cpus": "0.5"
+    },
+    "smb_decoy": {
+      "pool_slot": 2,
+      "build_context": "lab/smbdecoy",
+      "image": "deception-smbdecoy:latest",
+      "container_port": 445,
+      "host_port": 4445,
+      "log_mount": "/logs",
+      "mem": "256m", "cpus": "0.5"
+    }
+  }
+}

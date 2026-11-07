@@ -1,0 +1,6 @@
+# Runs excluded from evaluate.py, one run folder name per line. They were recorded before the
+# benign traffic generator existed (no background traffic, no analysis timing), so they are not
+# comparable with the evaluation runs.
+portscan_20261013_153952
+sshbrute_20261013_154226
+webprobe_20261013_154551

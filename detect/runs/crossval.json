@@ -1,0 +1,178 @@
+[
+ {
+  "held_out": "lure",
+  "learned_from_others": [
+   {
+    "from_type": "stealthscan",
+    "rule": {
+     "id": "P-FRAG-SYNSCAN",
+     "name": "Fragmented SYN scan across many ports",
+     "origin": "proposed",
+     "window_s": 10,
+     "technique": "T1046",
+     "all_of": [
+      {
+       "kind": "frag",
+       "measure": "count",
+       "op": ">=",
+       "value": 30
+      },
+      {
+       "kind": "syn",
+       "measure": "distinct_dport",
+       "op": ">=",
+       "value": 6
+      }
+     ]
+    },
+    "accepted": true,
+    "why_not": null
+   },
+   {
+    "from_type": "traverse",
+    "rule": {
+     "id": "P-TRAP-TOUCH",
+     "name": "Web trap path requested",
+     "origin": "proposed",
+     "window_s": 30,
+     "all_of": [
+      {
+       "kind": "http_req",
+       "measure": "count",
+       "op": ">=",
+       "value": 1,
+       "trap": true
+      }
+     ],
+     "refire_s": 60,
+     "technique": "T1595.003"
+    },
+    "accepted": true,
+    "why_not": null
+   }
+  ],
+  "rules_added": [
+   "P-FRAG-SYNSCAN",
+   "P-TRAP-TOUCH"
+  ],
+  "runs": 11,
+  "detected_before": 0,
+  "detected_after": 11,
+  "false_alarms_all_data": 0
+ },
+ {
+  "held_out": "stealthscan",
+  "learned_from_others": [
+   {
+    "from_type": "lure",
+    "rule": {
+     "id": "P-trap-touch",
+     "name": "Request to planted trap path",
+     "origin": "proposed",
+     "window_s": 60,
+     "all_of": [
+      {
+       "kind": "http_req",
+       "measure": "count",
+       "op": ">=",
+       "value": 1,
+       "trap": true
+      }
+     ],
+     "refire_s": 60,
+     "technique": "T1595.003"
+    },
+    "accepted": true,
+    "why_not": null
+   },
+   {
+    "from_type": "traverse",
+    "rule": {
+     "id": "P-ssh-cmd-burst",
+     "name": "Burst of SSH commands after login",
+     "origin": "proposed",
+     "window_s": 10,
+     "all_of": [
+      {
+       "kind": "ssh_command",
+       "measure": "count",
+       "op": ">=",
+       "value": 8
+      }
+     ],
+     "refire_s": 60,
+     "technique": "T1059.004"
+    },
+    "accepted": false,
+    "why_not": "0 development samples were missed before and are detected now"
+   }
+  ],
+  "rules_added": [
+   "P-trap-touch"
+  ],
+  "runs": 5,
+  "detected_before": 0,
+  "detected_after": 0,
+  "false_alarms_all_data": 0
+ },
+ {
+  "held_out": "traverse",
+  "learned_from_others": [
+   {
+    "from_type": "lure",
+    "rule": {
+     "id": "P-trap-touch",
+     "name": "Request to planted trap path",
+     "origin": "proposed",
+     "window_s": 60,
+     "all_of": [
+      {
+       "kind": "http_req",
+       "measure": "count",
+       "op": ">=",
+       "value": 1,
+       "trap": true
+      }
+     ],
+     "refire_s": 60
+    },
+    "accepted": true,
+    "why_not": null
+   },
+   {
+    "from_type": "stealthscan",
+    "rule": {
+     "id": "P-frag-syn-scan",
+     "name": "Fragmented SYN scan across many ports",
+     "origin": "proposed",
+     "window_s": 10,
+     "all_of": [
+      {
+       "kind": "frag",
+       "measure": "count",
+       "op": ">=",
+       "value": 40
+      },
+      {
+       "kind": "syn",
+       "measure": "distinct_dport",
+       "op": ">=",
+       "value": 6
+      }
+     ],
+     "technique": "T1046"
+    },
+    "accepted": true,
+    "why_not": null
+   }
+  ],
+  "rules_added": [
+   "P-trap-touch",
+   "P-frag-syn-scan"
+  ],
+  "runs": 3,
+  "detected_before": 0,
+  "detected_after": 3,
+  "false_alarms_all_data": 0
+ }
+]

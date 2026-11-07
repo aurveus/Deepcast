@@ -1,0 +1,20 @@
+[Unit]
+Description=Lab workstation simulator (benign traffic generator)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=wsim
+EnvironmentFile=/etc/workstation-sim.env
+ExecStart=/usr/bin/python3 /opt/workstation-sim/generator.py
+Restart=always
+RestartSec=5
+# Writes only its ground-truth log; no extra privileges.
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+LogsDirectory=workstation-sim
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,100 @@
+{
+  "summary": [
+    {
+      "scenario": "Lure chain",
+      "runs": 2,
+      "gate_triggered": "2/2",
+      "claude_detected": "2/2",
+      "ttd_s": 42.5,
+      "gate_s": 22.5,
+      "decoy_deployed": "2/2",
+      "false_alarms": 1,
+      "excluded": 0
+    },
+    {
+      "scenario": "Deep trap traversal",
+      "runs": 2,
+      "gate_triggered": "2/2",
+      "claude_detected": "2/2",
+      "ttd_s": 43.8,
+      "gate_s": 23.3,
+      "decoy_deployed": "2/2",
+      "false_alarms": 1,
+      "excluded": 0
+    }
+  ],
+  "runs": [
+    {
+      "n": 1,
+      "scenario": "traverse",
+      "t0": 1792856143.0,
+      "t1": 1792856230.0,
+      "start": "2026-10-24T15:35:43Z",
+      "trigger": 1792856160.498,
+      "detected": 1792856180.714,
+      "decoy": 1792856181.546,
+      "false_alarms": 0,
+      "analysis_error": false,
+      "merged": false,
+      "manually_excluded": false,
+      "excluded": false,
+      "ttd_s": 37.7,
+      "gate_s": 17.5
+    },
+    {
+      "n": 2,
+      "scenario": "lure",
+      "t0": 1792856410.0,
+      "t1": 1792856484.0,
+      "start": "2026-10-24T15:40:10Z",
+      "trigger": 1792856430.758,
+      "detected": 1792856453.897,
+      "decoy": 1792856454.876,
+      "false_alarms": 1,
+      "analysis_error": false,
+      "merged": false,
+      "manually_excluded": false,
+      "excluded": false,
+      "ttd_s": 43.9,
+      "gate_s": 20.8
+    },
+    {
+      "n": 3,
+      "scenario": "lure",
+      "t0": 1792856648.0,
+      "t1": 1792856720.0,
+      "start": "2026-10-24T15:44:08Z",
+      "trigger": 1792856672.066,
+      "detected": 1792856689.107,
+      "decoy": 1792856689.981,
+      "false_alarms": 0,
+      "analysis_error": false,
+      "merged": false,
+      "manually_excluded": false,
+      "excluded": false,
+      "ttd_s": 41.1,
+      "gate_s": 24.1
+    },
+    {
+      "n": 4,
+      "scenario": "traverse",
+      "t0": 1792856914.0,
+      "t1": 1792857002.0,
+      "start": "2026-10-24T15:48:34Z",
+      "trigger": 1792856943.13,
+      "detected": 1792856963.886,
+      "decoy": 1792856964.924,
+      "false_alarms": 1,
+      "analysis_error": false,
+      "merged": false,
+      "manually_excluded": false,
+      "excluded": false,
+      "ttd_s": 49.9,
+      "gate_s": 29.1
+    }
+  ],
+  "unassigned": 0,
+  "source": [
+    "campaign_20261024_195002.jsonl"
+  ]
+}

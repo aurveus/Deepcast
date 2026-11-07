@@ -1,0 +1,31 @@
+{
+  "run_id": "portscan_demo",
+  "analyses": [
+    {
+      "attacker_ip": "10.10.10.10",
+      "stage": "reconnaissance",
+      "techniques": [
+        {
+          "id": "T1595.001",
+          "name": "Scanning IP Blocks"
+        },
+        {
+          "id": "T1595",
+          "name": "Active Scanning"
+        }
+      ],
+      "evidence": [
+        "3,952 bare SYNs to 1,996 distinct ports in 16 s",
+        "Open ports answered: 8080, 21, 2222, 4445, 23, 135",
+        "No payload packets from source; zero HTTP requests",
+        "No logins or application sessions in capture or logs"
+      ],
+      "confidence": 0.95,
+      "recommended_decoys": [
+        "ftp_decoy",
+        "admin_panel_decoy"
+      ],
+      "summary": "10.10.10.10 sent 3,952 bare SYNs to 1,996 ports in 16 seconds, sequentially probing honeypot services without completing any application session. Pure SYN port scan; no credential or web activity observed."
+    }
+  ]
+}

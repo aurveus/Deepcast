@@ -1,0 +1,57 @@
+{
+  "attackers": {
+    "B": {
+      "ip": "10.10.10.11",
+      "scenario": "lure_ssh",
+      "start": 1792944935.0,
+      "trigger_s": 26.9,
+      "detected_s": 60.9,
+      "techniques": [
+        "T1078",
+        "T1552.001"
+      ],
+      "decoys": [
+        "db_decoy",
+        "smb_decoy"
+      ],
+      "honeytokens": [
+        "HT-001"
+      ],
+      "fast_path_s": 1.0
+    },
+    "A": {
+      "ip": "10.10.10.10",
+      "scenario": "portscan+sshbrute",
+      "start": 1792944910.0,
+      "trigger_s": 18.4,
+      "detected_s": 39.0,
+      "techniques": [
+        "T1110.001",
+        "T1110.003",
+        "T1595.001"
+      ],
+      "decoys": [
+        "ssh_decoy"
+      ],
+      "honeytokens": [],
+      "fast_path_s": null
+    }
+  },
+  "honeytoken_credit": [
+    [
+      "HT-001",
+      "10.10.10.11"
+    ]
+  ],
+  "other_sources": [],
+  "checks": {
+    "both_detected": true,
+    "a_behavior_ok": true,
+    "b_behavior_ok": true,
+    "token_credit_ok": true,
+    "no_leak_to_a": true,
+    "no_false_alarm": true,
+    "fast_path_ok": true
+  },
+  "passed": true
+}

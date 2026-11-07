@@ -1,0 +1,613 @@
+{
+  "summary": [
+    {
+      "scenario": "Port scan",
+      "runs": 5,
+      "no_data": 0,
+      "rules_detected": "5/5",
+      "rules_rules": [
+        "port_scan"
+      ],
+      "rules_correct": "5/5",
+      "rules_ttd_s": 0.8,
+      "claude_detected": "5/5",
+      "claude_ttd_s": 42.1
+    },
+    {
+      "scenario": "Slow port scan",
+      "runs": 5,
+      "no_data": 0,
+      "rules_detected": "5/5",
+      "rules_rules": [
+        "ssh_bruteforce"
+      ],
+      "rules_correct": "0/5",
+      "rules_ttd_s": 55.6,
+      "claude_detected": "5/5",
+      "claude_ttd_s": 74.8
+    },
+    {
+      "scenario": "SSH brute force",
+      "runs": 5,
+      "no_data": 0,
+      "rules_detected": "5/5",
+      "rules_rules": [
+        "ssh_bruteforce",
+        "web_probe"
+      ],
+      "rules_correct": "5/5",
+      "rules_ttd_s": 1.2,
+      "claude_detected": "5/5",
+      "claude_ttd_s": 40.6
+    },
+    {
+      "scenario": "Web probing",
+      "runs": 5,
+      "no_data": 0,
+      "rules_detected": "5/5",
+      "rules_rules": [
+        "port_scan",
+        "web_probe"
+      ],
+      "rules_correct": "5/5",
+      "rules_ttd_s": 1.3,
+      "claude_detected": "5/5",
+      "claude_ttd_s": 48.2
+    },
+    {
+      "scenario": "Lure chain",
+      "runs": 5,
+      "no_data": 0,
+      "rules_detected": "0/5",
+      "rules_rules": [],
+      "rules_correct": "n/a (no rule for it)",
+      "rules_ttd_s": null,
+      "claude_detected": "5/5",
+      "claude_ttd_s": 38.7
+    },
+    {
+      "scenario": "Directory brute force",
+      "runs": 5,
+      "no_data": 0,
+      "rules_detected": "5/5",
+      "rules_rules": [
+        "web_probe"
+      ],
+      "rules_correct": "5/5",
+      "rules_ttd_s": 1.0,
+      "claude_detected": "5/5",
+      "claude_ttd_s": 41.8
+    },
+    {
+      "scenario": "Stealth scan (fragmented/decoy)",
+      "runs": 5,
+      "no_data": 0,
+      "rules_detected": "0/5",
+      "rules_rules": [],
+      "rules_correct": "0/5",
+      "rules_ttd_s": null,
+      "claude_detected": "5/5",
+      "claude_ttd_s": 37.4
+    },
+    {
+      "scenario": "Deep trap traversal",
+      "runs": 3,
+      "no_data": 0,
+      "rules_detected": "0/3",
+      "rules_rules": [],
+      "rules_correct": "n/a (no rule for it)",
+      "rules_ttd_s": null,
+      "claude_detected": "3/3",
+      "claude_ttd_s": 27.5
+    },
+    {
+      "scenario": "Overlapping attacks (3 at once)",
+      "runs": 3,
+      "no_data": 0,
+      "rules_detected": "3/3",
+      "rules_rules": [
+        "port_scan",
+        "ssh_bruteforce",
+        "web_probe"
+      ],
+      "rules_correct": "n/a (no rule for it)",
+      "rules_ttd_s": 0.8,
+      "claude_detected": "3/3",
+      "claude_ttd_s": 45.0
+    }
+  ],
+  "runs": {
+    "sshbrute": [
+      {
+        "start": "2026-10-18T16:49:14Z",
+        "scenario": "sshbrute",
+        "claude_detected": true,
+        "claude_ttd_s": 26.0,
+        "windows": 4,
+        "rules_detected": true,
+        "rules_ttd_s": 1.4,
+        "rules": [
+          "ssh_bruteforce",
+          "web_probe"
+        ]
+      },
+      {
+        "start": "2026-10-20T13:57:46Z",
+        "scenario": "sshbrute",
+        "claude_detected": true,
+        "claude_ttd_s": 46.8,
+        "windows": 1,
+        "rules_detected": true,
+        "rules_ttd_s": 1.0,
+        "rules": [
+          "ssh_bruteforce"
+        ]
+      },
+      {
+        "start": "2026-10-20T14:12:53Z",
+        "scenario": "sshbrute",
+        "claude_detected": true,
+        "claude_ttd_s": 172.7,
+        "windows": 1,
+        "rules_detected": true,
+        "rules_ttd_s": 1.3,
+        "rules": [
+          "ssh_bruteforce"
+        ]
+      },
+      {
+        "start": "2026-10-20T17:19:48Z",
+        "scenario": "sshbrute",
+        "claude_detected": true,
+        "claude_ttd_s": 37.4,
+        "windows": 1,
+        "rules_detected": true,
+        "rules_ttd_s": 0.8,
+        "rules": [
+          "ssh_bruteforce"
+        ]
+      },
+      {
+        "start": "2026-10-20T18:08:52Z",
+        "scenario": "sshbrute",
+        "claude_detected": true,
+        "claude_ttd_s": 40.6,
+        "windows": 1,
+        "rules_detected": true,
+        "rules_ttd_s": 1.2,
+        "rules": [
+          "ssh_bruteforce"
+        ]
+      }
+    ],
+    "webprobe": [
+      {
+        "start": "2026-10-18T16:49:47Z",
+        "scenario": "webprobe",
+        "claude_detected": true,
+        "claude_ttd_s": 117.6,
+        "windows": 11,
+        "rules_detected": true,
+        "rules_ttd_s": 1.3,
+        "rules": [
+          "port_scan",
+          "web_probe"
+        ]
+      },
+      {
+        "start": "2026-10-18T18:14:45Z",
+        "scenario": "webprobe",
+        "claude_detected": true,
+        "claude_ttd_s": 49.6,
+        "windows": 8,
+        "rules_detected": true,
+        "rules_ttd_s": 1.6,
+        "rules": [
+          "web_probe"
+        ]
+      },
+      {
+        "start": "2026-10-20T12:08:30Z",
+        "scenario": "webprobe",
+        "claude_detected": true,
+        "claude_ttd_s": 39.0,
+        "windows": 10,
+        "rules_detected": true,
+        "rules_ttd_s": 1.4,
+        "rules": [
+          "web_probe"
+        ]
+      },
+      {
+        "start": "2026-10-20T16:09:32Z",
+        "scenario": "webprobe",
+        "claude_detected": true,
+        "claude_ttd_s": 35.2,
+        "windows": 11,
+        "rules_detected": true,
+        "rules_ttd_s": 1.3,
+        "rules": [
+          "web_probe"
+        ]
+      },
+      {
+        "start": "2026-10-20T16:26:54Z",
+        "scenario": "webprobe",
+        "claude_detected": true,
+        "claude_ttd_s": 48.2,
+        "windows": 11,
+        "rules_detected": true,
+        "rules_ttd_s": 1.2,
+        "rules": [
+          "web_probe"
+        ]
+      }
+    ],
+    "portscan": [
+      {
+        "start": "2026-10-18T16:54:43Z",
+        "scenario": "portscan",
+        "claude_detected": true,
+        "claude_ttd_s": 62.6,
+        "windows": 7,
+        "rules_detected": true,
+        "rules_ttd_s": 0.8,
+        "rules": [
+          "port_scan"
+        ]
+      },
+      {
+        "start": "2026-10-18T18:45:51Z",
+        "scenario": "portscan",
+        "claude_detected": true,
+        "claude_ttd_s": 42.1,
+        "windows": 7,
+        "rules_detected": true,
+        "rules_ttd_s": 1.0,
+        "rules": [
+          "port_scan"
+        ]
+      },
+      {
+        "start": "2026-10-20T14:04:22Z",
+        "scenario": "portscan",
+        "claude_detected": true,
+        "claude_ttd_s": 46.1,
+        "windows": 6,
+        "rules_detected": true,
+        "rules_ttd_s": 0.2,
+        "rules": [
+          "port_scan"
+        ]
+      },
+      {
+        "start": "2026-10-20T16:00:29Z",
+        "scenario": "portscan",
+        "claude_detected": true,
+        "claude_ttd_s": 39.9,
+        "windows": 6,
+        "rules_detected": true,
+        "rules_ttd_s": 0.2,
+        "rules": [
+          "port_scan"
+        ]
+      },
+      {
+        "start": "2026-10-20T17:10:59Z",
+        "scenario": "portscan",
+        "claude_detected": true,
+        "claude_ttd_s": 23.0,
+        "windows": 7,
+        "rules_detected": true,
+        "rules_ttd_s": 0.9,
+        "rules": [
+          "port_scan"
+        ]
+      }
+    ],
+    "slowscan": [
+      {
+        "start": "2026-10-18T17:35:40Z",
+        "scenario": "slowscan",
+        "claude_detected": true,
+        "claude_ttd_s": 74.8,
+        "windows": 4,
+        "rules_detected": true,
+        "rules_ttd_s": 70.4,
+        "rules": [
+          "ssh_bruteforce"
+        ]
+      },
+      {
+        "start": "2026-10-20T12:20:03Z",
+        "scenario": "slowscan",
+        "claude_detected": true,
+        "claude_ttd_s": 82.2,
+        "windows": 4,
+        "rules_detected": true,
+        "rules_ttd_s": 26.0,
+        "rules": [
+          "ssh_bruteforce"
+        ]
+      },
+      {
+        "start": "2026-10-20T14:19:19Z",
+        "scenario": "slowscan",
+        "claude_detected": true,
+        "claude_ttd_s": 410.5,
+        "windows": 3,
+        "rules_detected": true,
+        "rules_ttd_s": 80.5,
+        "rules": [
+          "ssh_bruteforce"
+        ]
+      },
+      {
+        "start": "2026-10-20T14:30:45Z",
+        "scenario": "slowscan",
+        "claude_detected": true,
+        "claude_ttd_s": 73.4,
+        "windows": 4,
+        "rules_detected": true,
+        "rules_ttd_s": 50.9,
+        "rules": [
+          "ssh_bruteforce"
+        ]
+      },
+      {
+        "start": "2026-10-20T16:56:38Z",
+        "scenario": "slowscan",
+        "claude_detected": true,
+        "claude_ttd_s": 72.1,
+        "windows": 4,
+        "rules_detected": true,
+        "rules_ttd_s": 55.6,
+        "rules": [
+          "ssh_bruteforce"
+        ]
+      }
+    ],
+    "lure": [
+      {
+        "start": "2026-10-18T17:39:23Z",
+        "scenario": "lure",
+        "claude_detected": true,
+        "claude_ttd_s": 30.2,
+        "windows": 6,
+        "rules_detected": false,
+        "rules_ttd_s": null,
+        "rules": []
+      },
+      {
+        "start": "2026-10-18T18:22:34Z",
+        "scenario": "lure",
+        "claude_detected": true,
+        "claude_ttd_s": 38.7,
+        "windows": 6,
+        "rules_detected": false,
+        "rules_ttd_s": null,
+        "rules": []
+      },
+      {
+        "start": "2026-10-20T12:36:17Z",
+        "scenario": "lure",
+        "claude_detected": true,
+        "claude_ttd_s": 47.8,
+        "windows": 4,
+        "rules_detected": false,
+        "rules_ttd_s": null,
+        "rules": []
+      },
+      {
+        "start": "2026-10-20T16:37:59Z",
+        "scenario": "lure",
+        "claude_detected": true,
+        "claude_ttd_s": 50.5,
+        "windows": 5,
+        "rules_detected": false,
+        "rules_ttd_s": null,
+        "rules": []
+      },
+      {
+        "start": "2026-10-20T16:47:23Z",
+        "scenario": "lure",
+        "claude_detected": true,
+        "claude_ttd_s": 29.2,
+        "windows": 6,
+        "rules_detected": false,
+        "rules_ttd_s": null,
+        "rules": []
+      }
+    ],
+    "stealthscan": [
+      {
+        "start": "2026-10-20T14:25:23Z",
+        "scenario": "stealthscan",
+        "claude_detected": true,
+        "claude_ttd_s": 27.5,
+        "windows": 1,
+        "rules_detected": false,
+        "rules_ttd_s": null,
+        "rules": []
+      },
+      {
+        "start": "2026-10-20T14:56:26Z",
+        "scenario": "stealthscan",
+        "claude_detected": true,
+        "claude_ttd_s": 50.7,
+        "windows": 1,
+        "rules_detected": false,
+        "rules_ttd_s": null,
+        "rules": []
+      },
+      {
+        "start": "2026-10-20T15:02:14Z",
+        "scenario": "stealthscan",
+        "claude_detected": true,
+        "claude_ttd_s": 25.5,
+        "windows": 1,
+        "rules_detected": false,
+        "rules_ttd_s": null,
+        "rules": []
+      },
+      {
+        "start": "2026-10-20T15:47:44Z",
+        "scenario": "stealthscan",
+        "claude_detected": true,
+        "claude_ttd_s": 47.5,
+        "windows": 1,
+        "rules_detected": false,
+        "rules_ttd_s": null,
+        "rules": []
+      },
+      {
+        "start": "2026-10-20T17:24:58Z",
+        "scenario": "stealthscan",
+        "claude_detected": true,
+        "claude_ttd_s": 37.4,
+        "windows": 1,
+        "rules_detected": false,
+        "rules_ttd_s": null,
+        "rules": []
+      }
+    ],
+    "dirbrute": [
+      {
+        "start": "2026-10-20T14:38:15Z",
+        "scenario": "dirbrute",
+        "claude_detected": true,
+        "claude_ttd_s": 50.2,
+        "windows": 2,
+        "rules_detected": true,
+        "rules_ttd_s": 1.1,
+        "rules": [
+          "web_probe"
+        ]
+      },
+      {
+        "start": "2026-10-20T14:44:24Z",
+        "scenario": "dirbrute",
+        "claude_detected": true,
+        "claude_ttd_s": 32.3,
+        "windows": 2,
+        "rules_detected": true,
+        "rules_ttd_s": 1.1,
+        "rules": [
+          "web_probe"
+        ]
+      },
+      {
+        "start": "2026-10-20T14:50:45Z",
+        "scenario": "dirbrute",
+        "claude_detected": true,
+        "claude_ttd_s": 41.8,
+        "windows": 2,
+        "rules_detected": true,
+        "rules_ttd_s": 0.9,
+        "rules": [
+          "web_probe"
+        ]
+      },
+      {
+        "start": "2026-10-20T16:19:46Z",
+        "scenario": "dirbrute",
+        "claude_detected": true,
+        "claude_ttd_s": 25.2,
+        "windows": 2,
+        "rules_detected": true,
+        "rules_ttd_s": 1.0,
+        "rules": [
+          "web_probe"
+        ]
+      },
+      {
+        "start": "2026-10-20T17:04:08Z",
+        "scenario": "dirbrute",
+        "claude_detected": true,
+        "claude_ttd_s": 49.5,
+        "windows": 2,
+        "rules_detected": true,
+        "rules_ttd_s": 0.8,
+        "rules": [
+          "web_probe"
+        ]
+      }
+    ],
+    "overlap": [
+      {
+        "start": "2026-10-21T13:03:36Z",
+        "scenario": "overlap",
+        "claude_detected": true,
+        "claude_ttd_s": 45.0,
+        "windows": 6,
+        "rules_detected": true,
+        "rules_ttd_s": 0.3,
+        "rules": [
+          "port_scan",
+          "ssh_bruteforce",
+          "web_probe"
+        ]
+      },
+      {
+        "start": "2026-10-21T13:22:38Z",
+        "scenario": "overlap",
+        "claude_detected": true,
+        "claude_ttd_s": 47.2,
+        "windows": 6,
+        "rules_detected": true,
+        "rules_ttd_s": 1.1,
+        "rules": [
+          "port_scan",
+          "ssh_bruteforce",
+          "web_probe"
+        ]
+      },
+      {
+        "start": "2026-10-21T13:30:55Z",
+        "scenario": "overlap",
+        "claude_detected": true,
+        "claude_ttd_s": 27.6,
+        "windows": 7,
+        "rules_detected": true,
+        "rules_ttd_s": 0.8,
+        "rules": [
+          "port_scan",
+          "ssh_bruteforce",
+          "web_probe"
+        ]
+      }
+    ],
+    "traverse": [
+      {
+        "start": "2026-10-21T13:12:47Z",
+        "scenario": "traverse",
+        "claude_detected": true,
+        "claude_ttd_s": 27.5,
+        "windows": 8,
+        "rules_detected": false,
+        "rules_ttd_s": null,
+        "rules": []
+      },
+      {
+        "start": "2026-10-21T13:39:11Z",
+        "scenario": "traverse",
+        "claude_detected": true,
+        "claude_ttd_s": 49.7,
+        "windows": 7,
+        "rules_detected": false,
+        "rules_ttd_s": null,
+        "rules": []
+      },
+      {
+        "start": "2026-10-21T13:48:29Z",
+        "scenario": "traverse",
+        "claude_detected": true,
+        "claude_ttd_s": 26.2,
+        "windows": 7,
+        "rules_detected": false,
+        "rules_ttd_s": null,
+        "rules": []
+      }
+    ]
+  }
+}

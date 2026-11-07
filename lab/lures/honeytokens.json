@@ -1,0 +1,34 @@
+{
+  "_comment": "Honeytokens: FAKE credentials planted as lures. Nothing real uses them, so any use is an attacker who read the lure. Single source of truth: render.py writes the planted files from this list, honeytokens.py watches the honeypot logs for it.",
+  "tokens": [
+    {
+      "id": "HT-001",
+      "kind": "ssh_credential",
+      "username": "tdavies",
+      "password": "Autumn#Davies26",
+      "planted_in": "web panel /backup/config.bak",
+      "usable_at": "SSH honeypot",
+      "match": "pair",
+      "where": "the fake web admin panel, in the file /backup/config.bak"
+    },
+    {
+      "id": "HT-002",
+      "kind": "mysql_credential",
+      "username": "reports_ro",
+      "password": "rpt_ro_Q3!2026",
+      "planted_in": "SMB share DOCS/it-notes.txt",
+      "usable_at": "MySQL decoy",
+      "match": "username",
+      "where": "the SMB file share, in the file DOCS/it-notes.txt"
+    }
+  ],
+  "lure_files": [
+    {
+      "id": "LF-001",
+      "path": "it-notes.txt",
+      "service": "smb",
+      "leads_to": "db_decoy",
+      "where": "the SMB file share, DOCS/it-notes.txt (names the database host and the HT-002 account)"
+    }
+  ]
+}

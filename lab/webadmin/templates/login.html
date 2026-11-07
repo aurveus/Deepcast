@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Network Administration Console</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #eef1f5; margin: 0; }
+  .box { width: 340px; margin: 12vh auto; background: #fff; padding: 28px; border: 1px solid #ccd; border-radius: 4px; }
+  h1 { font-size: 18px; margin: 0 0 18px; color: #234; }
+  label { display: block; font-size: 13px; margin-top: 12px; }
+  input { width: 100%; box-sizing: border-box; padding: 8px; margin-top: 4px; }
+  button { margin-top: 18px; padding: 8px 16px; background: #2a5d9f; color: #fff; border: 0; cursor: pointer; }
+  .err { color: #b00020; font-size: 13px; margin-bottom: 8px; }
+  .foot { font-size: 11px; color: #889; margin-top: 18px; }
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>Network Administration Console</h1>
+  {% if error %}<div class="err">{{ error }}</div>{% endif %}
+  <form method="post" action="/login">
+    <label>Username <input name="username" autofocus></label>
+    <label>Password <input name="password" type="password"></label>
+    <button type="submit">Sign in</button>
+  </form>
+  <div class="foot">Authorized personnel only. Activity is monitored.</div>
+</div>
+</body>
+</html>

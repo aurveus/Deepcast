@@ -1,0 +1,44 @@
+{
+ "rules": [
+  {
+   "id": "P-trap-touch",
+   "name": "Request to planted trap path",
+   "origin": "proposed",
+   "window_s": 30,
+   "all_of": [
+    {
+     "kind": "http_req",
+     "measure": "count",
+     "op": ">=",
+     "value": 1,
+     "trap": true
+    }
+   ],
+   "refire_s": 60,
+   "note": "The attacker made 2 trap requests (first at 66 s) while benign traffic made 0 trap requests, so a single trap hit is a clean signal. Its other numbers (10 distinct ports in 10 s, 8 paths) are too close to the benign envelope for a safe margin."
+  },
+  {
+   "id": "P-frag-syn-scan",
+   "name": "Fragmented SYN scan across many ports",
+   "origin": "proposed",
+   "window_s": 10,
+   "all_of": [
+    {
+     "kind": "frag",
+     "measure": "count",
+     "op": ">=",
+     "value": 40
+    },
+    {
+     "kind": "syn",
+     "measure": "distinct_dport",
+     "op": ">=",
+     "value": 6
+    }
+   ],
+   "technique": "T1046",
+   "note": "Attacker sent 160 IP fragments and 80 SYNs to 10 ports within 1.1 s; benign traffic had no fragments and at most 2 distinct ports per window. Thresholds of 40 fragments and 6 ports sit well above benign and below the attack."
+  }
+ ],
+ "_comment": "Written by detect/gate.py only. Rules here passed the promotion gate; remove the newest with: python detect/gate.py rollback"
+}

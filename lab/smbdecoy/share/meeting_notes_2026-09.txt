@@ -1,0 +1,4 @@
+Weekly IT sync - September
+- Patch window moved to Friday evening
+- Backup job on the file server is being reviewed
+- Printer on floor 2 replaced

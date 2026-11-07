@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deepcast</title>
+<link rel="icon" type="image/svg+xml" href="/static/deepcast.svg?v=6">
+<link rel="stylesheet" href="/static/fonts/fonts.css">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand">
+      <img class="logo" src="/static/deepcast.svg?v=6" alt="" width="34" height="34">
+      <div><strong class="wordmark">Deepcast</strong><small class="motto">Hook, line and sinker.</small></div>
+    </div>
+    <nav id="tabs" class="nav" role="tablist" aria-label="Sections"></nav>
+    <div class="side-foot">
+      <div id="live" class="pill" role="status"><i></i><span>connecting</span></div>
+      <div class="row">
+        <button id="pause" class="ghost" aria-pressed="false" title="Pause auto-refresh">Pause</button>
+        <button id="theme" class="ghost" title="Toggle light/dark">Theme</button>
+      </div>
+    </div>
+  </aside>
+  <div class="content">
+    <section id="banner" class="banner" hidden aria-live="polite"></section>
+    <main id="view" tabindex="-1"></main>
+  </div>
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>

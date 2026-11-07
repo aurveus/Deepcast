@@ -1,0 +1,4 @@
+{
+  "_comment": "Web paths the lab owner planted as traps: nothing links to them, so a normal visitor never requests them. Lab-owned configuration (not attacker input). A request whose path starts with one of these prefixes gets trap=true in the event stream.",
+  "path_prefixes": ["/backup", "/server-status"]
+}

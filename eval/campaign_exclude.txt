@@ -1,0 +1,9 @@
+# Campaign scenarios excluded from scoring by hand. Format: <scenario start, UTC, as in the campaign log>  # reason
+# Every entry must say why. Raw rows stay in eval/results/campaign.json (flag manually_excluded). Keep this list short.
+2026-10-18T19:48:37Z  # sshbrute from the first 2026-10-18 campaign: the watcher's old 10-minute merge window folded it into a still-open incident, so it had no trigger of its own (fixed by WATCH_MERGE=60); detection cannot be attributed
+2026-10-18T20:06:51Z  # idle window from the same period: its 4 'false alarms' are re-triggers of the previous scenario's incident (closed at 20:08:49 and re-triggered), not benign traffic being flagged
+2026-10-27T19:22:39Z  # sshbrute, 2026-10-27 campaign: gaps of 60-120 s kept the attacker below the watcher's 90 s quiet limit, so all scenarios sat in one open incident; this run was missed only because of that. Re-run with --gap-min 150
+2026-10-27T19:15:41Z  # lure, same cause: decoys were "already running" in the endless incident, so decoy deployment cannot be judged
+2026-10-27T18:58:31Z  # traverse, same cause as above
+2026-10-27T19:01:39Z  # overlap, same cause as above
+2026-10-27T19:18:29Z  # overlap, same cause as above

@@ -1,0 +1,3450 @@
+{
+ "version": 1,
+ "built": "2026-10-24T16:04:39+00:00",
+ "kali_ip": "10.10.10.10",
+ "host_ip": "10.10.10.1",
+ "schemes": {
+  "v1": {
+   "portscan": "development",
+   "sshbrute": "development",
+   "webprobe": "development",
+   "lure": "development",
+   "slowscan": "validation",
+   "dirbrute": "validation",
+   "stealthscan": "holdout",
+   "traverse": "holdout",
+   "overlap": "holdout",
+   "manual": "holdout"
+  },
+  "deploy": {
+   "portscan": "development",
+   "sshbrute": "development",
+   "webprobe": "development",
+   "lure": "development",
+   "stealthscan": "development",
+   "traverse": "development",
+   "slowscan": "validation",
+   "dirbrute": "validation",
+   "overlap": "holdout",
+   "manual": "holdout"
+  }
+ },
+ "pad_s": [
+  5,
+  20
+ ],
+ "min_coverage": 0.9,
+ "samples": [
+  {
+   "id": "sshbrute_20261018T164914Z",
+   "label": "attack",
+   "type": "sshbrute",
+   "split": "development",
+   "start": 1792342154.0,
+   "end": 1792342156.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261018_205728.jsonl",
+   "sources": [
+    "1c31be0730858242:live_00097_20261018204921.pcap",
+    "211dac9375c042d9:live_00096_20261018204851.pcap"
+   ],
+   "n_events": 64,
+   "events_file": "events/sshbrute_20261018T164914Z.jsonl.gz"
+  },
+  {
+   "id": "webprobe_20261018T164947Z",
+   "label": "attack",
+   "type": "webprobe",
+   "split": "development",
+   "start": 1792342187.0,
+   "end": 1792342429.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261018_205728.jsonl",
+   "sources": [
+    "0e0df52b2ea49f75:live_00105_20261018205322.pcap",
+    "1c31be0730858242:live_00097_20261018204921.pcap",
+    "222640fb5fd21862:live_00101_20261018205122.pcap",
+    "55d3ae4ca2f97cb2:live_00103_20261018205222.pcap",
+    "6ed9774cb11d6883:live_00104_20261018205252.pcap",
+    "8a9dcd41def59e7a:live_00098_20261018204951.pcap",
+    "90a221bb91e36b25:live_00102_20261018205152.pcap",
+    "ad49f00625db3059:live_00100_20261018205051.pcap",
+    "fb8196048185e078:live_00099_20261018205021.pcap"
+   ],
+   "n_events": 24105,
+   "events_file": "events/webprobe_20261018T164947Z.jsonl.gz"
+  },
+  {
+   "id": "portscan_20261018T165443Z",
+   "label": "attack",
+   "type": "portscan",
+   "split": "development",
+   "start": 1792342483.0,
+   "end": 1792342648.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261018_205728.jsonl",
+   "sources": [
+    "1449eebf0d4fa05f:live_00112_20261018205653.pcap",
+    "1d2bac778dd0ec46:live_00113_20261018205723.pcap",
+    "6152b8f822d89999:live_00111_20261018205623.pcap",
+    "9b5dbee610738c8f:live_00108_20261018205452.pcap",
+    "a65273f8d7d1a4e4:live_00110_20261018205553.pcap",
+    "d59f2c73ff9f9805:live_00109_20261018205523.pcap",
+    "f0395214375341cd:live_00107_20261018205422.pcap"
+   ],
+   "n_events": 131218,
+   "events_file": "events/portscan_20261018T165443Z.jsonl.gz"
+  },
+  {
+   "id": "slowscan_20261018T173540Z",
+   "label": "attack",
+   "type": "slowscan",
+   "split": "validation",
+   "start": 1792344940.0,
+   "end": 1792345026.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261018_214250.jsonl",
+   "sources": [
+    "252f56347bab7363:live_00192_20261018213704.pcap",
+    "56711fffe51d38af:live_00190_20261018213604.pcap",
+    "95e93cf3644cb173:live_00189_20261018213534.pcap",
+    "b8f4b4a32c41b484:live_00191_20261018213634.pcap"
+   ],
+   "n_events": 74,
+   "events_file": "events/slowscan_20261018T173540Z.jsonl.gz"
+  },
+  {
+   "id": "lure_20261018T173923Z",
+   "label": "attack",
+   "type": "lure",
+   "split": "development",
+   "start": 1792345163.0,
+   "end": 1792345370.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261018_214250.jsonl",
+   "sources": [
+    "2390f46e685d3698:live_00201_20261018214136.pcap",
+    "5f95c180a1657550:live_00200_20261018214106.pcap",
+    "8e8b4afc82a3837c:live_00199_20261018214035.pcap",
+    "a9dff532471b0d20:live_00196_20261018213905.pcap",
+    "ab7c19e70744831d:live_00198_20261018214005.pcap",
+    "f1f4d81fe83674dc:live_00197_20261018213935.pcap"
+   ],
+   "n_events": 135,
+   "events_file": "events/lure_20261018T173923Z.jsonl.gz"
+  },
+  {
+   "id": "webprobe_20261018T181445Z",
+   "label": "attack",
+   "type": "webprobe",
+   "split": "development",
+   "start": 1792347285.0,
+   "end": 1792347524.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_partial_20261019_001625.jsonl",
+   "sources": [
+    "07e226a468b49918:live_00269_20261018221545.pcap",
+    "25b36386c0b911ea:live_00274_20261018221815.pcap",
+    "3a09971927b7818e:live_00271_20261018221645.pcap",
+    "4f83e03908f74e9f:live_00273_20261018221745.pcap",
+    "6576e96ef26442e2:live_00268_20261018221515.pcap",
+    "874ce4ef9ab3efd8:live_00272_20261018221715.pcap",
+    "a4b36bad5ce72dd5:live_00270_20261018221615.pcap",
+    "ed926df0467d3533:live_00267_20261018221445.pcap"
+   ],
+   "n_events": 24138,
+   "events_file": "events/webprobe_20261018T181445Z.jsonl.gz"
+  },
+  {
+   "id": "lure_20261018T182234Z",
+   "label": "attack",
+   "type": "lure",
+   "split": "development",
+   "start": 1792347754.0,
+   "end": 1792347962.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_partial_20261019_001625.jsonl",
+   "sources": [
+    "72988dec07be1a9a:live_00287_20261018222447.pcap",
+    "c1c935f25a1d54df:live_00284_20261018222316.pcap",
+    "d487467d4fb5219c:live_00283_20261018222246.pcap",
+    "d8b08795e09f8ef0:live_00282_20261018222216.pcap",
+    "e75477c27c932d3f:live_00286_20261018222417.pcap",
+    "f72a1ec65eb0e9c3:live_00285_20261018222346.pcap"
+   ],
+   "n_events": 141,
+   "events_file": "events/lure_20261018T182234Z.jsonl.gz"
+  },
+  {
+   "id": "portscan_20261018T182934Z",
+   "label": "attack",
+   "type": "portscan",
+   "split": "development",
+   "start": 1792348174.0,
+   "end": 1792348339.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_partial_20261019_001625.jsonl",
+   "sources": [
+    "050f7f602a2a275f:live_00297_20261018222948.pcap",
+    "41d42ca0086d199f:live_00298_20261018223018.pcap",
+    "4fbb4e03a94035be:live_00302_20261018223218.pcap",
+    "7e7e5e719a057699:live_00299_20261018223048.pcap",
+    "a55a6f2b6bd293db:live_00300_20261018223118.pcap",
+    "e84198dd1436c4e8:live_00296_20261018222918.pcap",
+    "f2085f55bf42ec7f:live_00301_20261018223148.pcap"
+   ],
+   "n_events": 131241,
+   "events_file": "events/portscan_20261018T182934Z.jsonl.gz"
+  },
+  {
+   "id": "lure_20261018T183533Z",
+   "label": "attack",
+   "type": "lure",
+   "split": "development",
+   "start": 1792348533.0,
+   "end": 1792348613.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_partial_20261019_001625.jsonl",
+   "sources": [
+    "879f97b90279d28f:live_00309_20261018223549.pcap",
+    "974d519bbec52a73:live_00310_20261018223619.pcap",
+    "baefc4ef14ee3b1d:live_00311_20261018223649.pcap",
+    "cb84a87cbb0ae3cf:live_00308_20261018223519.pcap"
+   ],
+   "n_events": 92,
+   "events_file": "events/lure_20261018T183533Z.jsonl.gz"
+  },
+  {
+   "id": "portscan_20261018T184053Z",
+   "label": "attack",
+   "type": "portscan",
+   "split": "development",
+   "start": 1792348853.0,
+   "end": 1792349017.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_partial_20261019_001625.jsonl",
+   "sources": [
+    "2682c9e839d8f1db:live_00324_20261018224321.pcap",
+    "5d19d86af571fe12:live_00322_20261018224221.pcap",
+    "6397217a95655497:live_00323_20261018224251.pcap",
+    "a3a8ebf763a01808:live_00320_20261018224121.pcap",
+    "d4cdb127fa74d5c8:live_00319_20261018224051.pcap",
+    "da0dbdc6e188d52a:live_00321_20261018224151.pcap"
+   ],
+   "n_events": 131225,
+   "events_file": "events/portscan_20261018T184053Z.jsonl.gz"
+  },
+  {
+   "id": "portscan_20261018T184551Z",
+   "label": "attack",
+   "type": "portscan",
+   "split": "development",
+   "start": 1792349151.0,
+   "end": 1792349316.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_partial_20261019_001625.jsonl",
+   "sources": [
+    "01dec5435e2e99e7:live_00330_20261018224622.pcap",
+    "12ab9e9adfe703dd:live_00331_20261018224652.pcap",
+    "26f6c3072274f712:live_00332_20261018224722.pcap",
+    "2a34b05c57d18084:live_00328_20261018224522.pcap",
+    "63c7d271ec331080:live_00334_20261018224822.pcap",
+    "8d4d80c8b43f8183:live_00329_20261018224552.pcap",
+    "c683d208ae90a4fb:live_00333_20261018224752.pcap"
+   ],
+   "n_events": 131224,
+   "events_file": "events/portscan_20261018T184551Z.jsonl.gz"
+  },
+  {
+   "id": "lure_20261018T185151Z",
+   "label": "attack",
+   "type": "lure",
+   "split": "development",
+   "start": 1792349511.0,
+   "end": 1792349586.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_partial_20261019_001625.jsonl",
+   "sources": [
+    "459a877ea19d5b4e:live_00343_20261018225253.pcap",
+    "4cf5a2559c98b4d6:live_00342_20261018225223.pcap",
+    "544713d63aaac215:live_00340_20261018225123.pcap",
+    "9b1d1f188a3d747a:live_00341_20261018225153.pcap"
+   ],
+   "n_events": 98,
+   "events_file": "events/lure_20261018T185151Z.jsonl.gz"
+  },
+  {
+   "id": "sshbrute_20261018T185626Z",
+   "label": "attack",
+   "type": "sshbrute",
+   "split": "development",
+   "start": 1792349786.0,
+   "end": 1792349787.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_partial_20261019_001625.jsonl",
+   "sources": [
+    "48b123168433f61a:live_00350_20261018225624.pcap"
+   ],
+   "n_events": 55,
+   "events_file": "events/sshbrute_20261018T185626Z.jsonl.gz"
+  },
+  {
+   "id": "webprobe_20261018T190113Z",
+   "label": "attack",
+   "type": "webprobe",
+   "split": "development",
+   "start": 1792350073.0,
+   "end": 1792350314.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_partial_20261019_001625.jsonl",
+   "sources": [
+    "1a7984bdfeb19c27:live_00359_20261018230055.pcap",
+    "24c691572e4c45cf:live_00367_20261018230456.pcap",
+    "333e4b30c72674f1:live_00366_20261018230426.pcap",
+    "4cead6538b469763:live_00365_20261018230356.pcap",
+    "58c9b8abc4560816:live_00362_20261018230226.pcap",
+    "95a4ca983d7b9e61:live_00361_20261018230156.pcap",
+    "9628960d05a8e102:live_00363_20261018230256.pcap",
+    "9b98e5bfc4a64072:live_00360_20261018230125.pcap",
+    "e8289d0df97f4f2b:live_00364_20261018230326.pcap"
+   ],
+   "n_events": 24153,
+   "events_file": "events/webprobe_20261018T190113Z.jsonl.gz"
+  },
+  {
+   "id": "lure_20261018T191518Z",
+   "label": "attack",
+   "type": "lure",
+   "split": "development",
+   "start": 1792350918.0,
+   "end": 1792351131.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_partial_20261019_001625.jsonl",
+   "sources": [
+    "021e890860d367e1:live_00391_20261018231659.pcap",
+    "86211ee7151208ef:live_00389_20261018231559.pcap",
+    "96e55ece43b10e18:live_00387_20261018231458.pcap",
+    "a12f41f53be0e2a0:live_00390_20261018231629.pcap",
+    "c5f5a89d038840b7:live_00388_20261018231528.pcap",
+    "cbb881fe67d07518:live_00392_20261018231729.pcap"
+   ],
+   "n_events": 114,
+   "events_file": "events/lure_20261018T191518Z.jsonl.gz"
+  },
+  {
+   "id": "webprobe_20261018T192206Z",
+   "label": "attack",
+   "type": "webprobe",
+   "split": "development",
+   "start": 1792351326.0,
+   "end": 1792351576.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_partial_20261019_001625.jsonl",
+   "sources": [
+    "26a2802f8da1eb0c:live_00408_20261018232531.pcap",
+    "3a23481344b7057f:live_00405_20261018232400.pcap",
+    "52b3f22052109c6d:live_00409_20261018232601.pcap",
+    "7cc8767a564cd5d3:live_00406_20261018232430.pcap",
+    "a09ab33ad4db2a4c:live_00404_20261018232330.pcap",
+    "a6cb2b2208ec19b9:live_00401_20261018232200.pcap",
+    "dabb87426a171eab:live_00402_20261018232230.pcap",
+    "f20f2da3ecf5b80d:live_00403_20261018232300.pcap",
+    "f4b1b4237d4d3c10:live_00407_20261018232500.pcap"
+   ],
+   "n_events": 24123,
+   "events_file": "events/webprobe_20261018T192206Z.jsonl.gz"
+  },
+  {
+   "id": "lure_20261018T193457Z",
+   "label": "attack",
+   "type": "lure",
+   "split": "development",
+   "start": 1792352097.0,
+   "end": 1792352310.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_partial_20261019_001625.jsonl",
+   "sources": [
+    "8ed7f9685f5749fa:live_00429_20261018233603.pcap",
+    "c532c6a661f58038:live_00427_20261018233503.pcap",
+    "d90ecbee32a81cc5:live_00431_20261018233703.pcap",
+    "e3ced2971de2d2d8:live_00430_20261018233633.pcap",
+    "e6cb6db0194fa4e6:live_00426_20261018233433.pcap",
+    "f9159b660e023c82:live_00428_20261018233533.pcap"
+   ],
+   "n_events": 102,
+   "events_file": "events/lure_20261018T193457Z.jsonl.gz"
+  },
+  {
+   "id": "webprobe_20261018T194157Z",
+   "label": "attack",
+   "type": "webprobe",
+   "split": "development",
+   "start": 1792352517.0,
+   "end": 1792352788.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_partial_20261019_001625.jsonl",
+   "sources": [
+    "318947466a3c3175:live_00444_20261018234335.pcap",
+    "38dc7c082163c706:live_00449_20261018234605.pcap",
+    "454bcf1f3cbd6c2a:live_00442_20261018234234.pcap",
+    "578e5abb649cd4a5:live_00447_20261018234505.pcap",
+    "7a6294e5fb56627b:live_00441_20261018234204.pcap",
+    "817dd01aee0a4ce3:live_00448_20261018234535.pcap",
+    "adb900d5df5267d6:live_00443_20261018234304.pcap",
+    "c7c3107386445c31:live_00446_20261018234435.pcap",
+    "e8cf4abf6a9aca24:live_00440_20261018234134.pcap",
+    "f5c8f294e2e1ef00:live_00445_20261018234405.pcap"
+   ],
+   "n_events": 24167,
+   "events_file": "events/webprobe_20261018T194157Z.jsonl.gz"
+  },
+  {
+   "id": "sshbrute_20261018T194837Z",
+   "label": "attack",
+   "type": "sshbrute",
+   "split": "development",
+   "start": 1792352917.0,
+   "end": 1792352919.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_partial_20261019_001625.jsonl",
+   "sources": [
+    "805b85897e11432d:live_00454_20261018234836.pcap"
+   ],
+   "n_events": 61,
+   "events_file": "events/sshbrute_20261018T194837Z.jsonl.gz"
+  },
+  {
+   "id": "slowscan_20261018T195306Z",
+   "label": "attack",
+   "type": "slowscan",
+   "split": "validation",
+   "start": 1792353186.0,
+   "end": 1792353272.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_partial_20261019_001625.jsonl",
+   "sources": [
+    "4660fafd2df2bb9c:live_00463_20261018235307.pcap",
+    "6575f6ab41f0550d:live_00464_20261018235337.pcap"
+   ],
+   "n_events": 73,
+   "events_file": "events/slowscan_20261018T195306Z.jsonl.gz"
+  },
+  {
+   "id": "webprobe_20261020T120830Z",
+   "label": "attack",
+   "type": "webprobe",
+   "split": "development",
+   "start": 1792498110.0,
+   "end": 1792498389.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_182045.jsonl",
+   "sources": [
+    "0ae5a65d423cf73c:live_00009_20261020161218.pcap",
+    "0b0b7bb07e2b69db:live_00007_20261020161118.pcap",
+    "144a185d2fd7cd47:live_00010_20261020161249.pcap",
+    "180dff14635f277d:live_00005_20261020161018.pcap",
+    "50c313352048c4cb:live_00006_20261020161048.pcap",
+    "6fea8c3cd26fa252:live_00008_20261020161148.pcap",
+    "a1acca169963a675:live_00003_20261020160918.pcap",
+    "cab30ba5edfc78fe:live_00002_20261020160848.pcap",
+    "d0e956e46592a08b:live_00004_20261020160948.pcap",
+    "ef23938a31bec466:live_00001_20261020160817.pcap"
+   ],
+   "n_events": 24178,
+   "events_file": "events/webprobe_20261020T120830Z.jsonl.gz"
+  },
+  {
+   "id": "slowscan_20261020T122003Z",
+   "label": "attack",
+   "type": "slowscan",
+   "split": "validation",
+   "start": 1792498803.0,
+   "end": 1792498889.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_182045.jsonl",
+   "sources": [
+    "664e57c204262ed7:live_00025_20261020162021.pcap",
+    "94531696a3e3a823:live_00024_20261020161951.pcap",
+    "b1bbb568da0f2a34:live_00027_20261020162121.pcap",
+    "c0c85162a6436b37:live_00026_20261020162051.pcap"
+   ],
+   "n_events": 104,
+   "events_file": "events/slowscan_20261020T122003Z.jsonl.gz"
+  },
+  {
+   "id": "portscan_20261020T122641Z",
+   "label": "attack",
+   "type": "portscan",
+   "split": "development",
+   "start": 1792499201.0,
+   "end": 1792499366.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_182045.jsonl",
+   "sources": [
+    "018c22369a3fed58:live_00042_20261020162854.pcap",
+    "1a5996ec2be64713:live_00039_20261020162723.pcap",
+    "26d51785ae9af7b4:live_00038_20261020162653.pcap",
+    "3612e1973f2b8ae4:live_00041_20261020162823.pcap",
+    "4d2d7270f66f9f9a:live_00037_20261020162623.pcap",
+    "996f2393f0991e54:live_00043_20261020162924.pcap",
+    "a094b0d1a52a5ad2:live_00040_20261020162753.pcap"
+   ],
+   "n_events": 131254,
+   "events_file": "events/portscan_20261020T122641Z.jsonl.gz"
+  },
+  {
+   "id": "lure_20261020T123617Z",
+   "label": "attack",
+   "type": "lure",
+   "split": "development",
+   "start": 1792499777.0,
+   "end": 1792499854.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_182045.jsonl",
+   "sources": [
+    "45dbac4716a3ba6f:live_00059_20261020163726.pcap",
+    "49530954ea7e82d8:live_00058_20261020163656.pcap",
+    "4e6b497514de6938:live_00056_20261020163555.pcap",
+    "e98e7d6ec3510863:live_00057_20261020163625.pcap"
+   ],
+   "n_events": 124,
+   "events_file": "events/lure_20261020T123617Z.jsonl.gz"
+  },
+  {
+   "id": "sshbrute_20261020T124248Z",
+   "label": "attack",
+   "type": "sshbrute",
+   "split": "development",
+   "start": 1792500168.0,
+   "end": 1792500170.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_182045.jsonl",
+   "sources": [
+    "7016fd6f0710b61f:live_00069_20261020164227.pcap"
+   ],
+   "n_events": 49,
+   "events_file": "events/sshbrute_20261020T124248Z.jsonl.gz"
+  },
+  {
+   "id": "lure_20261020T124932Z",
+   "label": "attack",
+   "type": "lure",
+   "split": "development",
+   "start": 1792500572.0,
+   "end": 1792500649.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_182045.jsonl",
+   "sources": [
+    "3cad494f22a8ecf9:live_00085_20261020165029.pcap",
+    "5d445d6b023118d4:live_00084_20261020164959.pcap",
+    "9bb4b0647f66e2f4:live_00083_20261020164929.pcap"
+   ],
+   "n_events": 103,
+   "events_file": "events/lure_20261020T124932Z.jsonl.gz"
+  },
+  {
+   "id": "slowscan_20261020T125726Z",
+   "label": "attack",
+   "type": "slowscan",
+   "split": "validation",
+   "start": 1792501046.0,
+   "end": 1792501132.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_182045.jsonl",
+   "sources": [
+    "75f7278a9ee26d91:live_00099_20261020165730.pcap",
+    "bd2be1234731a8aa:live_00101_20261020165831.pcap",
+    "c92a05edc492f72b:live_00100_20261020165800.pcap"
+   ],
+   "n_events": 71,
+   "events_file": "events/slowscan_20261020T125726Z.jsonl.gz"
+  },
+  {
+   "id": "lure_20261020T130429Z",
+   "label": "attack",
+   "type": "lure",
+   "split": "development",
+   "start": 1792501469.0,
+   "end": 1792501549.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_182045.jsonl",
+   "sources": [
+    "3f83d9f79dda8763:live_00113_20261020170432.pcap",
+    "45bb68295314d0db:live_00115_20261020170533.pcap",
+    "bf9b30d449f4a149:live_00112_20261020170402.pcap",
+    "f4ac749bfe65f998:live_00114_20261020170503.pcap"
+   ],
+   "n_events": 115,
+   "events_file": "events/lure_20261020T130429Z.jsonl.gz"
+  },
+  {
+   "id": "slowscan_20261020T131244Z",
+   "label": "attack",
+   "type": "slowscan",
+   "split": "validation",
+   "start": 1792501964.0,
+   "end": 1792502050.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_182045.jsonl",
+   "sources": [
+    "7a843c089c0b383a:live_00130_20261020171304.pcap",
+    "af2c48f73dab0799:live_00132_20261020171405.pcap",
+    "b10ef93285808569:live_00129_20261020171234.pcap",
+    "f3b634df42547ef7:live_00131_20261020171334.pcap"
+   ],
+   "n_events": 95,
+   "events_file": "events/slowscan_20261020T131244Z.jsonl.gz"
+  },
+  {
+   "id": "webprobe_20261020T131942Z",
+   "label": "attack",
+   "type": "webprobe",
+   "split": "development",
+   "start": 1792502382.0,
+   "end": 1792502673.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_182045.jsonl",
+   "sources": [
+    "17a65ee57eff5407:live_00144_20261020172006.pcap",
+    "1d119823825eb55e:live_00143_20261020171936.pcap",
+    "2360f6a3d5e80213:live_00152_20261020172407.pcap",
+    "26072c73b1b14d01:live_00146_20261020172106.pcap",
+    "60ac6568a705475e:live_00148_20261020172206.pcap",
+    "b698d635e3be69ab:live_00149_20261020172237.pcap",
+    "dbcfbc8f8479a1cf:live_00151_20261020172337.pcap",
+    "dcb48c84549491d4:live_00150_20261020172307.pcap",
+    "f885d44763f63f50:live_00145_20261020172036.pcap",
+    "fa5a7932cca048ff:live_00147_20261020172136.pcap"
+   ],
+   "n_events": 24150,
+   "events_file": "events/webprobe_20261020T131942Z.jsonl.gz"
+  },
+  {
+   "id": "webprobe_20261020T132943Z",
+   "label": "attack",
+   "type": "webprobe",
+   "split": "development",
+   "start": 1792502983.0,
+   "end": 1792503283.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_182045.jsonl",
+   "sources": [
+    "20c511783e48850d:live_00172_20261020173409.pcap",
+    "23aa66a7fec24b42:live_00169_20261020173239.pcap",
+    "2629303529ef6607:live_00171_20261020173339.pcap",
+    "33dbedf50d64cd13:live_00170_20261020173309.pcap",
+    "43f969f743a3838f:live_00167_20261020173139.pcap",
+    "499e350b4095608c:live_00164_20261020173008.pcap",
+    "4df7bacd5a24e68d:live_00163_20261020172938.pcap",
+    "5e4b4bf22c7fd087:live_00168_20261020173209.pcap",
+    "7299822af42fefce:live_00166_20261020173109.pcap",
+    "e5c6a253835d280c:live_00173_20261020173439.pcap",
+    "eba6f188b4ced189:live_00165_20261020173038.pcap"
+   ],
+   "n_events": 24071,
+   "events_file": "events/webprobe_20261020T132943Z.jsonl.gz"
+  },
+  {
+   "id": "portscan_20261020T134024Z",
+   "label": "attack",
+   "type": "portscan",
+   "split": "development",
+   "start": 1792503624.0,
+   "end": 1792503788.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_182045.jsonl",
+   "sources": [
+    "27251c344f49f9bd:live_00188_20261020174210.pcap",
+    "96c10c3cd5d918c3:live_00185_20261020174040.pcap",
+    "c884645cc226eef7:live_00189_20261020174240.pcap",
+    "d9f7609db41cf61a:live_00184_20261020174010.pcap",
+    "e5277a3a3a0b78d3:live_00186_20261020174110.pcap",
+    "f142a04474db34a7:live_00187_20261020174140.pcap"
+   ],
+   "n_events": 131240,
+   "events_file": "events/portscan_20261020T134024Z.jsonl.gz"
+  },
+  {
+   "id": "sshbrute_20261020T135746Z",
+   "label": "attack",
+   "type": "sshbrute",
+   "split": "development",
+   "start": 1792504666.0,
+   "end": 1792504668.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_182045.jsonl",
+   "sources": [
+    "c939e25d7274f50b:live_00219_20261020175744.pcap"
+   ],
+   "n_events": 49,
+   "events_file": "events/sshbrute_20261020T135746Z.jsonl.gz"
+  },
+  {
+   "id": "portscan_20261020T140422Z",
+   "label": "attack",
+   "type": "portscan",
+   "split": "development",
+   "start": 1792505062.0,
+   "end": 1792505226.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_182045.jsonl",
+   "sources": [
+    "149e2536eee1b562:live_00234_20261020180515.pcap",
+    "18ba04af21f806f0:live_00232_20261020180415.pcap",
+    "39091652015e8af7:live_00237_20261020180646.pcap",
+    "85f3995cc4361697:live_00235_20261020180545.pcap",
+    "9f93df3ff90d6cf6:live_00236_20261020180616.pcap",
+    "d9aeff6ca781f1d2:live_00233_20261020180445.pcap"
+   ],
+   "n_events": 131242,
+   "events_file": "events/portscan_20261020T140422Z.jsonl.gz"
+  },
+  {
+   "id": "sshbrute_20261020T141253Z",
+   "label": "attack",
+   "type": "sshbrute",
+   "split": "development",
+   "start": 1792505573.0,
+   "end": 1792505575.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_182045.jsonl",
+   "sources": [
+    "10138635b50813ab:live_00249_20261020181247.pcap"
+   ],
+   "n_events": 58,
+   "events_file": "events/sshbrute_20261020T141253Z.jsonl.gz"
+  },
+  {
+   "id": "slowscan_20261020T141919Z",
+   "label": "attack",
+   "type": "slowscan",
+   "split": "validation",
+   "start": 1792505959.0,
+   "end": 1792506045.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_182045.jsonl",
+   "sources": [
+    "1718f9fa0882e739:live_00264_20261020182019.pcap",
+    "c67ceb3babe1ad6f:live_00262_20261020181918.pcap",
+    "d11c828306d969ce:live_00263_20261020181949.pcap"
+   ],
+   "n_events": 65,
+   "events_file": "events/slowscan_20261020T141919Z.jsonl.gz"
+  },
+  {
+   "id": "stealthscan_20261020T142523Z",
+   "label": "attack",
+   "type": "stealthscan",
+   "split": "holdout",
+   "start": 1792506323.0,
+   "end": 1792506324.0,
+   "attack_clients": [
+    "10.10.10.10",
+    "10.10.10.201",
+    "10.10.10.202",
+    "10.10.10.203"
+   ],
+   "campaign_log": "campaign_20261020_190215.jsonl",
+   "sources": [
+    "2b904bd2cfca17a7:live_00001_20261020182507.pcap"
+   ],
+   "n_events": 249,
+   "events_file": "events/stealthscan_20261020T142523Z.jsonl.gz"
+  },
+  {
+   "id": "slowscan_20261020T143045Z",
+   "label": "attack",
+   "type": "slowscan",
+   "split": "validation",
+   "start": 1792506645.0,
+   "end": 1792506731.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_190215.jsonl",
+   "sources": [
+    "151304e35a0dbc55:live_00014_20261020183139.pcap",
+    "704f491737780b10:live_00013_20261020183108.pcap",
+    "85a9acdedbad39fd:live_00015_20261020183209.pcap",
+    "f9d0b10ab5820c46:live_00012_20261020183038.pcap"
+   ],
+   "n_events": 71,
+   "events_file": "events/slowscan_20261020T143045Z.jsonl.gz"
+  },
+  {
+   "id": "dirbrute_20261020T143815Z",
+   "label": "attack",
+   "type": "dirbrute",
+   "split": "validation",
+   "start": 1792507095.0,
+   "end": 1792507123.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_190215.jsonl",
+   "sources": [
+    "1c0fc9dc4170c9b0:live_00027_20261020183810.pcap",
+    "5759e0f4742947b6:live_00028_20261020183840.pcap"
+   ],
+   "n_events": 13884,
+   "events_file": "events/dirbrute_20261020T143815Z.jsonl.gz"
+  },
+  {
+   "id": "dirbrute_20261020T144424Z",
+   "label": "attack",
+   "type": "dirbrute",
+   "split": "validation",
+   "start": 1792507464.0,
+   "end": 1792507492.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_190215.jsonl",
+   "sources": [
+    "76231ec78c10f41b:live_00040_20261020184441.pcap",
+    "f3147dd22b9d6211:live_00039_20261020184411.pcap"
+   ],
+   "n_events": 13867,
+   "events_file": "events/dirbrute_20261020T144424Z.jsonl.gz"
+  },
+  {
+   "id": "dirbrute_20261020T145045Z",
+   "label": "attack",
+   "type": "dirbrute",
+   "split": "validation",
+   "start": 1792507845.0,
+   "end": 1792507873.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_190215.jsonl",
+   "sources": [
+    "10f4f959de601c5d:live_00052_20261020185043.pcap",
+    "a80b5108ef2a1814:live_00053_20261020185113.pcap"
+   ],
+   "n_events": 13860,
+   "events_file": "events/dirbrute_20261020T145045Z.jsonl.gz"
+  },
+  {
+   "id": "stealthscan_20261020T145626Z",
+   "label": "attack",
+   "type": "stealthscan",
+   "split": "holdout",
+   "start": 1792508186.0,
+   "end": 1792508188.0,
+   "attack_clients": [
+    "10.10.10.10",
+    "10.10.10.201",
+    "10.10.10.202",
+    "10.10.10.203"
+   ],
+   "campaign_log": "campaign_20261020_190215.jsonl",
+   "sources": [
+    "7c5a79163542ccbb:live_00063_20261020185614.pcap"
+   ],
+   "n_events": 246,
+   "events_file": "events/stealthscan_20261020T145626Z.jsonl.gz"
+  },
+  {
+   "id": "stealthscan_20261020T150214Z",
+   "label": "attack",
+   "type": "stealthscan",
+   "split": "holdout",
+   "start": 1792508534.0,
+   "end": 1792508535.0,
+   "attack_clients": [
+    "10.10.10.10",
+    "10.10.10.201",
+    "10.10.10.202",
+    "10.10.10.203"
+   ],
+   "campaign_log": "campaign_20261020_190215.jsonl",
+   "sources": [
+    "24405c871915114f:live_00074_20261020190145.pcap"
+   ],
+   "n_events": 246,
+   "events_file": "events/stealthscan_20261020T150214Z.jsonl.gz"
+  },
+  {
+   "id": "stealthscan_20261020T154744Z",
+   "label": "attack",
+   "type": "stealthscan",
+   "split": "holdout",
+   "start": 1792511264.0,
+   "end": 1792511266.0,
+   "attack_clients": [
+    "10.10.10.10",
+    "10.10.10.201",
+    "10.10.10.202",
+    "10.10.10.203"
+   ],
+   "campaign_log": "campaign_20261020_194746.jsonl",
+   "sources": [
+    "446c72f06fbea331:live_00002_20261020194741.pcap"
+   ],
+   "n_events": 258,
+   "events_file": "events/stealthscan_20261020T154744Z.jsonl.gz"
+  },
+  {
+   "id": "portscan_20261020T160029Z",
+   "label": "attack",
+   "type": "portscan",
+   "split": "development",
+   "start": 1792512029.0,
+   "end": 1792512193.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_212500.jsonl",
+   "sources": [
+    "26d6bccb7cc064c9:live_00004_20261020200143.pcap",
+    "2de00ba190c9c13e:live_00002_20261020200043.pcap",
+    "59963362ad6dab66:live_00001_20261020200013.pcap",
+    "b9254f2a0553e63b:live_00005_20261020200213.pcap",
+    "cfd9971a2514f64a:live_00003_20261020200113.pcap",
+    "fdc89118a8d873ad:live_00006_20261020200244.pcap"
+   ],
+   "n_events": 131230,
+   "events_file": "events/portscan_20261020T160029Z.jsonl.gz"
+  },
+  {
+   "id": "webprobe_20261020T160932Z",
+   "label": "attack",
+   "type": "webprobe",
+   "split": "development",
+   "start": 1792512572.0,
+   "end": 1792512872.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_212500.jsonl",
+   "sources": [
+    "3e2bcd61bebdea6e:live_00025_20261020201216.pcap",
+    "452faede3f593d2a:live_00026_20261020201246.pcap",
+    "48114f7ec88a8460:live_00029_20261020201416.pcap",
+    "4d1cf801dec16cb8:live_00023_20261020201115.pcap",
+    "646dd0b891491624:live_00021_20261020201015.pcap",
+    "8ea78a018ecbecfe:live_00027_20261020201316.pcap",
+    "9804564727fa516c:live_00028_20261020201346.pcap",
+    "9d1282364a840c46:live_00022_20261020201045.pcap",
+    "cb5c8205fa121e5b:live_00020_20261020200945.pcap",
+    "d71921522f3a1e70:live_00019_20261020200915.pcap",
+    "ffd3af9030769f75:live_00024_20261020201145.pcap"
+   ],
+   "n_events": 18728,
+   "events_file": "events/webprobe_20261020T160932Z.jsonl.gz"
+  },
+  {
+   "id": "dirbrute_20261020T161946Z",
+   "label": "attack",
+   "type": "dirbrute",
+   "split": "validation",
+   "start": 1792513186.0,
+   "end": 1792513214.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_212500.jsonl",
+   "sources": [
+    "4fa77db661a62de6:live_00040_20261020201948.pcap",
+    "a94471d7e1602343:live_00039_20261020201918.pcap"
+   ],
+   "n_events": 13855,
+   "events_file": "events/dirbrute_20261020T161946Z.jsonl.gz"
+  },
+  {
+   "id": "webprobe_20261020T162654Z",
+   "label": "attack",
+   "type": "webprobe",
+   "split": "development",
+   "start": 1792513614.0,
+   "end": 1792513914.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_212500.jsonl",
+   "sources": [
+    "0d4603a4d35e2593:live_00059_20261020202920.pcap",
+    "147328f7ca2f61a7:live_00057_20261020202820.pcap",
+    "2fdd2ad91bb82641:live_00054_20261020202649.pcap",
+    "3175e8237ec7bce1:live_00064_20261020203151.pcap",
+    "41dbafb12096d00a:live_00055_20261020202719.pcap",
+    "61cf22ea29fc7999:live_00062_20261020203050.pcap",
+    "6a6dc1d4d07cbcb8:live_00061_20261020203020.pcap",
+    "720dda0c7ae1cd1a:live_00056_20261020202749.pcap",
+    "8e2b711829bbfee0:live_00058_20261020202850.pcap",
+    "bac36dcc4d6dbe7e:live_00063_20261020203121.pcap",
+    "d9f023332a561512:live_00060_20261020202950.pcap"
+   ],
+   "n_events": 14854,
+   "events_file": "events/webprobe_20261020T162654Z.jsonl.gz"
+  },
+  {
+   "id": "lure_20261020T163759Z",
+   "label": "attack",
+   "type": "lure",
+   "split": "development",
+   "start": 1792514279.0,
+   "end": 1792514488.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_212500.jsonl",
+   "sources": [
+    "304c9320133095eb:live_00078_20261020203853.pcap",
+    "7d4c4492d70d447e:live_00076_20261020203752.pcap",
+    "c85c422c9d6a8ef0:live_00080_20261020203953.pcap",
+    "e70ad37e3f9044d1:live_00079_20261020203923.pcap",
+    "f439dc17529e2325:live_00077_20261020203822.pcap"
+   ],
+   "n_events": 123,
+   "events_file": "events/lure_20261020T163759Z.jsonl.gz"
+  },
+  {
+   "id": "lure_20261020T164723Z",
+   "label": "attack",
+   "type": "lure",
+   "split": "development",
+   "start": 1792514843.0,
+   "end": 1792515055.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_212500.jsonl",
+   "sources": [
+    "09f118c80499521c:live_00097_20261020204825.pcap",
+    "3ebb6e0b743ab5d2:live_00099_20261020204926.pcap",
+    "5ad1cc0ac75703aa:live_00098_20261020204855.pcap",
+    "740d145b05d0b040:live_00095_20261020204725.pcap",
+    "a7d5a80047994c00:live_00094_20261020204655.pcap",
+    "dca145632a28555a:live_00096_20261020204755.pcap"
+   ],
+   "n_events": 117,
+   "events_file": "events/lure_20261020T164723Z.jsonl.gz"
+  },
+  {
+   "id": "slowscan_20261020T165638Z",
+   "label": "attack",
+   "type": "slowscan",
+   "split": "validation",
+   "start": 1792515398.0,
+   "end": 1792515484.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_212500.jsonl",
+   "sources": [
+    "b1dc451305df58ef:live_00114_20261020205658.pcap",
+    "ba6b759372d99d0b:live_00115_20261020205728.pcap",
+    "dbbe0c834a3d7748:live_00116_20261020205758.pcap",
+    "eb436e650b460a01:live_00113_20261020205628.pcap"
+   ],
+   "n_events": 95,
+   "events_file": "events/slowscan_20261020T165638Z.jsonl.gz"
+  },
+  {
+   "id": "dirbrute_20261020T170408Z",
+   "label": "attack",
+   "type": "dirbrute",
+   "split": "validation",
+   "start": 1792515848.0,
+   "end": 1792515876.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_212500.jsonl",
+   "sources": [
+    "c60f150d2a2b4842:live_00128_20261020210400.pcap",
+    "f6e9293f3b78ebb8:live_00129_20261020210430.pcap"
+   ],
+   "n_events": 13845,
+   "events_file": "events/dirbrute_20261020T170408Z.jsonl.gz"
+  },
+  {
+   "id": "portscan_20261020T171059Z",
+   "label": "attack",
+   "type": "portscan",
+   "split": "development",
+   "start": 1792516259.0,
+   "end": 1792516424.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_212500.jsonl",
+   "sources": [
+    "0172cb6c7b6c416e:live_00147_20261020211332.pcap",
+    "1b9f705aa248193e:live_00146_20261020211302.pcap",
+    "21ecc0db94935433:live_00145_20261020211232.pcap",
+    "68b92f9ddc063032:live_00141_20261020211032.pcap",
+    "9e1b1a36de999c1b:live_00144_20261020211202.pcap",
+    "b769dc6f4305bac3:live_00142_20261020211102.pcap",
+    "ef513c8f7f4aeace:live_00143_20261020211132.pcap"
+   ],
+   "n_events": 131236,
+   "events_file": "events/portscan_20261020T171059Z.jsonl.gz"
+  },
+  {
+   "id": "sshbrute_20261020T171948Z",
+   "label": "attack",
+   "type": "sshbrute",
+   "split": "development",
+   "start": 1792516788.0,
+   "end": 1792516789.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_212500.jsonl",
+   "sources": [
+    "66abdcdad0a39e25:live_00159_20261020211934.pcap"
+   ],
+   "n_events": 49,
+   "events_file": "events/sshbrute_20261020T171948Z.jsonl.gz"
+  },
+  {
+   "id": "stealthscan_20261020T172458Z",
+   "label": "attack",
+   "type": "stealthscan",
+   "split": "holdout",
+   "start": 1792517098.0,
+   "end": 1792517100.0,
+   "attack_clients": [
+    "10.10.10.10",
+    "10.10.10.201",
+    "10.10.10.202",
+    "10.10.10.203"
+   ],
+   "campaign_log": "campaign_20261020_212500.jsonl",
+   "sources": [
+    "3295e1cecaba075a:live_00169_20261020212435.pcap"
+   ],
+   "n_events": 240,
+   "events_file": "events/stealthscan_20261020T172458Z.jsonl.gz"
+  },
+  {
+   "id": "sshbrute_20261020T180852Z",
+   "label": "attack",
+   "type": "sshbrute",
+   "split": "development",
+   "start": 1792519732.0,
+   "end": 1792519734.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261020_220854.jsonl",
+   "sources": [
+    "3db457584e1e7660:live_00001_20261020220837.pcap"
+   ],
+   "n_events": 55,
+   "events_file": "events/sshbrute_20261020T180852Z.jsonl.gz"
+  },
+  {
+   "id": "overlap_20261021T130336Z",
+   "label": "attack",
+   "type": "overlap",
+   "split": "holdout",
+   "start": 1792587816.0,
+   "end": 1792587980.0,
+   "attack_clients": [
+    "10.10.10.10",
+    "10.10.10.201",
+    "10.10.10.202",
+    "10.10.10.203"
+   ],
+   "campaign_log": "campaign_20261021_175115.jsonl",
+   "sources": [
+    "090f701496253478:live_00004_20261021170451.pcap",
+    "0e1dc40909714b0e:live_00006_20261021170551.pcap",
+    "14379d50bf495867:live_00001_20261021170320.pcap",
+    "3caec54364f6facf:live_00002_20261021170350.pcap",
+    "b422614aa5673c34:live_00003_20261021170420.pcap",
+    "db60bc88ae4f2282:live_00005_20261021170521.pcap"
+   ],
+   "n_events": 145115,
+   "events_file": "events/overlap_20261021T130336Z.jsonl.gz"
+  },
+  {
+   "id": "traverse_20261021T131247Z",
+   "label": "attack",
+   "type": "traverse",
+   "split": "holdout",
+   "start": 1792588367.0,
+   "end": 1792588589.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261021_175115.jsonl",
+   "sources": [
+    "0f476c839c60b5df:live_00027_20261021171624.pcap",
+    "172d22d22c86a2a5:live_00023_20261021171423.pcap",
+    "58654b46e14ae33f:live_00020_20261021171252.pcap",
+    "acfde422c61829e3:live_00019_20261021171222.pcap",
+    "cbeff090d952c028:live_00022_20261021171353.pcap",
+    "d597668fac56318f:live_00026_20261021171554.pcap",
+    "d6f0fabc88955c48:live_00024_20261021171453.pcap",
+    "e2e13c0b1962cdb4:live_00021_20261021171322.pcap"
+   ],
+   "n_events": 192,
+   "events_file": "events/traverse_20261021T131247Z.jsonl.gz"
+  },
+  {
+   "id": "overlap_20261021T132238Z",
+   "label": "attack",
+   "type": "overlap",
+   "split": "holdout",
+   "start": 1792588958.0,
+   "end": 1792589123.0,
+   "attack_clients": [
+    "10.10.10.10",
+    "10.10.10.201",
+    "10.10.10.202",
+    "10.10.10.203"
+   ],
+   "campaign_log": "campaign_20261021_175115.jsonl",
+   "sources": [
+    "0a0b07751612b857:live_00039_20261021172226.pcap",
+    "422884766f9d5544:live_00044_20261021172457.pcap",
+    "61d168c00e5d98a5:live_00042_20261021172356.pcap",
+    "d8f6333555426029:live_00041_20261021172326.pcap",
+    "ebe3b2bcce8f9d2f:live_00040_20261021172256.pcap",
+    "fec94cc0fb0404dc:live_00043_20261021172427.pcap"
+   ],
+   "n_events": 145146,
+   "events_file": "events/overlap_20261021T132238Z.jsonl.gz"
+  },
+  {
+   "id": "overlap_20261021T133055Z",
+   "label": "attack",
+   "type": "overlap",
+   "split": "holdout",
+   "start": 1792589455.0,
+   "end": 1792589620.0,
+   "attack_clients": [
+    "10.10.10.10",
+    "10.10.10.201",
+    "10.10.10.202",
+    "10.10.10.203"
+   ],
+   "campaign_log": "campaign_20261021_175115.jsonl",
+   "sources": [
+    "0b7e56e438114e88:live_00061_20261021173330.pcap",
+    "1c9f2aaf0e565a94:live_00058_20261021173159.pcap",
+    "24f7b6b16efff2e5:live_00056_20261021173059.pcap",
+    "50e71e90ae9a1843:live_00057_20261021173129.pcap",
+    "6400d94ba6167691:live_00059_20261021173229.pcap",
+    "7c59159d8db839d5:live_00060_20261021173300.pcap",
+    "819d0fbcb835eae9:live_00055_20261021173029.pcap"
+   ],
+   "n_events": 145109,
+   "events_file": "events/overlap_20261021T133055Z.jsonl.gz"
+  },
+  {
+   "id": "traverse_20261021T133911Z",
+   "label": "attack",
+   "type": "traverse",
+   "split": "holdout",
+   "start": 1792589951.0,
+   "end": 1792590177.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261021_175115.jsonl",
+   "sources": [
+    "0aacf43d2a69a1fd:live_00076_20261021174102.pcap",
+    "0d2a5f94e999ed5f:live_00072_20261021173902.pcap",
+    "111d1f89f1023af5:live_00075_20261021174032.pcap",
+    "1de087185ccfbb8d:live_00074_20261021174002.pcap",
+    "527f1e763d3104a5:live_00079_20261021174233.pcap",
+    "6cbdd851b23ac30f:live_00077_20261021174133.pcap",
+    "cc82b3f6db7a1069:live_00073_20261021173932.pcap"
+   ],
+   "n_events": 196,
+   "events_file": "events/traverse_20261021T133911Z.jsonl.gz"
+  },
+  {
+   "id": "traverse_20261021T134829Z",
+   "label": "attack",
+   "type": "traverse",
+   "split": "holdout",
+   "start": 1792590509.0,
+   "end": 1792590675.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261021_175115.jsonl",
+   "sources": [
+    "2a6427078c669136:live_00090_20261021174805.pcap",
+    "2af510726ee0d38c:live_00093_20261021174935.pcap",
+    "7802de07d6a7b7bb:live_00095_20261021175036.pcap",
+    "8e7b742836003d26:live_00091_20261021174835.pcap",
+    "a0b673e39a4e9c15:live_00094_20261021175005.pcap",
+    "eb7100e19af8ba80:live_00092_20261021174905.pcap",
+    "ee329b9ae5cad159:live_00096_20261021175106.pcap"
+   ],
+   "n_events": 163,
+   "events_file": "events/traverse_20261021T134829Z.jsonl.gz"
+  },
+  {
+   "id": "webprobe_20261024T131048Z",
+   "label": "attack",
+   "type": "webprobe",
+   "split": "development",
+   "start": 1792847448.0,
+   "end": 1792847748.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "279843b5e158b5d3:live_00001_20261024171037.pcap",
+    "2c108770a2becaac:live_00004_20261024171207.pcap",
+    "4c59fdd53bf53828:live_00006_20261024171308.pcap",
+    "4cdc6f10f6cc60c4:live_00007_20261024171338.pcap",
+    "57a3b7762c22246c:live_00010_20261024171508.pcap",
+    "5d3cd963c6507fb2:live_00008_20261024171408.pcap",
+    "80d47d2d8320df44:live_00003_20261024171137.pcap",
+    "a8d43a4c1a2b1744:live_00005_20261024171237.pcap",
+    "b1980af286d91463:live_00002_20261024171107.pcap",
+    "ba647a452a10cb6d:live_00009_20261024171438.pcap",
+    "f4b69a12d27a2213:live_00011_20261024171538.pcap"
+   ],
+   "n_events": 9402,
+   "events_file": "events/webprobe_20261024T131048Z.jsonl.gz"
+  },
+  {
+   "id": "sshbrute_20261024T131830Z",
+   "label": "attack",
+   "type": "sshbrute",
+   "split": "development",
+   "start": 1792847910.0,
+   "end": 1792847912.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "76f7aca33aa4b491:live_00017_20261024171839.pcap",
+    "d296f57b0c8a58ba:live_00016_20261024171809.pcap"
+   ],
+   "n_events": 67,
+   "events_file": "events/sshbrute_20261024T131830Z.jsonl.gz"
+  },
+  {
+   "id": "dirbrute_20261024T132142Z",
+   "label": "attack",
+   "type": "dirbrute",
+   "split": "validation",
+   "start": 1792848102.0,
+   "end": 1792848129.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "96f4aa72cd2bc248:live_00023_20261024172139.pcap",
+    "b959c8a94d276d32:live_00024_20261024172210.pcap",
+    "e197fe6dbfc98753:live_00022_20261024172109.pcap"
+   ],
+   "n_events": 13881,
+   "events_file": "events/dirbrute_20261024T132142Z.jsonl.gz"
+  },
+  {
+   "id": "lure_20261024T132423Z",
+   "label": "attack",
+   "type": "lure",
+   "split": "development",
+   "start": 1792848263.0,
+   "end": 1792848341.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "0a3ccec896dc5b9e:live_00028_20261024172410.pcap",
+    "545dee6b7b3d9f1c:live_00029_20261024172440.pcap",
+    "6b093f03828f2eb0:live_00030_20261024172510.pcap",
+    "fd2d6d7594e4d8ff:live_00031_20261024172541.pcap"
+   ],
+   "n_events": 101,
+   "events_file": "events/lure_20261024T132423Z.jsonl.gz"
+  },
+  {
+   "id": "stealthscan_20261024T132842Z",
+   "label": "attack",
+   "type": "stealthscan",
+   "split": "holdout",
+   "start": 1792848522.0,
+   "end": 1792848523.0,
+   "attack_clients": [
+    "10.10.10.10",
+    "10.10.10.201",
+    "10.10.10.202",
+    "10.10.10.203"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "3797d71316f04399:live_00036_20261024172811.pcap",
+    "ea580942608f58a7:live_00037_20261024172841.pcap"
+   ],
+   "n_events": 264,
+   "events_file": "events/stealthscan_20261024T132842Z.jsonl.gz"
+  },
+  {
+   "id": "stealthscan_20261024T133230Z",
+   "label": "attack",
+   "type": "stealthscan",
+   "split": "holdout",
+   "start": 1792848750.0,
+   "end": 1792848752.0,
+   "attack_clients": [
+    "10.10.10.10",
+    "10.10.10.201",
+    "10.10.10.202",
+    "10.10.10.203"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "1dd01cf846b8a575:live_00045_20261024173242.pcap",
+    "fa1ffbab0f2c6a47:live_00044_20261024173212.pcap"
+   ],
+   "n_events": 246,
+   "events_file": "events/stealthscan_20261024T133230Z.jsonl.gz"
+  },
+  {
+   "id": "portscan_20261024T133527Z",
+   "label": "attack",
+   "type": "portscan",
+   "split": "development",
+   "start": 1792848927.0,
+   "end": 1792849091.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "190cc32b92592a6b:live_00052_20261024173612.pcap",
+    "383bd52861c30c24:live_00051_20261024173542.pcap",
+    "884c8f41a5174f4b:live_00056_20261024173813.pcap",
+    "9c44dc17d044e1d7:live_00050_20261024173512.pcap",
+    "eafca22ef692022d:live_00053_20261024173643.pcap",
+    "ef81c38774e650a9:live_00055_20261024173743.pcap",
+    "f81ec991385f4726:live_00054_20261024173713.pcap"
+   ],
+   "n_events": 131314,
+   "events_file": "events/portscan_20261024T133527Z.jsonl.gz"
+  },
+  {
+   "id": "slowscan_20261024T134148Z",
+   "label": "attack",
+   "type": "slowscan",
+   "split": "validation",
+   "start": 1792849308.0,
+   "end": 1792849394.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "4e027f1624b78542:live_00066_20261024174314.pcap",
+    "6f13125f02b6907a:live_00064_20261024174213.pcap",
+    "dafa54cef02d411d:live_00063_20261024174143.pcap",
+    "e7cddfc803a62ebf:live_00065_20261024174243.pcap"
+   ],
+   "n_events": 128,
+   "events_file": "events/slowscan_20261024T134148Z.jsonl.gz"
+  },
+  {
+   "id": "slowscan_20261024T135155Z",
+   "label": "attack",
+   "type": "slowscan",
+   "split": "validation",
+   "start": 1792849915.0,
+   "end": 1792850001.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "02c47cd2bb534d6e:live_00085_20261024175246.pcap",
+    "84c8c8b265696d34:live_00083_20261024175145.pcap",
+    "8727f94965fa8542:live_00084_20261024175215.pcap",
+    "e62cbe6de0fca46b:live_00086_20261024175316.pcap"
+   ],
+   "n_events": 110,
+   "events_file": "events/slowscan_20261024T135155Z.jsonl.gz"
+  },
+  {
+   "id": "traverse_20261024T135609Z",
+   "label": "attack",
+   "type": "traverse",
+   "split": "holdout",
+   "start": 1792850169.0,
+   "end": 1792850260.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "33bfd9cffe5dcfee:live_00093_20261024175647.pcap",
+    "3baad520b306c011:live_00095_20261024175747.pcap",
+    "4b9e001cc2be548a:live_00091_20261024175546.pcap",
+    "6a640069f151ae5a:live_00094_20261024175717.pcap",
+    "c943f070072c5085:live_00092_20261024175616.pcap"
+   ],
+   "n_events": 186,
+   "events_file": "events/traverse_20261024T135609Z.jsonl.gz"
+  },
+  {
+   "id": "webprobe_20261024T140045Z",
+   "label": "attack",
+   "type": "webprobe",
+   "split": "development",
+   "start": 1792850445.0,
+   "end": 1792850748.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "03b212a725938f7a:live_00101_20261024180048.pcap",
+    "0b539273c07d47b5:live_00111_20261024180549.pcap",
+    "0db8fd8d3fa313f4:live_00110_20261024180519.pcap",
+    "267deaa129123539:live_00100_20261024180018.pcap",
+    "359d60806c90e012:live_00103_20261024180148.pcap",
+    "5080931660028130:live_00109_20261024180449.pcap",
+    "58c042e7864db4f2:live_00106_20261024180319.pcap",
+    "59bf19ce93eeb358:live_00108_20261024180419.pcap",
+    "65c9411dad5f81da:live_00104_20261024180219.pcap",
+    "9b2c1e8184213f70:live_00107_20261024180349.pcap",
+    "c50ff1168e2dc9d5:live_00105_20261024180249.pcap",
+    "fba213b7494f5335:live_00102_20261024180118.pcap"
+   ],
+   "n_events": 9400,
+   "events_file": "events/webprobe_20261024T140045Z.jsonl.gz"
+  },
+  {
+   "id": "portscan_20261024T141455Z",
+   "label": "attack",
+   "type": "portscan",
+   "split": "development",
+   "start": 1792851295.0,
+   "end": 1792851460.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "0f6e1ee119dbdb40:live_00132_20261024181622.pcap",
+    "62618cff307e31e7:live_00129_20261024181451.pcap",
+    "69cf1325c4f2b11c:live_00130_20261024181521.pcap",
+    "7e9a95cf75bc52bb:live_00133_20261024181652.pcap",
+    "9c9205600aa8c0f0:live_00135_20261024181752.pcap",
+    "c40e611915c941ae:live_00131_20261024181552.pcap",
+    "e8ecfac00b08fd8c:live_00134_20261024181722.pcap",
+    "f98587f8d4d04af4:live_00128_20261024181421.pcap"
+   ],
+   "n_events": 131296,
+   "events_file": "events/portscan_20261024T141455Z.jsonl.gz"
+  },
+  {
+   "id": "traverse_20261024T142039Z",
+   "label": "attack",
+   "type": "traverse",
+   "split": "holdout",
+   "start": 1792851639.0,
+   "end": 1792851728.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "00ee90435d129c2c:live_00144_20261024182223.pcap",
+    "7084759088089ff4:live_00141_20261024182052.pcap",
+    "749c532c5292fe6d:live_00140_20261024182022.pcap",
+    "ab9bee742d267fff:live_00142_20261024182122.pcap",
+    "c71c2c480ce5d5c4:live_00143_20261024182153.pcap"
+   ],
+   "n_events": 175,
+   "events_file": "events/traverse_20261024T142039Z.jsonl.gz"
+  },
+  {
+   "id": "lure_20261024T142522Z",
+   "label": "attack",
+   "type": "lure",
+   "split": "development",
+   "start": 1792851922.0,
+   "end": 1792851992.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "1ad75a5ab49c860d:live_00149_20261024182453.pcap",
+    "5833e9ecdd0cccda:live_00150_20261024182523.pcap",
+    "886781234e74bdda:live_00151_20261024182553.pcap",
+    "c38cd1da6f413e5b:live_00152_20261024182624.pcap"
+   ],
+   "n_events": 105,
+   "events_file": "events/lure_20261024T142522Z.jsonl.gz"
+  },
+  {
+   "id": "sshbrute_20261024T142900Z",
+   "label": "attack",
+   "type": "sshbrute",
+   "split": "development",
+   "start": 1792852140.0,
+   "end": 1792852142.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "831a4ede2df33c9b:live_00157_20261024182854.pcap"
+   ],
+   "n_events": 70,
+   "events_file": "events/sshbrute_20261024T142900Z.jsonl.gz"
+  },
+  {
+   "id": "dirbrute_20261024T143152Z",
+   "label": "attack",
+   "type": "dirbrute",
+   "split": "validation",
+   "start": 1792852312.0,
+   "end": 1792852346.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "69e31b61ddbd9883:live_00163_20261024183155.pcap",
+    "b8c18ec07dd8312b:live_00164_20261024183225.pcap",
+    "d408eb1c13b887ef:live_00162_20261024183125.pcap"
+   ],
+   "n_events": 13860,
+   "events_file": "events/dirbrute_20261024T143152Z.jsonl.gz"
+  },
+  {
+   "id": "overlap_20261024T143522Z",
+   "label": "attack",
+   "type": "overlap",
+   "split": "holdout",
+   "start": 1792852522.0,
+   "end": 1792852686.0,
+   "attack_clients": [
+    "10.10.10.10",
+    "10.10.10.201",
+    "10.10.10.202",
+    "10.10.10.203"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "0cf8abf6d147bc0b:live_00170_20261024183525.pcap",
+    "1053b4bc7c8deb5e:live_00169_20261024183455.pcap",
+    "4fcc8d22daa5fa70:live_00171_20261024183555.pcap",
+    "a5013e340ad150af:live_00172_20261024183625.pcap",
+    "a95d2b39affe9cd9:live_00175_20261024183756.pcap",
+    "da986df72aeb544b:live_00173_20261024183656.pcap",
+    "f144bcfea316bd8b:live_00174_20261024183726.pcap"
+   ],
+   "n_events": 145205,
+   "events_file": "events/overlap_20261024T143522Z.jsonl.gz"
+  },
+  {
+   "id": "overlap_20261024T144840Z",
+   "label": "attack",
+   "type": "overlap",
+   "split": "holdout",
+   "start": 1792853320.0,
+   "end": 1792853485.0,
+   "attack_clients": [
+    "10.10.10.10",
+    "10.10.10.201",
+    "10.10.10.202",
+    "10.10.10.203"
+   ],
+   "campaign_log": "campaign_20261024_185125.jsonl",
+   "sources": [
+    "1cc3a3dd8db865df:live_00197_20261024184858.pcap",
+    "5dcd1b30c0280c9e:live_00196_20261024184828.pcap",
+    "6e01b4ec199c71df:live_00201_20261024185059.pcap",
+    "b427994e8bc06fa9:live_00199_20261024184958.pcap",
+    "b9066c729138ae55:live_00200_20261024185029.pcap",
+    "c68949bf710d7698:live_00198_20261024184928.pcap",
+    "de6f383815c4aa78:live_00202_20261024185129.pcap"
+   ],
+   "n_events": 145186,
+   "events_file": "events/overlap_20261024T144840Z.jsonl.gz"
+  },
+  {
+   "id": "traverse_20261024T153543Z",
+   "label": "attack",
+   "type": "traverse",
+   "split": "holdout",
+   "start": 1792856143.0,
+   "end": 1792856230.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_195002.jsonl",
+   "sources": [
+    "5e4296285b5c5a42:live_00003_20261024193629.pcap",
+    "97254474ceb0ba9c:live_00002_20261024193559.pcap",
+    "b2ddac1d69537175:live_00004_20261024193659.pcap",
+    "b654c348bf64bb6c:live_00005_20261024193729.pcap",
+    "e6e4ef44b040e0f3:live_00001_20261024193528.pcap"
+   ],
+   "n_events": 171,
+   "events_file": "events/traverse_20261024T153543Z.jsonl.gz"
+  },
+  {
+   "id": "lure_20261024T154010Z",
+   "label": "attack",
+   "type": "lure",
+   "split": "development",
+   "start": 1792856410.0,
+   "end": 1792856484.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_195002.jsonl",
+   "sources": [
+    "3fd4dc3bb959a3bc:live_00012_20261024194059.pcap",
+    "49c1e62e255d12b7:live_00010_20261024193959.pcap",
+    "adab73d136efd646:live_00011_20261024194029.pcap",
+    "c5d33b4a6e365f70:live_00013_20261024194129.pcap"
+   ],
+   "n_events": 131,
+   "events_file": "events/lure_20261024T154010Z.jsonl.gz"
+  },
+  {
+   "id": "lure_20261024T154408Z",
+   "label": "attack",
+   "type": "lure",
+   "split": "development",
+   "start": 1792856648.0,
+   "end": 1792856720.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_195002.jsonl",
+   "sources": [
+    "402044c32f6adcdb:live_00019_20261024194430.pcap",
+    "6c0be8325b818345:live_00018_20261024194400.pcap",
+    "8b5754962266908f:live_00021_20261024194531.pcap",
+    "facc1d85351f8ba9:live_00020_20261024194501.pcap"
+   ],
+   "n_events": 125,
+   "events_file": "events/lure_20261024T154408Z.jsonl.gz"
+  },
+  {
+   "id": "traverse_20261024T154834Z",
+   "label": "attack",
+   "type": "traverse",
+   "split": "holdout",
+   "start": 1792856914.0,
+   "end": 1792857002.0,
+   "attack_clients": [
+    "10.10.10.10"
+   ],
+   "campaign_log": "campaign_20261024_195002.jsonl",
+   "sources": [
+    "156ee15452001661:live_00030_20261024195002.pcap",
+    "76576b5faa2f1d65:live_00028_20261024194902.pcap",
+    "95d37d6f55ca7de3:live_00026_20261024194802.pcap",
+    "ef93924ab071bbda:live_00029_20261024194932.pcap",
+    "ffc39a7dd58cedd2:live_00027_20261024194832.pcap"
+   ],
+   "n_events": 189,
+   "events_file": "events/traverse_20261024T154834Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261013T164101Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "holdout",
+   "start": 1791909661.0,
+   "end": 1791909961.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "83e6022ab9c4421d:lab_00001_20261013204101.pcap"
+   ],
+   "n_events": 42,
+   "events_file": "events/benign_20261013T164101Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261013T170607Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1791911167.0,
+   "end": 1791911767.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "d37c2ba4c193c203:lab_00001_20261013210607.pcap",
+    "dc4b58f1e45cfe64:lab_00002_20261013211107.pcap"
+   ],
+   "n_events": 108,
+   "events_file": "events/benign_20261013T170607Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261021T155311Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792597991.0,
+   "end": 1792598443.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "0926d1a8e0d991cf:live_00002_20261021195341.pcap",
+    "0cc91d01e5f346b9:live_00010_20261021195743.pcap",
+    "17f7249d3ed95d20:live_00012_20261021195843.pcap",
+    "237a685b5746a062:live_00007_20261021195612.pcap",
+    "2c50fbd8e57b1fde:live_00003_20261021195411.pcap",
+    "3b04eb995c5da5fc:live_00011_20261021195813.pcap",
+    "400c02c7bfb25cd7:live_00009_20261021195712.pcap",
+    "4c0417c2cbcc61d4:live_00001_20261021195311.pcap",
+    "5916560e0be5dd4a:live_00008_20261021195642.pcap",
+    "6840d0782d53192c:live_00014_20261021195943.pcap",
+    "7b2f2dad88a3d1c6:live_00015_20261021200013.pcap",
+    "ac50f818b72f8b47:live_00006_20261021195542.pcap",
+    "c8dae96cf6639891:live_00004_20261021195442.pcap",
+    "ec8ca74e5e20c22f:live_00013_20261021195913.pcap",
+    "fb60151114ba1420:live_00005_20261021195512.pcap"
+   ],
+   "n_events": 87,
+   "events_file": "events/benign_20261021T155311Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261021T160114Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792598474.0,
+   "end": 1792598594.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "420dda33db111854:live_00017_20261021200114.pcap",
+    "4f6a83e414a7e631:live_00018_20261021200144.pcap",
+    "7ff4537c3522576b:live_00019_20261021200214.pcap",
+    "c2516d212e9445cd:live_00020_20261021200244.pcap"
+   ],
+   "n_events": 18,
+   "events_file": "events/benign_20261021T160114Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261021T160345Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "validation",
+   "start": 1792598625.0,
+   "end": 1792599225.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "0c34c11855acd6d8:live_00022_20261021200345.pcap",
+    "1264436c0feabc47:live_00025_20261021200515.pcap",
+    "1dad8e99a6bb6a07:live_00028_20261021200646.pcap",
+    "3fdd666f98402b45:live_00030_20261021200746.pcap",
+    "413644a279f05cd2:live_00026_20261021200545.pcap",
+    "49498bd78c020e2c:live_00033_20261021200917.pcap",
+    "5538e3c20fad72a1:live_00037_20261021201117.pcap",
+    "6d9be73a2b562e1d:live_00036_20261021201047.pcap",
+    "75c60e5944803cd3:live_00034_20261021200947.pcap",
+    "782291d3a11513e3:live_00040_20261021201248.pcap",
+    "94be2c4345882d22:live_00023_20261021200415.pcap",
+    "9a5274e73eae7ea2:live_00024_20261021200445.pcap",
+    "a38a0e5fef2e7a92:live_00035_20261021201017.pcap",
+    "a760439542e1f3cc:live_00029_20261021200716.pcap",
+    "c7fb39f0de730d61:live_00041_20261021201318.pcap",
+    "c80896284dbab9cd:live_00032_20261021200846.pcap",
+    "cbb4ab42300d57fe:live_00027_20261021200615.pcap",
+    "cc307eaee8fc5eb5:live_00039_20261021201217.pcap",
+    "e39ce869e0387d07:live_00031_20261021200816.pcap",
+    "e94d72a99c1a8e6a:live_00038_20261021201147.pcap"
+   ],
+   "n_events": 174,
+   "events_file": "events/benign_20261021T160345Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261021T161548Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792599348.0,
+   "end": 1792599560.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "015467575694df08:live_00051_20261021201819.pcap",
+    "11a42836ab6309c0:live_00049_20261021201719.pcap",
+    "40129daf575d6c76:live_00050_20261021201749.pcap",
+    "463a079fcf88fc47:live_00052_20261021201850.pcap",
+    "5d0953f83b0f3416:live_00047_20261021201618.pcap",
+    "6b26488d7ad636cb:live_00046_20261021201548.pcap",
+    "c63e98e0703e3a0e:live_00048_20261021201649.pcap"
+   ],
+   "n_events": 39,
+   "events_file": "events/benign_20261021T161548Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T122235Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792758155.0,
+   "end": 1792758755.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "131f14ce5c72305b:live_00018_20261023163107.pcap",
+    "269b78f04214f469:live_00008_20261023162606.pcap",
+    "2bdbb74340e70483:live_00010_20261023162706.pcap",
+    "39700990a3bd7391:live_00019_20261023163137.pcap",
+    "3c9580ad96f03db6:live_00017_20261023163037.pcap",
+    "42819f6c4950fc47:live_00013_20261023162836.pcap",
+    "45f54296b5a8b16a:live_00007_20261023162536.pcap",
+    "469659cdc1e7a57a:live_00009_20261023162636.pcap",
+    "4fdfd19bdd4835e2:live_00003_20261023162335.pcap",
+    "52f2f3a5c8b45439:live_00015_20261023162937.pcap",
+    "57166cebd13ea9a9:live_00001_20261023162235.pcap",
+    "74335cd0c56e52c5:live_00014_20261023162907.pcap",
+    "7f71a875cf297f5a:live_00006_20261023162506.pcap",
+    "a3bf89601dc3a590:live_00002_20261023162305.pcap",
+    "a5058b47cc6b0f60:live_00020_20261023163207.pcap",
+    "ac340a7b6465e156:live_00011_20261023162736.pcap",
+    "b17b32ec2958273a:live_00004_20261023162405.pcap",
+    "c29834d35ab51072:live_00005_20261023162435.pcap",
+    "c71931168b91d0ca:live_00016_20261023163007.pcap",
+    "e314d67d541a9370:live_00012_20261023162806.pcap"
+   ],
+   "n_events": 240,
+   "events_file": "events/benign_20261023T122235Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T123408Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792758848.0,
+   "end": 1792759119.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "172304ae829467c1:live_00025_20261023163438.pcap",
+    "225addd3346cea9b:live_00030_20261023163708.pcap",
+    "46453d36a70c8c93:live_00029_20261023163638.pcap",
+    "4913a506a2c71c6c:live_00027_20261023163538.pcap",
+    "593cc0e4acf68fdb:live_00031_20261023163739.pcap",
+    "93709728b607f868:live_00032_20261023163809.pcap",
+    "a887c8d57f0ad569:live_00028_20261023163608.pcap",
+    "b818940c38d16ae1:live_00024_20261023163408.pcap",
+    "d3bfb1591d469881:live_00026_20261023163508.pcap"
+   ],
+   "n_events": 81,
+   "events_file": "events/benign_20261023T123408Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T123909Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "holdout",
+   "start": 1792759149.0,
+   "end": 1792759360.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "15774235e3b26f09:live_00034_20261023163909.pcap",
+    "28d5f437506d056c:live_00038_20261023164110.pcap",
+    "5b9efdfcaafbf775:live_00039_20261023164140.pcap",
+    "a5dba9074c763f7f:live_00040_20261023164210.pcap",
+    "c8d06d7524eee30b:live_00036_20261023164009.pcap",
+    "d50367ca1394fc14:live_00035_20261023163939.pcap",
+    "e760b048692b9efc:live_00037_20261023164039.pcap"
+   ],
+   "n_events": 33,
+   "events_file": "events/benign_20261023T123909Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T124310Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792759390.0,
+   "end": 1792759811.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "045b8d17dd221f16:live_00052_20261023164811.pcap",
+    "05f4886154c485c4:live_00051_20261023164741.pcap",
+    "1117b7cfcd7953ac:live_00055_20261023164941.pcap",
+    "398c8c773ebc4b17:live_00043_20261023164340.pcap",
+    "3e43c534a71ffdba:live_00045_20261023164440.pcap",
+    "4648cce3d66650a8:live_00046_20261023164510.pcap",
+    "49931de9a6dc8146:live_00054_20261023164911.pcap",
+    "7bf6ee03a0b553a6:live_00048_20261023164611.pcap",
+    "8f9702574cada397:live_00050_20261023164711.pcap",
+    "c88667a92441de72:live_00042_20261023164310.pcap",
+    "d6865fe266a531b8:live_00047_20261023164541.pcap",
+    "df1d8c55375cc801:live_00053_20261023164841.pcap",
+    "e244b2bc817bee7a:live_00049_20261023164641.pcap",
+    "e5333c8f50cb70d1:live_00044_20261023164410.pcap"
+   ],
+   "n_events": 111,
+   "events_file": "events/benign_20261023T124310Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T125936Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "holdout",
+   "start": 1792760376.0,
+   "end": 1792760557.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "027aa8af0552808e:live_00022_20261023170107.pcap",
+    "32c284c7408f3b02:live_00023_20261023170137.pcap",
+    "36958aef182c63ed:live_00024_20261023170207.pcap",
+    "4cf71671671a9a39:live_00020_20261023170006.pcap",
+    "6e3ca56ff3c8dc6b:live_00019_20261023165936.pcap",
+    "71e22926a4e77e6d:live_00021_20261023170037.pcap"
+   ],
+   "n_events": 57,
+   "events_file": "events/benign_20261023T125936Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T130307Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792760587.0,
+   "end": 1792760828.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "6b3fbec29aa5254f:live_00027_20261023170338.pcap",
+    "7593d1310699a947:live_00026_20261023170307.pcap",
+    "80c4afebb07bd39d:live_00029_20261023170438.pcap",
+    "9342033521a94b4e:live_00032_20261023170608.pcap",
+    "95a6b5da14f60bc0:live_00028_20261023170408.pcap",
+    "9b13615110f7ce62:live_00030_20261023170508.pcap",
+    "ca73c0aa231f6e86:live_00033_20261023170638.pcap",
+    "fea29713b2952a76:live_00031_20261023170538.pcap"
+   ],
+   "n_events": 75,
+   "events_file": "events/benign_20261023T130307Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T130739Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792760859.0,
+   "end": 1792760979.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "312ff9349c3ad80a:live_00035_20261023170739.pcap",
+    "50e0a4491f1569fd:live_00037_20261023170839.pcap",
+    "cfdbf2c7ee03f4f4:live_00036_20261023170809.pcap",
+    "e2bec7f4edd6b23d:live_00038_20261023170909.pcap"
+   ],
+   "n_events": 18,
+   "events_file": "events/benign_20261023T130739Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T131009Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792761009.0,
+   "end": 1792761431.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "0f135b52204ee41d:live_00052_20261023171611.pcap",
+    "3548290298f7b8f4:live_00048_20261023171410.pcap",
+    "3af6ee9e7ed13182:live_00050_20261023171510.pcap",
+    "3c0e3be02b33f5d3:live_00053_20261023171641.pcap",
+    "3fb21f946f832e91:live_00051_20261023171540.pcap",
+    "41ace3a6b08fa6d2:live_00046_20261023171310.pcap",
+    "6c0168455d5f2f54:live_00040_20261023171009.pcap",
+    "744128dc400549fb:live_00049_20261023171440.pcap",
+    "8ccc7332f1d3a572:live_00043_20261023171140.pcap",
+    "a66e43111a5f87f5:live_00044_20261023171210.pcap",
+    "b22ce715a03a98f3:live_00045_20261023171240.pcap",
+    "ca040dc75f10944b:live_00047_20261023171340.pcap",
+    "dec71e2b95ef65cd:live_00041_20261023171039.pcap",
+    "e019f589ab8e7833:live_00042_20261023171109.pcap"
+   ],
+   "n_events": 162,
+   "events_file": "events/benign_20261023T131009Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T131741Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792761461.0,
+   "end": 1792761612.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "36f374e524ba8cb3:live_00059_20261023171942.pcap",
+    "8698002ae3a59917:live_00058_20261023171912.pcap",
+    "9ed2bf5b54fc21e4:live_00057_20261023171841.pcap",
+    "a5bc5f3d2ad9fbaf:live_00056_20261023171811.pcap",
+    "dda87dc2063ef718:live_00055_20261023171741.pcap"
+   ],
+   "n_events": 27,
+   "events_file": "events/benign_20261023T131741Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T132042Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "validation",
+   "start": 1792761642.0,
+   "end": 1792762242.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "0634b1666dc23e2d:live_00074_20261023172713.pcap",
+    "198ea9fd7c577736:live_00069_20261023172443.pcap",
+    "1a329de35f9268b4:live_00062_20261023172112.pcap",
+    "2282dc18052b3a3d:live_00071_20261023172543.pcap",
+    "27f13b04d57f7432:live_00076_20261023172814.pcap",
+    "35c1e4b66b4095c5:live_00066_20261023172312.pcap",
+    "40c3552a523a89ec:live_00065_20261023172242.pcap",
+    "4cd739ee9149af8b:live_00070_20261023172513.pcap",
+    "53d1ca4cdd36e52a:live_00064_20261023172212.pcap",
+    "645aaff1c9aae1c4:live_00080_20261023173014.pcap",
+    "6d6c753f840cafe6:live_00068_20261023172412.pcap",
+    "76a0c9c171de634f:live_00075_20261023172744.pcap",
+    "986781e33af95bfb:live_00072_20261023172613.pcap",
+    "a2879a94f175f0fc:live_00073_20261023172643.pcap",
+    "b6ebec01eb75231c:live_00078_20261023172914.pcap",
+    "c243f3c455309866:live_00079_20261023172944.pcap",
+    "c8246c4b594ca5d3:live_00077_20261023172844.pcap",
+    "cd618287ddb6db42:live_00061_20261023172042.pcap",
+    "e7321f0dfb682952:live_00063_20261023172142.pcap",
+    "f8601ac0d6079ccb:live_00067_20261023172342.pcap"
+   ],
+   "n_events": 132,
+   "events_file": "events/benign_20261023T132042Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T134505Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "validation",
+   "start": 1792763105.0,
+   "end": 1792763557.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "01d97299cb5109cc:live_00011_20261023175006.pcap",
+    "11eece7573c59503:live_00001_20261023174505.pcap",
+    "1530d9f9f2925fde:live_00010_20261023174936.pcap",
+    "26f48dfa235da5f8:live_00008_20261023174836.pcap",
+    "298190323ec09ea3:live_00004_20261023174636.pcap",
+    "2f3c3429b8058d51:live_00005_20261023174706.pcap",
+    "36a1bd4cf2e13311:live_00015_20261023175207.pcap",
+    "631d04e38495f127:live_00006_20261023174736.pcap",
+    "731cf077aa2a3b3c:live_00002_20261023174535.pcap",
+    "7495c57f1d114258:live_00003_20261023174605.pcap",
+    "788d6f3a186bbb30:live_00013_20261023175106.pcap",
+    "9edb791ae03691d6:live_00014_20261023175137.pcap",
+    "a688e5012d6f01d8:live_00007_20261023174806.pcap",
+    "af2b6359499e8135:live_00012_20261023175036.pcap",
+    "e0cce3dd80c1ce98:live_00009_20261023174906.pcap"
+   ],
+   "n_events": 90,
+   "events_file": "events/benign_20261023T134505Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T135307Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "holdout",
+   "start": 1792763587.0,
+   "end": 1792764187.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "01c57848c9b82770:live_00025_20261023175708.pcap",
+    "07bd05d93c355969:live_00018_20261023175337.pcap",
+    "20af764090c15c1b:live_00036_20261023180239.pcap",
+    "25fde44cfabec1b1:live_00027_20261023175808.pcap",
+    "3de5e2df0cc1a155:live_00019_20261023175407.pcap",
+    "4b1620920b7fa859:live_00032_20261023180038.pcap",
+    "4f33ddc0c56e86e2:live_00026_20261023175738.pcap",
+    "50188be92e3eefcd:live_00033_20261023180108.pcap",
+    "54239fe57c3e45c0:live_00029_20261023175908.pcap",
+    "6962e78f9d15e78b:live_00023_20261023175607.pcap",
+    "72088573016c287b:live_00020_20261023175437.pcap",
+    "7d83fb09fe2caaae:live_00028_20261023175838.pcap",
+    "9335c108d829eec1:live_00022_20261023175537.pcap",
+    "a7b5fc91d599844e:live_00030_20261023175938.pcap",
+    "aaecf88080eaadea:live_00031_20261023180008.pcap",
+    "b479642602f25f42:live_00035_20261023180208.pcap",
+    "c4192e754e9fd1c8:live_00024_20261023175638.pcap",
+    "d5cdf7b0c27fe69b:live_00034_20261023180138.pcap",
+    "d841ff0d14abcba0:live_00021_20261023175507.pcap",
+    "e0d44e8e9c72b337:live_00017_20261023175307.pcap"
+   ],
+   "n_events": 99,
+   "events_file": "events/benign_20261023T135307Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T140307Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792764187.0,
+   "end": 1792764787.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "013281620126987d:live_00049_20261023180910.pcap",
+    "05664c7c9eda046f:live_00050_20261023180940.pcap",
+    "20af764090c15c1b:live_00036_20261023180239.pcap",
+    "23f07ee58339fc29:live_00041_20261023180509.pcap",
+    "29506faf6fe588d7:live_00044_20261023180640.pcap",
+    "2f22942e051e32fa:live_00039_20261023180409.pcap",
+    "400a0d150e6b2723:live_00042_20261023180540.pcap",
+    "424d19f63d799cc2:live_00040_20261023180439.pcap",
+    "44c55fc6b0e941e8:live_00053_20261023181111.pcap",
+    "527f996d64ad7136:live_00047_20261023180810.pcap",
+    "6742560f0f4d3a54:live_00048_20261023180840.pcap",
+    "80822797403921f8:live_00055_20261023181211.pcap",
+    "8695c2968791746f:live_00038_20261023180339.pcap",
+    "86dbfd2961728b6a:live_00051_20261023181010.pcap",
+    "aceb0512a8f3f17c:live_00046_20261023180740.pcap",
+    "b4bda51640346390:live_00052_20261023181041.pcap",
+    "bf5486edd7bed969:live_00045_20261023180710.pcap",
+    "c02ffb1977bac703:live_00056_20261023181241.pcap",
+    "dd41ec6d441c44b8:live_00037_20261023180309.pcap",
+    "f677446547cd25cc:live_00043_20261023180610.pcap",
+    "fbf0e7bc6b0ad5de:live_00054_20261023181141.pcap"
+   ],
+   "n_events": 129,
+   "events_file": "events/benign_20261023T140307Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T141307Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792764787.0,
+   "end": 1792765387.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "03410d557c30ce3f:live_00068_20261023181842.pcap",
+    "0e94ca2eb62c24ef:live_00061_20261023181511.pcap",
+    "11b2dfc983ed685f:live_00066_20261023181742.pcap",
+    "1ccad96a89e0ff72:live_00069_20261023181912.pcap",
+    "1eccfaf6f2e7ae5f:live_00064_20261023181642.pcap",
+    "2feb05ab1e6aef81:live_00063_20261023181611.pcap",
+    "3a15cc4fb136e6a4:live_00072_20261023182043.pcap",
+    "3dcd04febd629076:live_00057_20261023181311.pcap",
+    "51c67d98fca296c0:live_00067_20261023181812.pcap",
+    "5c18246dedfcc4a4:live_00059_20261023181411.pcap",
+    "91ff3e40bbd22784:live_00073_20261023182113.pcap",
+    "9328a6ff39d1e51a:live_00065_20261023181712.pcap",
+    "95b4c1284eb7b7ad:live_00075_20261023182213.pcap",
+    "b2fb985a7df918cb:live_00058_20261023181341.pcap",
+    "b56631b01ef5185d:live_00074_20261023182143.pcap",
+    "c02ffb1977bac703:live_00056_20261023181241.pcap",
+    "d2f775d88c594e86:live_00060_20261023181441.pcap",
+    "d82350edb7dc74b5:live_00071_20261023182012.pcap",
+    "dda33054e8635b46:live_00070_20261023181942.pcap",
+    "eda0e8c859094b66:live_00076_20261023182243.pcap",
+    "fd73bab95fb15d85:live_00062_20261023181541.pcap"
+   ],
+   "n_events": 358,
+   "events_file": "events/benign_20261023T141307Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T142307Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "holdout",
+   "start": 1792765387.0,
+   "end": 1792765987.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "0dbd48d09dbfd4d2:live_00081_20261023182513.pcap",
+    "15e5aabc204e1a7b:live_00085_20261023182714.pcap",
+    "2a6670d443499f50:live_00093_20261023183115.pcap",
+    "4b6b56da2b286ce4:live_00083_20261023182614.pcap",
+    "541a1a7eb0bf589b:live_00086_20261023182744.pcap",
+    "57b6380bb72dd711:live_00095_20261023183215.pcap",
+    "7179121684f02454:live_00090_20261023182944.pcap",
+    "744a2496f17235ce:live_00087_20261023182814.pcap",
+    "81ef99612b17bdb6:live_00079_20261023182413.pcap",
+    "a20cfbd929ca9218:live_00096_20261023183245.pcap",
+    "a9126e1b447bc94c:live_00088_20261023182844.pcap",
+    "a91304481b3ffa5e:live_00077_20261023182313.pcap",
+    "ba47a589b001d949:live_00084_20261023182644.pcap",
+    "c0ef24d1c3385397:live_00078_20261023182343.pcap",
+    "c981e4cda190ff9b:live_00082_20261023182543.pcap",
+    "e1f0bc21c648880e:live_00080_20261023182443.pcap",
+    "e36b2c33ad534a18:live_00094_20261023183145.pcap",
+    "e52b12d9a66c4cf5:live_00089_20261023182914.pcap",
+    "e533510c5ff01ee2:live_00092_20261023183044.pcap",
+    "e9f9f06ef1a41601:live_00091_20261023183014.pcap",
+    "eda0e8c859094b66:live_00076_20261023182243.pcap"
+   ],
+   "n_events": 405,
+   "events_file": "events/benign_20261023T142307Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T143307Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "holdout",
+   "start": 1792765987.0,
+   "end": 1792766587.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "01073e5f236ff102:live_00104_20261023183647.pcap",
+    "08c2449353f02cb0:live_00100_20261023183446.pcap",
+    "0d06acc6b47fa6e1:live_00107_20261023183817.pcap",
+    "11ee5c4c8170be35:live_00103_20261023183617.pcap",
+    "15c168c177b3f046:live_00113_20261023184119.pcap",
+    "24771157af61c07f:live_00099_20261023183416.pcap",
+    "2f5306fb385d56d7:live_00108_20261023183848.pcap",
+    "331e699ff82f5b01:live_00116_20261023184249.pcap",
+    "3b864ac660f088f0:live_00115_20261023184219.pcap",
+    "4e9709e518da4f3c:live_00106_20261023183747.pcap",
+    "513de158551c05a0:live_00098_20261023183346.pcap",
+    "67c466c7e90559f3:live_00114_20261023184149.pcap",
+    "6bf5602b1a259a6c:live_00109_20261023183918.pcap",
+    "75dfe8428785d437:live_00112_20261023184048.pcap",
+    "8c3f2b20e668ec81:live_00111_20261023184018.pcap",
+    "8efb0320328ffec0:live_00110_20261023183948.pcap",
+    "a20cfbd929ca9218:live_00096_20261023183245.pcap",
+    "b48585df1b3bc370:live_00101_20261023183516.pcap",
+    "b653a7daa29b4557:live_00102_20261023183546.pcap",
+    "bba37fab300627de:live_00105_20261023183717.pcap",
+    "eb080e14b688b161:live_00097_20261023183315.pcap"
+   ],
+   "n_events": 410,
+   "events_file": "events/benign_20261023T143307Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T144307Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792766587.0,
+   "end": 1792766780.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "1994a2fb3a48acd8:live_00119_20261023184420.pcap",
+    "20fae4b1e0ddf327:live_00121_20261023184520.pcap",
+    "331e699ff82f5b01:live_00116_20261023184249.pcap",
+    "472c7500fa83bad1:live_00120_20261023184450.pcap",
+    "91b0159b841fceb7:live_00117_20261023184319.pcap",
+    "ac9f025c8b03e5af:live_00122_20261023184550.pcap",
+    "eeffafdf56885cdd:live_00118_20261023184350.pcap"
+   ],
+   "n_events": 120,
+   "events_file": "events/benign_20261023T144307Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T144651Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792766811.0,
+   "end": 1792767112.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "40b0248e4a139ef7:live_00131_20261023185022.pcap",
+    "42131c855e983bcf:live_00124_20261023184651.pcap",
+    "447e5630451d4e47:live_00125_20261023184721.pcap",
+    "4ca9895b2f752247:live_00133_20261023185122.pcap",
+    "5243ec329a034292:live_00129_20261023184922.pcap",
+    "7401402e1c17fee3:live_00132_20261023185052.pcap",
+    "8de7a0c7d0e7bb89:live_00127_20261023184821.pcap",
+    "bdcb9d723e8958ef:live_00128_20261023184852.pcap",
+    "c48723b9f56fed48:live_00126_20261023184751.pcap",
+    "d07cc0c1647447fb:live_00130_20261023184952.pcap"
+   ],
+   "n_events": 204,
+   "events_file": "events/benign_20261023T144651Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T145223Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "holdout",
+   "start": 1792767143.0,
+   "end": 1792767743.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "169393e580db5c52:live_00151_20261023190026.pcap",
+    "2387948666ec5663:live_00147_20261023185825.pcap",
+    "299c8e98e78c309b:live_00154_20261023190157.pcap",
+    "2db7192f0832e9eb:live_00150_20261023185956.pcap",
+    "2e29da81c21d7874:live_00153_20261023190126.pcap",
+    "465733c86436b829:live_00144_20261023185655.pcap",
+    "4a20e6996d9fa079:live_00139_20261023185424.pcap",
+    "5bf08a0000a29a76:live_00143_20261023185624.pcap",
+    "6fb8c51690c58ad4:live_00146_20261023185755.pcap",
+    "829d9451af55d11b:live_00148_20261023185855.pcap",
+    "870ce6ff7af347aa:live_00152_20261023190056.pcap",
+    "88f48b13de3e879c:live_00149_20261023185926.pcap",
+    "9413035eab190a2d:live_00145_20261023185725.pcap",
+    "a5c6e2dcaf333ef3:live_00141_20261023185524.pcap",
+    "b549cb4104b08310:live_00140_20261023185454.pcap",
+    "b86beb23ab6d643f:live_00142_20261023185554.pcap",
+    "dcbf32b8b9decc57:live_00138_20261023185353.pcap",
+    "e3fabefe791290b0:live_00136_20261023185253.pcap",
+    "e7dbd05c78afcf71:live_00135_20261023185223.pcap",
+    "fd2e916816231970:live_00137_20261023185323.pcap"
+   ],
+   "n_events": 348,
+   "events_file": "events/benign_20261023T145223Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T150257Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792767777.0,
+   "end": 1792768377.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "03f0597dec0f7c6c:live_00164_20261023190658.pcap",
+    "139dd97437eea92e:live_00170_20261023191000.pcap",
+    "2ffb41845dabcadf:live_00156_20261023190257.pcap",
+    "374e99ef15c543d6:live_00161_20261023190528.pcap",
+    "46de2468982ad2b2:live_00172_20261023191100.pcap",
+    "49392f10e5fa29d2:live_00163_20261023190628.pcap",
+    "5d16baa51ee4d10e:live_00169_20261023190929.pcap",
+    "5dba5692f088c517:live_00175_20261023191231.pcap",
+    "7aefc1655df6468a:live_00173_20261023191130.pcap",
+    "7fc0a2bed195aedb:live_00167_20261023190829.pcap",
+    "80b140adf194e8f1:live_00162_20261023190558.pcap",
+    "92b665173f3d5652:live_00171_20261023191030.pcap",
+    "9588c7f657d347a7:live_00166_20261023190759.pcap",
+    "a9bb8d8ae8f187b7:live_00159_20261023190427.pcap",
+    "b570f6499820d5ae:live_00174_20261023191200.pcap",
+    "baa302c3e989c75c:live_00158_20261023190357.pcap",
+    "dc05f8559fb8d25d:live_00160_20261023190458.pcap",
+    "e21f18970f276461:live_00165_20261023190729.pcap",
+    "f1380dd14603557c:live_00157_20261023190327.pcap",
+    "f60d6a3a2e183763:live_00168_20261023190859.pcap"
+   ],
+   "n_events": 369,
+   "events_file": "events/benign_20261023T150257Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T151257Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792768377.0,
+   "end": 1792768977.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "0bbbd8f48b396d91:live_00190_20261023192003.pcap",
+    "1913567b8aba3da1:live_00194_20261023192203.pcap",
+    "1ba4afd9ac152c60:live_00180_20261023191502.pcap",
+    "1c3d1ce59ee4b23c:live_00186_20261023191802.pcap",
+    "2b22b11d801654fd:live_00195_20261023192233.pcap",
+    "2b5e7f56bf68b3a6:live_00187_20261023191832.pcap",
+    "2f5f0898a2aa1ebb:live_00191_20261023192033.pcap",
+    "40329b74e3943d37:live_00178_20261023191401.pcap",
+    "5286c6bba4fb282a:live_00193_20261023192133.pcap",
+    "5dba5692f088c517:live_00175_20261023191231.pcap",
+    "5ec6bfe6277d0763:live_00177_20261023191331.pcap",
+    "608a5e31d915c672:live_00179_20261023191431.pcap",
+    "66340b51505acaad:live_00192_20261023192103.pcap",
+    "6f21c2338b6eac11:live_00188_20261023191903.pcap",
+    "9be0fb5809288896:live_00181_20261023191532.pcap",
+    "a3abccf4acb61aa8:live_00182_20261023191602.pcap",
+    "ae2b4e888f6b6cfa:live_00185_20261023191732.pcap",
+    "b89697b6db6e61d1:live_00183_20261023191632.pcap",
+    "d9f175354268b578:live_00176_20261023191301.pcap",
+    "ef767704e5a2657d:live_00184_20261023191702.pcap",
+    "f22417383493a1ff:live_00189_20261023191933.pcap"
+   ],
+   "n_events": 426,
+   "events_file": "events/benign_20261023T151257Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T152257Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "holdout",
+   "start": 1792768977.0,
+   "end": 1792769254.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "1aa684d92e8b0c27:live_00203_20261023192634.pcap",
+    "211b56df3c3de128:live_00204_20261023192704.pcap",
+    "2b22b11d801654fd:live_00195_20261023192233.pcap",
+    "7687b5d3e8d5c3f6:live_00198_20261023192404.pcap",
+    "874c5a5bbaa056be:live_00197_20261023192334.pcap",
+    "94bb281875ba6e69:live_00201_20261023192534.pcap",
+    "bbb24f2fe1d52ef2:live_00200_20261023192504.pcap",
+    "cd6e3d24d516722b:live_00202_20261023192604.pcap",
+    "da867a4ca1c588e3:live_00196_20261023192303.pcap",
+    "eee939f43349dfac:live_00199_20261023192434.pcap"
+   ],
+   "n_events": 180,
+   "events_file": "events/benign_20261023T152257Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T152804Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "holdout",
+   "start": 1792769284.0,
+   "end": 1792769884.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "077488ed9485bdca:live_00206_20261023192804.pcap",
+    "34adf6e6dcd55dde:live_00220_20261023193506.pcap",
+    "37cd8e4d9b050c35:live_00216_20261023193305.pcap",
+    "3cfe25909e233272:live_00223_20261023193636.pcap",
+    "58620e9aeef77982:live_00209_20261023192935.pcap",
+    "5fff412bc139db84:live_00225_20261023193737.pcap",
+    "6f8f5b5a10930411:live_00218_20261023193406.pcap",
+    "7d98822cefb3a010:live_00210_20261023193005.pcap",
+    "87c17c4c875be4c3:live_00208_20261023192904.pcap",
+    "8cd50ed61ffc98ab:live_00215_20261023193235.pcap",
+    "9059da703847e1fe:live_00212_20261023193105.pcap",
+    "90ebf1fa21bd1272:live_00213_20261023193135.pcap",
+    "99f43e68dea351cd:live_00217_20261023193335.pcap",
+    "a7962ed6b0cead6f:live_00214_20261023193205.pcap",
+    "aab2a45fddac6885:live_00211_20261023193035.pcap",
+    "be9ace29cf228235:live_00219_20261023193436.pcap",
+    "c1291949ecd23958:live_00224_20261023193707.pcap",
+    "c8a9a85c99d5b5fb:live_00222_20261023193606.pcap",
+    "cdcdff614964244f:live_00207_20261023192834.pcap",
+    "d8ceb7fc757453fd:live_00221_20261023193536.pcap"
+   ],
+   "n_events": 396,
+   "events_file": "events/benign_20261023T152804Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T153804Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792769884.0,
+   "end": 1792770484.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "15381fc20a9bb017:live_00229_20261023193938.pcap",
+    "20a0d82228c41cbb:live_00230_20261023194008.pcap",
+    "247c07fc73ee4504:live_00228_20261023193907.pcap",
+    "2a09f3530eaf73f1:live_00241_20261023194540.pcap",
+    "458bc914e7a8c4ab:live_00235_20261023194239.pcap",
+    "511c88c87f273a6f:live_00236_20261023194309.pcap",
+    "530c88219c40d567:live_00226_20261023193807.pcap",
+    "54aa60da7be32899:live_00237_20261023194339.pcap",
+    "550d6979ba119d13:live_00227_20261023193837.pcap",
+    "583a4c201d524725:live_00243_20261023194640.pcap",
+    "5fff412bc139db84:live_00225_20261023193737.pcap",
+    "831aa0cbd3028773:live_00232_20261023194108.pcap",
+    "9bd4b554998e0833:live_00244_20261023194711.pcap",
+    "a0887f01a299fc46:live_00234_20261023194209.pcap",
+    "a32f602d378258f4:live_00239_20261023194440.pcap",
+    "a938ccbb5b667828:live_00242_20261023194610.pcap",
+    "c484860f6c1549aa:live_00231_20261023194038.pcap",
+    "d3c89ba23bae96ed:live_00245_20261023194741.pcap",
+    "d90f05823daa6465:live_00233_20261023194138.pcap",
+    "e3458a14da80177c:live_00238_20261023194409.pcap",
+    "e9e8bb4635a35c72:live_00240_20261023194510.pcap"
+   ],
+   "n_events": 411,
+   "events_file": "events/benign_20261023T153804Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T154804Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "holdout",
+   "start": 1792770484.0,
+   "end": 1792771084.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "178bf04c26ad6923:live_00254_20261023195212.pcap",
+    "22020ec1a0c0b54a:live_00248_20261023194911.pcap",
+    "2cdd9c594ac4d06b:live_00246_20261023194811.pcap",
+    "3d4dc3e4884dfc1e:live_00253_20261023195142.pcap",
+    "4704897c91b2e954:live_00249_20261023194941.pcap",
+    "4e008d9237089c5b:live_00257_20261023195343.pcap",
+    "52e6fa95a103f578:live_00260_20261023195514.pcap",
+    "5aea7d70acbb4a55:live_00261_20261023195544.pcap",
+    "649739da16285281:live_00247_20261023194841.pcap",
+    "6819390213d17d0e:live_00256_20261023195313.pcap",
+    "9853608e975e2fbe:live_00251_20261023195042.pcap",
+    "9ea67b7402704399:live_00258_20261023195413.pcap",
+    "a025b7a6a325f4d5:live_00259_20261023195443.pcap",
+    "a75a1858e71f4882:live_00252_20261023195112.pcap",
+    "ad61850f4183f438:live_00262_20261023195614.pcap",
+    "b30ddb82d63fe4f7:live_00263_20261023195644.pcap",
+    "ca13cff3357f13be:live_00264_20261023195714.pcap",
+    "d3c89ba23bae96ed:live_00245_20261023194741.pcap",
+    "d646b0b2a902814a:live_00250_20261023195012.pcap",
+    "e36e59c544049e49:live_00255_20261023195243.pcap",
+    "e539c3b030becd50:live_00265_20261023195745.pcap"
+   ],
+   "n_events": 417,
+   "events_file": "events/benign_20261023T154804Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T155804Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792771084.0,
+   "end": 1792771684.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "008fbc9f05ac5347:live_00276_20261023200317.pcap",
+    "02f8e26b0c4e8807:live_00282_20261023200618.pcap",
+    "0625a3b942c609a2:live_00268_20261023195915.pcap",
+    "0cb9e1b996407837:live_00281_20261023200548.pcap",
+    "112060ef17856dee:live_00278_20261023200417.pcap",
+    "1f493d69dd5bf71c:live_00272_20261023200116.pcap",
+    "23b3ddb27a1c4e59:live_00279_20261023200448.pcap",
+    "30224f85e4ee2f94:live_00280_20261023200518.pcap",
+    "44492a87e02fdabe:live_00273_20261023200146.pcap",
+    "55b0d4b660f69eb4:live_00277_20261023200347.pcap",
+    "698485d12898cd2f:live_00266_20261023195815.pcap",
+    "7fcd42b86ef19989:live_00274_20261023200217.pcap",
+    "8b16bd2ddeeb9732:live_00271_20261023200046.pcap",
+    "8f48d538f4e5867d:live_00283_20261023200648.pcap",
+    "974128181eb3a25e:live_00285_20261023200749.pcap",
+    "aafe11768b0cc407:live_00267_20261023195845.pcap",
+    "b03fd4c94d56ebb2:live_00270_20261023200016.pcap",
+    "cb4be56c64803e90:live_00275_20261023200247.pcap",
+    "d8996df98867b1b5:live_00284_20261023200719.pcap",
+    "e332144a20be97e0:live_00269_20261023195945.pcap",
+    "e539c3b030becd50:live_00265_20261023195745.pcap"
+   ],
+   "n_events": 294,
+   "events_file": "events/benign_20261023T155804Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T160804Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "holdout",
+   "start": 1792771684.0,
+   "end": 1792772284.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "0a2d1e860eb1de0e:live_00302_20261023201622.pcap",
+    "138153fd2c1a53a0:live_00289_20261023200950.pcap",
+    "20b9e194564b7c6a:live_00305_20261023201753.pcap",
+    "22c693e0fbaab4a5:live_00296_20261023201321.pcap",
+    "2dbd494a871a18be:live_00288_20261023200920.pcap",
+    "3dd2fb8788e404a1:live_00303_20261023201652.pcap",
+    "46e7c10d555a37eb:live_00287_20261023200849.pcap",
+    "53229cc94c96273f:live_00290_20261023201020.pcap",
+    "61f1f8f0048269ce:live_00293_20261023201150.pcap",
+    "6301229b9c44fc13:live_00292_20261023201120.pcap",
+    "700a3888ac1faef2:live_00286_20261023200819.pcap",
+    "79b30a437d9e1bae:live_00291_20261023201050.pcap",
+    "81f3cd9a4a14027f:live_00298_20261023201421.pcap",
+    "974128181eb3a25e:live_00285_20261023200749.pcap",
+    "b1fbf688641a8f88:live_00304_20261023201723.pcap",
+    "b7cb359c33509354:live_00300_20261023201522.pcap",
+    "bbd61f95fd8b839e:live_00299_20261023201452.pcap",
+    "c12065d172f14716:live_00295_20261023201251.pcap",
+    "c67c60acb4a79b4f:live_00301_20261023201552.pcap",
+    "ebd810680c2acea5:live_00294_20261023201221.pcap",
+    "fb7842976098bd88:live_00297_20261023201351.pcap"
+   ],
+   "n_events": 459,
+   "events_file": "events/benign_20261023T160804Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T161804Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "validation",
+   "start": 1792772284.0,
+   "end": 1792772884.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "0f27c63fa551a435:live_00309_20261023201953.pcap",
+    "13f2ea39c713a20d:live_00317_20261023202355.pcap",
+    "20b9e194564b7c6a:live_00305_20261023201753.pcap",
+    "2ebd4fae028fbccf:live_00319_20261023202455.pcap",
+    "3a69c33caf2fe28d:live_00324_20261023202726.pcap",
+    "46741cb2d3d660fd:live_00316_20261023202325.pcap",
+    "55c6b4d9bb306cb6:live_00308_20261023201923.pcap",
+    "72a5aab39af8dd27:live_00321_20261023202556.pcap",
+    "75e6e2e50c1dbe18:live_00312_20261023202124.pcap",
+    "7672a9d79853de54:live_00315_20261023202255.pcap",
+    "77b46a5d85a02407:live_00307_20261023201853.pcap",
+    "7fe8d2654699466d:live_00314_20261023202225.pcap",
+    "8b4eaaefca6d1882:live_00310_20261023202024.pcap",
+    "99afdfce8afcffce:live_00322_20261023202626.pcap",
+    "b6f33d1cd4b586a0:live_00323_20261023202656.pcap",
+    "c35b5b9009677b48:live_00318_20261023202425.pcap",
+    "e5cc88c16aa23eaf:live_00313_20261023202154.pcap",
+    "efa6ac2a53d2fb7a:live_00325_20261023202756.pcap",
+    "f114a25a55aeb5e2:live_00306_20261023201823.pcap",
+    "f2ffcb1ed3b951c0:live_00320_20261023202526.pcap",
+    "fd3fce2477226346:live_00311_20261023202054.pcap"
+   ],
+   "n_events": 441,
+   "events_file": "events/benign_20261023T161804Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T162804Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "validation",
+   "start": 1792772884.0,
+   "end": 1792773484.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "082507321e5ffa8a:live_00340_20261023203529.pcap",
+    "0dcf0070c1787326:live_00328_20261023202927.pcap",
+    "13eada5d5bfcd0b1:live_00326_20261023202827.pcap",
+    "1dc04d4bf2751624:live_00344_20261023203730.pcap",
+    "355e3b54e8cbe94c:live_00333_20261023203158.pcap",
+    "3620321914e7abf6:live_00331_20261023203057.pcap",
+    "3f2bf9d2938fc4f6:live_00339_20261023203459.pcap",
+    "40d22c4df5709204:live_00342_20261023203629.pcap",
+    "43d07c088f7cf3e6:live_00329_20261023202957.pcap",
+    "762e16aa9f496285:live_00337_20261023203359.pcap",
+    "7c4fee75cbb0b898:live_00345_20261023203800.pcap",
+    "7fde47a26168f176:live_00327_20261023202857.pcap",
+    "88021cc27415bacf:live_00335_20261023203258.pcap",
+    "a0ad200f12115213:live_00341_20261023203559.pcap",
+    "b7e31c77bd21494d:live_00343_20261023203700.pcap",
+    "cf6095158b06a2f6:live_00332_20261023203128.pcap",
+    "eab061efd4a95223:live_00334_20261023203228.pcap",
+    "efa6ac2a53d2fb7a:live_00325_20261023202756.pcap",
+    "f139f76b47a0da48:live_00338_20261023203429.pcap",
+    "f5e1e03111af8f36:live_00330_20261023203027.pcap",
+    "fff7f8fccc52b3c3:live_00336_20261023203328.pcap"
+   ],
+   "n_events": 378,
+   "events_file": "events/benign_20261023T162804Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T163804Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792773484.0,
+   "end": 1792773661.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "017afc7a27fdbeda:live_00347_20261023203900.pcap",
+    "0f5459452629876d:live_00348_20261023203931.pcap",
+    "7c4fee75cbb0b898:live_00345_20261023203800.pcap",
+    "aceac48c619dcad3:live_00346_20261023203830.pcap",
+    "b4f4c3cfeea3094b:live_00349_20261023204001.pcap",
+    "d4473428c38ae60c:live_00350_20261023204031.pcap"
+   ],
+   "n_events": 129,
+   "events_file": "events/benign_20261023T163804Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T164131Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792773691.0,
+   "end": 1792774291.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "0979fedc4409b82d:live_00353_20261023204202.pcap",
+    "0cd724a4350d1474:live_00357_20261023204402.pcap",
+    "10c53807d3994fa6:live_00361_20261023204603.pcap",
+    "22e38fc0bb50611b:live_00358_20261023204432.pcap",
+    "28065078dc3e2fb7:live_00371_20261023205105.pcap",
+    "2abf6bb140242f7c:live_00365_20261023204804.pcap",
+    "36623f3409599c08:live_00352_20261023204131.pcap",
+    "3905c36c511392ef:live_00369_20261023205005.pcap",
+    "4df3f6109a121bf5:live_00363_20261023204703.pcap",
+    "4f14eaa85af0f86b:live_00355_20261023204302.pcap",
+    "521e7d9a54cb7bf8:live_00368_20261023204934.pcap",
+    "5584722b7c7e73ba:live_00364_20261023204734.pcap",
+    "6f2abaefcd9e3184:live_00359_20261023204503.pcap",
+    "91d9cd97b76910aa:live_00362_20261023204633.pcap",
+    "b35a770e1e544892:live_00367_20261023204904.pcap",
+    "b36aaf17460cb9a7:live_00354_20261023204232.pcap",
+    "b6a3d5a516799e49:live_00356_20261023204332.pcap",
+    "b8723b3ad5d3505c:live_00366_20261023204834.pcap",
+    "c86861eff993916c:live_00370_20261023205035.pcap",
+    "df190caca45c7d44:live_00360_20261023204533.pcap"
+   ],
+   "n_events": 423,
+   "events_file": "events/benign_20261023T164131Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T165131Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "validation",
+   "start": 1792774291.0,
+   "end": 1792774891.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "28065078dc3e2fb7:live_00371_20261023205105.pcap",
+    "2ed061372fc5f924:live_00375_20261023205306.pcap",
+    "33272947bcb30988:live_00373_20261023205205.pcap",
+    "355dd1e6c6e48521:live_00386_20261023205837.pcap",
+    "3981b475117a385a:live_00387_20261023205908.pcap",
+    "439655ccf46683bc:live_00385_20261023205807.pcap",
+    "450fc66dc33b5772:live_00377_20261023205406.pcap",
+    "5ee3cefa40382f10:live_00391_20261023210108.pcap",
+    "7e21f6e85590ad04:live_00382_20261023205637.pcap",
+    "80e98a4ee1cab048:live_00389_20261023210008.pcap",
+    "9210e5a96c51e7bb:live_00383_20261023205707.pcap",
+    "9e761ff8b21cf6db:live_00388_20261023205938.pcap",
+    "ac7ec7dc8e554d84:live_00380_20261023205536.pcap",
+    "b53d543dcf9426f9:live_00374_20261023205235.pcap",
+    "b59c94f12326ac8a:live_00376_20261023205336.pcap",
+    "b660eaf4097f3046:live_00378_20261023205436.pcap",
+    "d3972bf31b08bb6b:live_00379_20261023205506.pcap",
+    "db3b7d24451de3f2:live_00390_20261023210038.pcap",
+    "dc08313431cad67e:live_00372_20261023205135.pcap",
+    "e355d6f38ce5e449:live_00384_20261023205737.pcap",
+    "e8f53cd9fa02394f:live_00381_20261023205606.pcap"
+   ],
+   "n_events": 384,
+   "events_file": "events/benign_20261023T165131Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T170131Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792774891.0,
+   "end": 1792775261.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "169bad943c7785d1:live_00394_20261023210239.pcap",
+    "1ad7406c358ee4ff:live_00400_20261023210540.pcap",
+    "1ee187cfe982f664:live_00399_20261023210510.pcap",
+    "3cd12a40ffa98271:live_00398_20261023210440.pcap",
+    "3f3f8bd28e986486:live_00396_20261023210339.pcap",
+    "5ee3cefa40382f10:live_00391_20261023210108.pcap",
+    "617b0bb8812b0ba2:live_00393_20261023210209.pcap",
+    "845788e9003f8d27:live_00397_20261023210409.pcap",
+    "a84a58b96e1df231:live_00401_20261023210610.pcap",
+    "c6190d8bdc05d028:live_00403_20261023210711.pcap",
+    "c7136fdd19b43f36:live_00402_20261023210640.pcap",
+    "cad6ca39f359e621:live_00392_20261023210138.pcap",
+    "ec7a31918317d61e:live_00395_20261023210309.pcap"
+   ],
+   "n_events": 219,
+   "events_file": "events/benign_20261023T170131Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T170811Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792775291.0,
+   "end": 1792775442.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "253d6811fd6a600d:live_00409_20261023211012.pcap",
+    "c59e19ef4876c5a3:live_00406_20261023210841.pcap",
+    "e5d21063184cd459:live_00408_20261023210941.pcap",
+    "e8aaf0e943d55ebf:live_00407_20261023210911.pcap",
+    "fdd01fdb84d4aeaa:live_00405_20261023210811.pcap"
+   ],
+   "n_events": 87,
+   "events_file": "events/benign_20261023T170811Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T171112Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792775472.0,
+   "end": 1792776072.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "0559c64e559b27d5:live_00417_20261023211413.pcap",
+    "140201765905194c:live_00414_20261023211242.pcap",
+    "1885e4fbacf17a61:live_00423_20261023211714.pcap",
+    "1cf7703a0cffb584:live_00418_20261023211443.pcap",
+    "23942557c24d52ab:live_00415_20261023211313.pcap",
+    "2fd03b40b9e31355:live_00411_20261023211112.pcap",
+    "4d0829f3654085a4:live_00428_20261023211945.pcap",
+    "552a23da7af1265a:live_00427_20261023211915.pcap",
+    "5603659dc4f825de:live_00416_20261023211343.pcap",
+    "5e84569c56ab9532:live_00430_20261023212046.pcap",
+    "7c7f743d678b6390:live_00413_20261023211212.pcap",
+    "7e50f52fa3eddacb:live_00425_20261023211815.pcap",
+    "88b95b7e64c23907:live_00429_20261023212015.pcap",
+    "9489a4b23909d945:live_00424_20261023211744.pcap",
+    "9fee8cd4f731f4b6:live_00419_20261023211513.pcap",
+    "a6fd25548a0d1362:live_00422_20261023211644.pcap",
+    "a811e9c2a45e21b5:live_00420_20261023211544.pcap",
+    "b0c1137d45ebd89f:live_00412_20261023211142.pcap",
+    "b4a559441e51a44d:live_00426_20261023211845.pcap",
+    "d180a1fbe47b9974:live_00421_20261023211614.pcap"
+   ],
+   "n_events": 285,
+   "events_file": "events/benign_20261023T171112Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T172112Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "validation",
+   "start": 1792776072.0,
+   "end": 1792776672.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "0291973ebaa49988:live_00444_20261023212748.pcap",
+    "09642e7b9bd705f1:live_00449_20261023213019.pcap",
+    "138c59fa1f59bdf6:live_00431_20261023212116.pcap",
+    "1670929888ba4e6d:live_00442_20261023212648.pcap",
+    "27576c34982de2f0:live_00445_20261023212818.pcap",
+    "2ea18114a8145802:live_00433_20261023212216.pcap",
+    "30db358dffc37946:live_00448_20261023212949.pcap",
+    "34336b7cbee61159:live_00438_20261023212447.pcap",
+    "5e84569c56ab9532:live_00430_20261023212046.pcap",
+    "6128dd17828a1164:live_00436_20261023212347.pcap",
+    "7df5c4233ef9f9a2:live_00437_20261023212417.pcap",
+    "973deb6c135c3225:live_00434_20261023212246.pcap",
+    "9aabeec46d0eac69:live_00450_20261023213049.pcap",
+    "ab02e0e4b15f31da:live_00435_20261023212316.pcap",
+    "d91c32edd940f8b0:live_00439_20261023212517.pcap",
+    "e40855a43db8cc6f:live_00432_20261023212146.pcap",
+    "e993adb9ee922642:live_00447_20261023212919.pcap",
+    "eb228f819e37902a:live_00440_20261023212547.pcap",
+    "f32d7cd847b76057:live_00441_20261023212617.pcap",
+    "f5ef2385465a840c:live_00446_20261023212848.pcap",
+    "fc99561ddea78297:live_00443_20261023212718.pcap"
+   ],
+   "n_events": 396,
+   "events_file": "events/benign_20261023T172112Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T173112Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792776672.0,
+   "end": 1792777272.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "0483c742f7522dd1:live_00458_20261023213451.pcap",
+    "3544763e962c7c2f:live_00452_20261023213149.pcap",
+    "455f6bbe529b5a87:live_00455_20261023213320.pcap",
+    "489ee2f7c5c81a26:live_00467_20261023213922.pcap",
+    "4dff6ac6194cc1cc:live_00469_20261023214022.pcap",
+    "508f0115c7361f6d:live_00461_20261023213621.pcap",
+    "57703550f0a488e7:live_00457_20261023213420.pcap",
+    "7a4dc1b9976df175:live_00451_20261023213119.pcap",
+    "83be69cde406b5f5:live_00466_20261023213852.pcap",
+    "9560cdd43182a224:live_00456_20261023213350.pcap",
+    "96ce2f3f064eb8df:live_00454_20261023213250.pcap",
+    "9aabeec46d0eac69:live_00450_20261023213049.pcap",
+    "9c4d93bf60d3baa9:live_00462_20261023213651.pcap",
+    "a4297c377c4cd1db:live_00453_20261023213220.pcap",
+    "abb72bc9f034e653:live_00465_20261023213822.pcap",
+    "af187aa0e1798de5:live_00470_20261023214053.pcap",
+    "b81af68e676c0512:live_00460_20261023213551.pcap",
+    "e157102056ffd4ab:live_00459_20261023213521.pcap",
+    "f31f64f18f6e7228:live_00468_20261023213952.pcap",
+    "fa010f496dd9c3d7:live_00464_20261023213751.pcap",
+    "fa6bea62706c3ea6:live_00463_20261023213721.pcap"
+   ],
+   "n_events": 501,
+   "events_file": "events/benign_20261023T173112Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T174112Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "validation",
+   "start": 1792777272.0,
+   "end": 1792777872.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "18aa6ac79aecd82a:live_00488_20261023214956.pcap",
+    "1ccf333a9f8085bf:live_00486_20261023214856.pcap",
+    "21b37e772255f814:live_00473_20261023214223.pcap",
+    "4965e1f0219e3812:live_00471_20261023214123.pcap",
+    "5ba7de7660433d89:live_00489_20261023215026.pcap",
+    "5fdaa18fa41da23c:live_00479_20261023214525.pcap",
+    "69a34088e9aded77:live_00478_20261023214454.pcap",
+    "6e78ef6cfd715a0d:live_00490_20261023215056.pcap",
+    "7a5be67b4b614dbe:live_00474_20261023214254.pcap",
+    "88689b12c8480b6e:live_00476_20261023214354.pcap",
+    "8ee24b8ed4e506ee:live_00472_20261023214153.pcap",
+    "9d763c02d4fac86c:live_00484_20261023214755.pcap",
+    "9ec29ea86e9bc064:live_00482_20261023214655.pcap",
+    "a85206e6699f4966:live_00487_20261023214926.pcap",
+    "af187aa0e1798de5:live_00470_20261023214053.pcap",
+    "c05e2864470e5300:live_00481_20261023214625.pcap",
+    "c5efae529ba3d37d:live_00483_20261023214725.pcap",
+    "cabaf790a347966c:live_00480_20261023214555.pcap",
+    "d28b13028d93e627:live_00477_20261023214424.pcap",
+    "e6a31e412796650c:live_00485_20261023214826.pcap",
+    "e87d5cce4ae066d9:live_00475_20261023214324.pcap"
+   ],
+   "n_events": 420,
+   "events_file": "events/benign_20261023T174112Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T175112Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "holdout",
+   "start": 1792777872.0,
+   "end": 1792778472.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "05ad1a204d4d6c8e:live_00493_20261023215227.pcap",
+    "1f83cb82c6b789a3:live_00504_20261023215758.pcap",
+    "1f8bd301662070fa:live_00508_20261023215959.pcap",
+    "2347c71cc21aebec:live_00501_20261023215628.pcap",
+    "52b8f56cad43b44c:live_00498_20261023215458.pcap",
+    "54b7a4fb8b06cef5:live_00492_20261023215157.pcap",
+    "558ec879ad88a294:live_00507_20261023215929.pcap",
+    "5fc4dc6b53666e8d:live_00509_20261023220029.pcap",
+    "6e78ef6cfd715a0d:live_00490_20261023215056.pcap",
+    "800bc29a596b7662:live_00499_20261023215528.pcap",
+    "8a83e8d2a3e8c6ba:live_00496_20261023215358.pcap",
+    "8e19f3300d1e6784:live_00497_20261023215428.pcap",
+    "9cbb77e0c09c7cd5:live_00500_20261023215558.pcap",
+    "acc34a8fbdeaafb3:live_00510_20261023220059.pcap",
+    "ad89fdb62cd5852c:live_00506_20261023215858.pcap",
+    "b70b4e21d44df3d6:live_00491_20261023215127.pcap",
+    "c6531cb9a6ae95aa:live_00503_20261023215728.pcap",
+    "cc10c24fd7ca5802:live_00495_20261023215327.pcap",
+    "d42555c8a4c91a30:live_00494_20261023215257.pcap",
+    "d5943007932c89a1:live_00502_20261023215658.pcap",
+    "d8fb5183b68d165e:live_00505_20261023215828.pcap"
+   ],
+   "n_events": 368,
+   "events_file": "events/benign_20261023T175112Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T180211Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "validation",
+   "start": 1792778531.0,
+   "end": 1792779073.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "11b705f54c0deed9:live_00017_20261023221013.pcap",
+    "207b901243efbd28:live_00018_20261023221043.pcap",
+    "2fa9ec2ffca03f3b:live_00012_20261023220742.pcap",
+    "38dc145dc6d6905d:live_00005_20261023220412.pcap",
+    "3a7ccb5c2d699605:live_00014_20261023220843.pcap",
+    "65eb2cc8acd0bd57:live_00011_20261023220712.pcap",
+    "734ac1f6e9775187:live_00015_20261023220913.pcap",
+    "742f3b85b7023e16:live_00004_20261023220342.pcap",
+    "8351d95c0d9e0c2f:live_00010_20261023220642.pcap",
+    "9191c2de13d3c49c:live_00016_20261023220943.pcap",
+    "91946c4da86192d3:live_00008_20261023220542.pcap",
+    "a7f4351479a6ec1f:live_00009_20261023220612.pcap",
+    "a8edaee2e8854a11:live_00003_20261023220312.pcap",
+    "bc0e67106993bad6:live_00001_20261023220211.pcap",
+    "c50b0607e3c62faa:live_00007_20261023220512.pcap",
+    "e56d2696fed41b7d:live_00013_20261023220812.pcap",
+    "f0a63530d955eacd:live_00002_20261023220241.pcap",
+    "f69d83acdb502776:live_00006_20261023220442.pcap"
+   ],
+   "n_events": 372,
+   "events_file": "events/benign_20261023T180211Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T181144Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "holdout",
+   "start": 1792779104.0,
+   "end": 1792779704.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "059b11dddca5eed5:live_00035_20261023221917.pcap",
+    "1482086f401138ee:live_00021_20261023221214.pcap",
+    "18909b8b40a6eb32:live_00038_20261023222047.pcap",
+    "1cf3f965c736ad1e:live_00028_20261023221545.pcap",
+    "20e4869d962eb8bc:live_00023_20261023221314.pcap",
+    "2eff626ad153fe0e:live_00024_20261023221344.pcap",
+    "35377f0b4b89ed09:live_00037_20261023222017.pcap",
+    "3bbde83d6ebb0147:live_00026_20261023221445.pcap",
+    "474b97c8395dc793:live_00022_20261023221244.pcap",
+    "4d3322ea0d73e212:live_00034_20261023221846.pcap",
+    "6e0e0a64b22fa6d3:live_00039_20261023222117.pcap",
+    "87b92f1e25546229:live_00029_20261023221615.pcap",
+    "96c186028f038742:live_00031_20261023221716.pcap",
+    "aaa4fd58f14a9d19:live_00020_20261023221144.pcap",
+    "aedc1b2f10e99b17:live_00033_20261023221816.pcap",
+    "e1080933615ebd71:live_00030_20261023221646.pcap",
+    "e91a6f6feb2d9365:live_00036_20261023221947.pcap",
+    "ee079f5ed1ab5e93:live_00027_20261023221515.pcap",
+    "f4d56dd9b581722f:live_00032_20261023221746.pcap",
+    "febe1cf73810afce:live_00025_20261023221415.pcap"
+   ],
+   "n_events": 459,
+   "events_file": "events/benign_20261023T181144Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T182144Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "holdout",
+   "start": 1792779704.0,
+   "end": 1792780304.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "0f946b1bb5bad104:live_00045_20261023222418.pcap",
+    "1659a41a71bab687:live_00050_20261023222649.pcap",
+    "274d620cf491faf5:live_00046_20261023222449.pcap",
+    "37a1574be282cbd2:live_00059_20261023223121.pcap",
+    "3ba268ba10531011:live_00055_20261023222920.pcap",
+    "46276ab824281514:live_00047_20261023222519.pcap",
+    "56d6be2c7b99852c:live_00042_20261023222248.pcap",
+    "58b838a23bf43690:live_00052_20261023222750.pcap",
+    "5ef08c882cfc3891:live_00058_20261023223051.pcap",
+    "6d75d18ba452d94d:live_00056_20261023222951.pcap",
+    "6e0e0a64b22fa6d3:live_00039_20261023222117.pcap",
+    "8bffa7319a73bad5:live_00049_20261023222619.pcap",
+    "a9ce095ee945cf6d:live_00041_20261023222218.pcap",
+    "b5d963d4ff37e2ab:live_00057_20261023223021.pcap",
+    "b994ff82fbc1161b:live_00044_20261023222348.pcap",
+    "baa58e9ca9beda5a:live_00054_20261023222850.pcap",
+    "c25be746a93ef8f9:live_00043_20261023222318.pcap",
+    "c437cbe61f772688:live_00040_20261023222147.pcap",
+    "c460c665d970f192:live_00053_20261023222820.pcap",
+    "d959065041be26e2:live_00051_20261023222720.pcap",
+    "e63e8b4ea1c31060:live_00048_20261023222549.pcap"
+   ],
+   "n_events": 358,
+   "events_file": "events/benign_20261023T182144Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T183144Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "development",
+   "start": 1792780304.0,
+   "end": 1792780904.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "014fb405daac8616:live_00078_20261023224054.pcap",
+    "02d45a2cb28c4610:live_00069_20261023223623.pcap",
+    "0a75cb12b723149f:live_00063_20261023223322.pcap",
+    "203ef9dd67624231:live_00074_20261023223854.pcap",
+    "2c013dbabd4d1e6c:live_00071_20261023223723.pcap",
+    "32e4578623c35ae6:live_00064_20261023223352.pcap",
+    "37a1574be282cbd2:live_00059_20261023223121.pcap",
+    "3c3d076b236534da:live_00065_20261023223422.pcap",
+    "4664cb76148aec46:live_00073_20261023223824.pcap",
+    "5947f1f4ac12f2bf:live_00076_20261023223954.pcap",
+    "6a0b4b649ef2bf03:live_00062_20261023223252.pcap",
+    "722c257f543dbdef:live_00060_20261023223151.pcap",
+    "7874f6c3a218197b:live_00072_20261023223754.pcap",
+    "8f35a34245b0f665:live_00075_20261023223924.pcap",
+    "b710b16b47a09baf:live_00077_20261023224024.pcap",
+    "cf7d5ac3a8daae85:live_00066_20261023223453.pcap",
+    "d26058c5564c51db:live_00067_20261023223523.pcap",
+    "d3f8cefb7b4a95c3:live_00070_20261023223653.pcap",
+    "dd7eb7540b4545cc:live_00068_20261023223553.pcap",
+    "f38a3981095697d5:live_00079_20261023224124.pcap",
+    "f92987229e7baa9b:live_00061_20261023223222.pcap"
+   ],
+   "n_events": 389,
+   "events_file": "events/benign_20261023T183144Z.jsonl.gz"
+  },
+  {
+   "id": "benign_20261023T184144Z",
+   "label": "benign",
+   "type": "benign_block",
+   "split": "validation",
+   "start": 1792780904.0,
+   "end": 1792781275.0,
+   "attack_clients": [],
+   "campaign_log": null,
+   "sources": [
+    "049223b38b4bc174:live_00080_20261023224154.pcap",
+    "10267f2daea9d307:live_00082_20261023224254.pcap",
+    "1625ba22a6fd557c:live_00088_20261023224555.pcap",
+    "2d2c9d051c304c40:live_00084_20261023224355.pcap",
+    "3edcf3244659adc6:live_00083_20261023224324.pcap",
+    "45050142b22f946e:live_00085_20261023224425.pcap",
+    "47519310a4573600:live_00090_20261023224655.pcap",
+    "7fe52d0369eb776f:live_00081_20261023224224.pcap",
+    "8e6653b5491e6f82:live_00089_20261023224625.pcap",
+    "a1b5301924a3888f:live_00087_20261023224525.pcap",
+    "a4391d8c84e4ad2c:live_00086_20261023224455.pcap",
+    "c9a0f4ff845c1bf4:live_00091_20261023224725.pcap",
+    "f38a3981095697d5:live_00079_20261023224124.pcap"
+   ],
+   "n_events": 207,
+   "events_file": "events/benign_20261023T184144Z.jsonl.gz"
+  }
+ ],
+ "skipped": [
+  {
+   "scenario": "sshbrute",
+   "start": "2026-10-18T19:56:32Z",
+   "reason": "pcap coverage 0%"
+  },
+  {
+   "scenario": "slowscan",
+   "start": "2026-10-18T19:58:54Z",
+   "reason": "pcap coverage 0%"
+  },
+  {
+   "scenario": "sshbrute",
+   "start": "2026-10-18T20:02:27Z",
+   "reason": "pcap coverage 0%"
+  },
+  {
+   "scenario": "slowscan",
+   "start": "2026-10-18T20:12:25Z",
+   "reason": "pcap coverage 0%"
+  },
+  {
+   "scenario": "lure",
+   "start": "2026-10-23T18:48:44Z",
+   "reason": "pcap coverage 0%"
+  },
+  {
+   "scenario": "lure",
+   "start": "2026-10-23T18:48:44Z",
+   "reason": "pcap coverage 0%"
+  },
+  {
+   "scenario": "dirbrute",
+   "start": "2026-10-23T19:02:02Z",
+   "reason": "pcap coverage 0%"
+  },
+  {
+   "scenario": "dirbrute",
+   "start": "2026-10-23T19:02:02Z",
+   "reason": "pcap coverage 0%"
+  },
+  {
+   "scenario": "portscan",
+   "start": "2026-10-23T19:06:10Z",
+   "reason": "pcap coverage 0%"
+  },
+  {
+   "scenario": "portscan",
+   "start": "2026-10-23T19:06:10Z",
+   "reason": "pcap coverage 0%"
+  },
+  {
+   "scenario": "lure",
+   "start": "2026-10-23T19:12:27Z",
+   "reason": "pcap coverage 0%"
+  },
+  {
+   "scenario": "lure",
+   "start": "2026-10-23T19:12:27Z",
+   "reason": "pcap coverage 0%"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1791822299.0,
+   "reason": "attacker traffic present"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1791891155.0,
+   "reason": "attacker traffic present"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1791891755.0,
+   "reason": "attacker traffic present"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1791899062.0,
+   "reason": "attacker traffic present"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1791910026.0,
+   "reason": "attacker traffic present"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1791910626.0,
+   "reason": "attacker traffic present"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1791911986.0,
+   "reason": "attacker traffic present"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1791912613.0,
+   "reason": "attacker traffic present"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1792335678.0,
+   "reason": "attacker traffic present"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1792335829.0,
+   "reason": "attacker traffic present"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1792340293.0,
+   "reason": "attacker traffic present"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1792341106.0,
+   "reason": "attacker traffic present"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1792509054.0,
+   "reason": "attacker traffic present"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1792511674.0,
+   "reason": "attacker traffic present"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1792587237.0,
+   "reason": "attacker traffic present"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1792759835.0,
+   "reason": "attacker traffic present"
+  },
+  {
+   "scenario": "benign block",
+   "start": 1792762242.0,
+   "reason": "attacker traffic present"
+  }
+ ]
+}

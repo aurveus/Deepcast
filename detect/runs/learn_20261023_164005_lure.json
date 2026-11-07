@@ -1,0 +1,251 @@
+{
+ "attack_type": "lure",
+ "evidence": {
+  "profile": {
+   "duration_s": 147.4,
+   "kinds": {
+    "syn": {
+     "total": 64,
+     "max_per_window": {
+      "w10": 22,
+      "w30": 31,
+      "w60": 37
+     }
+    },
+    "http_req": {
+     "total": 13,
+     "max_per_window": {
+      "w10": 10,
+      "w30": 10,
+      "w60": 13
+     }
+    },
+    "http_resp": {
+     "total": 11,
+     "max_per_window": {
+      "w10": 10,
+      "w30": 10,
+      "w60": 11
+     }
+    }
+   },
+   "syn": {
+    "distinct_dports_total": 11,
+    "top_dports": [
+     [
+      4445,
+      16
+     ],
+     [
+      3306,
+      13
+     ],
+     [
+      8080,
+      12
+     ],
+     [
+      139,
+      5
+     ],
+     [
+      2222,
+      3
+     ],
+     [
+      443,
+      2
+     ],
+     [
+      22,
+      2
+     ],
+     [
+      23,
+      2
+     ],
+     [
+      21,
+      2
+     ],
+     [
+      80,
+      2
+     ]
+    ],
+    "max_distinct_dports": {
+     "w10": 10,
+     "w30": 10,
+     "w60": 10
+    },
+    "max_distinct_servers_30s": 3
+   },
+   "http_req": {
+    "distinct_paths_total": 8,
+    "max_distinct_paths": {
+     "w30": 8,
+     "w60": 8
+    },
+    "methods": {
+     "GET": 11,
+     "OPTIONS": 1,
+     "POST": 1
+    },
+    "trap_requests": 2,
+    "first_trap_after_s": 66.1
+   },
+   "http_resp": {
+    "status_counts": {
+     "302": 4,
+     "404": 4,
+     "200": 3
+    },
+    "max_404_per_30s": 4
+   }
+  },
+  "benign_envelope": {
+   "duration_s": 572.4,
+   "kinds": {
+    "syn": {
+     "total": 37,
+     "max_per_window": {
+      "w10": 6,
+      "w30": 11,
+      "w60": 15
+     }
+    },
+    "http_req": {
+     "total": 35,
+     "max_per_window": {
+      "w10": 6,
+      "w30": 11,
+      "w60": 15
+     }
+    },
+    "http_resp": {
+     "total": 35,
+     "max_per_window": {
+      "w10": 6,
+      "w30": 11,
+      "w60": 15
+     }
+    }
+   },
+   "syn": {
+    "distinct_dports_total": 2,
+    "top_dports": [
+     [
+      8080,
+      5
+     ]
+    ],
+    "max_distinct_dports": {
+     "w10": 2,
+     "w30": 2,
+     "w60": 2
+    },
+    "max_distinct_servers_30s": 1
+   },
+   "http_req": {
+    "distinct_paths_total": 3,
+    "max_distinct_paths": {
+     "w30": 3,
+     "w60": 3
+    },
+    "methods": {
+     "GET": 35
+    },
+    "trap_requests": 0,
+    "first_trap_after_s": null
+   },
+   "http_resp": {
+    "status_counts": {
+     "302": 12,
+     "200": 24
+    },
+    "max_404_per_30s": 0
+   }
+  },
+  "current_rules": {
+   "missed": "yes",
+   "rule_ids": []
+  },
+  "samples_used": 11
+ },
+ "proposal": {
+  "rule": {
+   "id": "P-trap-touch",
+   "name": "Request to planted trap path",
+   "origin": "proposed",
+   "window_s": 30,
+   "all_of": [
+    {
+     "kind": "http_req",
+     "measure": "count",
+     "op": ">=",
+     "value": 1,
+     "trap": true
+    }
+   ],
+   "refire_s": 60
+  },
+  "rationale": "The attacker made 2 trap requests (first at 66 s) while benign traffic made 0 trap requests, so a single trap hit is a clean signal. Its other numbers (10 distinct ports in 10 s, 8 paths) are too close to the benign envelope for a safe margin."
+ },
+ "report": {
+  "accepted": true,
+  "checks": [
+   {
+    "name": "schema",
+    "ok": true,
+    "detail": "valid"
+   },
+   {
+    "name": "catches",
+    "ok": true,
+    "detail": "11/11 development 'lure' samples detected"
+   },
+   {
+    "name": "adds",
+    "ok": true,
+    "detail": "11 development samples were missed before and are detected now"
+   },
+   {
+    "name": "quiet",
+    "ok": true,
+    "detail": "0 false alarms on development+validation"
+   },
+   {
+    "name": "holdout",
+    "ok": true,
+    "detail": "0 false alarms on holdout"
+   }
+  ],
+  "reported": {
+   "validation": {
+    "slowscan": {
+     "before": "8/8",
+     "after": "8/8"
+    },
+    "dirbrute": {
+     "before": "5/5",
+     "after": "5/5"
+    }
+   },
+   "holdout": {
+    "stealthscan": {
+     "before": "0/5",
+     "after": "0/5"
+    },
+    "overlap": {
+     "before": "3/3",
+     "after": "3/3"
+    },
+    "traverse": {
+     "before": "0/3",
+     "after": "3/3"
+    }
+   },
+   "benign_minutes_tested": 38.2
+  }
+ }
+}

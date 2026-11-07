@@ -1,0 +1,30 @@
+{
+  "run_id": "webprobe_demo",
+  "analyses": [
+    {
+      "attacker_ip": "10.10.10.10",
+      "stage": "reconnaissance",
+      "techniques": [
+        {
+          "id": "T1595.002",
+          "name": "Vulnerability Scanning"
+        },
+        {
+          "id": "T1595.003",
+          "name": "Wordlist Scanning"
+        }
+      ],
+      "evidence": [
+        "386 HTTP requests to port 8080 in about 3 s, 171+ distinct URIs",
+        "321 of 392 HTTP responses were 404 (82%)",
+        "61 requests carried a Shellshock (CVE-2014-6271) payload in the User-Agent",
+        "Probed /cgi-bin, /admin, /backup, /robots.txt, and random-named files; 393 connections to one port"
+      ],
+      "confidence": 0.97,
+      "recommended_decoys": [
+        "admin_panel_decoy"
+      ],
+      "summary": "10.10.10.10 sent 386 HTTP requests to the admin panel on 8080 in about 3 s. It ran a Nikto-style path and CGI sweep with Shellshock probes, mostly returning 404. This is web vulnerability scanning with no credential guessing or other services touched."
+    }
+  ]
+}

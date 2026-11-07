@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Deception platform analysis result",
+  "description": "What Claude returns for one capture run. The controller validates this and ignores anything off-schema or off-allowlist.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["run_id", "analyses"],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "description": "Name of the saved run folder, e.g. portscan_20261013_153952."
+    },
+    "analyses": {
+      "type": "array",
+      "description": "One entry per attacker IP seen misbehaving. Empty array if the traffic is benign.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["attacker_ip", "stage", "techniques", "evidence", "confidence", "recommended_decoys", "summary"],
+        "properties": {
+          "attacker_ip": {
+            "type": "string",
+            "format": "ipv4",
+            "description": "Real source IP taken from the pcap (honeypot logs only show the Docker gateway)."
+          },
+          "stage": {
+            "type": "string",
+            "enum": ["reconnaissance", "initial_access", "credential_access", "discovery", "lateral_movement", "collection", "exfiltration"],
+            "description": "Most advanced ATT&CK tactic reached in this run."
+          },
+          "techniques": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["id", "name"],
+              "properties": {
+                "id": { "type": "string", "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$" },
+                "name": { "type": "string" }
+              }
+            },
+            "description": "MITRE ATT&CK techniques, e.g. T1046 Network Service Discovery, T1110.001 Password Guessing, T1595.002 Vulnerability Scanning."
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string" },
+            "description": "Concrete observations with numbers: packet counts, ports, timings, log lines. No guesses."
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "0 to 1. Below 0.5 the controller does not act."
+          },
+          "recommended_decoys": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["ssh_decoy", "ftp_decoy", "smb_decoy", "db_decoy", "admin_panel_decoy"]
+            },
+            "uniqueItems": true,
+            "description": "Decoy templates to spawn, matched to what the attacker is looking for. Names only; the controller owns images, ports and limits."
+          },
+          "summary": {
+            "type": "string",
+            "description": "2-4 sentence session summary: timeline, techniques, evidence. Feeds the final report."
+          }
+        }
+      }
+    }
+  }
+}

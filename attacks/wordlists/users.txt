@@ -1,0 +1,10 @@
+admin
+root
+user
+test
+oracle
+ubuntu
+pi
+postgres
+guest
+support

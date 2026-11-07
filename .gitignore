@@ -1,0 +1,45 @@
+# Secrets / local config
+.env
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Packet captures may contain sensitive data: add sample pcaps deliberately with `git add -f`
+*.pcap
+*.pcapng
+
+# Honeypot runtime logs
+lab/logs/*
+!lab/logs/.gitkeep
+
+# Honeypot persistent state (contains private SSH host keys and attacker downloads)
+lab/state/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Saved attack runs (pcaps + logs are sensitive)
+capture/runs/
+traffic/logs/
+
+# Generated lure files (see lab/lures/render.py)
+lab/webadmin/lures/
+lab/smbdecoy/share/it-notes.txt
+lab/cowrie_custom/base_fs.pickle
+lab/cowrie_custom/out/
+attacks/logs/
+attacks/logs/
+
+# Corpus events are derived from pcaps and large: keep local (the manifest with SHA-256 hashes is committed)
+corpus/events/
+
+# optional offline copy of the container images (docker save), several GB
+lab-images.tar
+*.tar
+
+# Real credentials copied from another machine (the laptop copy was saved without the leading dot)
+env

@@ -1,0 +1,241 @@
+{
+ "attack_type": "traverse",
+ "evidence": {
+  "profile": {
+   "duration_s": 224.4,
+   "kinds": {
+    "syn": {
+     "total": 71,
+     "max_per_window": {
+      "w10": 20,
+      "w30": 27,
+      "w60": 34
+     }
+    },
+    "http_resp": {
+     "total": 11,
+     "max_per_window": {
+      "w10": 10,
+      "w30": 10,
+      "w60": 11
+     }
+    },
+    "ssh_login_ok": {
+     "total": 1,
+     "max_per_window": {
+      "w10": 1,
+      "w30": 1,
+      "w60": 1
+     }
+    },
+    "ssh_command": {
+     "total": 19,
+     "max_per_window": {
+      "w10": 19,
+      "w30": 19,
+      "w60": 19
+     }
+    }
+   },
+   "syn": {
+    "distinct_dports_total": 11,
+    "top_dports": [
+     [
+      4445,
+      17
+     ],
+     [
+      3306,
+      13
+     ],
+     [
+      8080,
+      12
+     ],
+     [
+      139,
+      10
+     ],
+     [
+      21,
+      3
+     ],
+     [
+      2222,
+      3
+     ],
+     [
+      443,
+      2
+     ],
+     [
+      23,
+      2
+     ],
+     [
+      445,
+      2
+     ],
+     [
+      22,
+      2
+     ]
+    ],
+    "max_distinct_dports": {
+     "w10": 10,
+     "w30": 10,
+     "w60": 10
+    },
+    "max_distinct_servers_30s": 3
+   },
+   "http_resp": {
+    "status_counts": {
+     "302": 4,
+     "404": 4,
+     "200": 3
+    },
+    "max_404_per_30s": 4
+   }
+  },
+  "benign_envelope": {
+   "duration_s": 526.3,
+   "kinds": {
+    "syn": {
+     "total": 80,
+     "max_per_window": {
+      "w10": 6,
+      "w30": 12,
+      "w60": 18
+     }
+    },
+    "http_resp": {
+     "total": 75,
+     "max_per_window": {
+      "w10": 6,
+      "w30": 12,
+      "w60": 18
+     }
+    },
+    "ssh_login_ok": {
+     "total": 5,
+     "max_per_window": {
+      "w10": 2,
+      "w30": 2,
+      "w60": 3
+     }
+    },
+    "ssh_command": {
+     "total": 5,
+     "max_per_window": {
+      "w10": 2,
+      "w30": 2,
+      "w60": 3
+     }
+    }
+   },
+   "syn": {
+    "distinct_dports_total": 2,
+    "top_dports": [
+     [
+      8080,
+      5
+     ]
+    ],
+    "max_distinct_dports": {
+     "w10": 2,
+     "w30": 2,
+     "w60": 2
+    },
+    "max_distinct_servers_30s": 1
+   },
+   "http_resp": {
+    "status_counts": {
+     "302": 24,
+     "200": 51
+    },
+    "max_404_per_30s": 0
+   }
+  },
+  "current_rules": {
+   "missed": "yes",
+   "rule_ids": []
+  },
+  "samples_used": 3,
+  "unavailable_kinds": [
+   "http_req"
+  ]
+ },
+ "proposal": {
+  "rule": {
+   "id": "P-ssh-cmd-burst",
+   "name": "Burst of commands in SSH honeypot session",
+   "origin": "proposed",
+   "window_s": 10,
+   "refire_s": 60,
+   "technique": "T1059",
+   "all_of": [
+    {
+     "kind": "ssh_command",
+     "measure": "count",
+     "op": ">=",
+     "value": 8
+    }
+   ]
+  },
+  "rationale": "The attacker ran 19 SSH commands within 10 s after a successful login, while benign traffic peaked at 2 commands per 10 s (3 per 60 s). A threshold of 8 is 4x the benign peak and well below the attacker's 19."
+ },
+ "report": {
+  "accepted": true,
+  "checks": [
+   {
+    "name": "schema",
+    "ok": true,
+    "detail": "valid"
+   },
+   {
+    "name": "independent",
+    "ok": true,
+    "detail": "uses ['ssh_command']; must avoid ['http_req']"
+   },
+   {
+    "name": "catches",
+    "ok": true,
+    "detail": "3/3 development 'traverse' samples detected"
+   },
+   {
+    "name": "adds",
+    "ok": true,
+    "detail": "3 development samples were missed before and are detected now"
+   },
+   {
+    "name": "quiet",
+    "ok": true,
+    "detail": "0 false alarms on development+validation"
+   },
+   {
+    "name": "holdout",
+    "ok": true,
+    "detail": "0 false alarms on holdout"
+   }
+  ],
+  "reported": {
+   "validation": {
+    "slowscan": {
+     "before": "8/8",
+     "after": "8/8"
+    },
+    "dirbrute": {
+     "before": "5/5",
+     "after": "5/5"
+    }
+   },
+   "holdout": {
+    "overlap": {
+     "before": "3/3",
+     "after": "3/3"
+    }
+   },
+   "benign_minutes_tested": 84.9
+  }
+ }
+}

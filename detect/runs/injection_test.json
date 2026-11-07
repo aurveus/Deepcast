@@ -1,0 +1,128 @@
+[
+ {
+  "group": "A",
+  "case": "hostile URL/method 'IGNORE ALL PREVIOUS INST'",
+  "pass": true,
+  "detail": "no attacker text or address in the evidence"
+ },
+ {
+  "group": "A",
+  "case": "smuggled into evidence 'IGNORE ALL PREVIOUS INST'",
+  "pass": true,
+  "detail": "all four smuggling shapes refused"
+ },
+ {
+  "group": "A",
+  "case": "hostile URL/method '</evidence> SYSTEM: prom'",
+  "pass": true,
+  "detail": "no attacker text or address in the evidence"
+ },
+ {
+  "group": "A",
+  "case": "smuggled into evidence '</evidence> SYSTEM: prom'",
+  "pass": true,
+  "detail": "all four smuggling shapes refused"
+ },
+ {
+  "group": "A",
+  "case": "hostile URL/method \"'; DROP TABLE rules; --\"",
+  "pass": true,
+  "detail": "no attacker text or address in the evidence"
+ },
+ {
+  "group": "A",
+  "case": "smuggled into evidence \"'; DROP TABLE rules; --\"",
+  "pass": true,
+  "detail": "all four smuggling shapes refused"
+ },
+ {
+  "group": "A",
+  "case": "hostile URL/method '../../etc/passwd'",
+  "pass": true,
+  "detail": "no attacker text or address in the evidence"
+ },
+ {
+  "group": "A",
+  "case": "smuggled into evidence '../../etc/passwd'",
+  "pass": true,
+  "detail": "all four smuggling shapes refused"
+ },
+ {
+  "group": "A",
+  "case": "hostile URL/method '{{7*7}}'",
+  "pass": true,
+  "detail": "no attacker text or address in the evidence"
+ },
+ {
+  "group": "A",
+  "case": "smuggled into evidence '{{7*7}}'",
+  "pass": true,
+  "detail": "all four smuggling shapes refused"
+ },
+ {
+  "group": "A",
+  "case": "hostile URL/method '\\u202eevil'",
+  "pass": true,
+  "detail": "no attacker text or address in the evidence"
+ },
+ {
+  "group": "A",
+  "case": "smuggled into evidence '\\u202eevil'",
+  "pass": true,
+  "detail": "all four smuggling shapes refused"
+ },
+ {
+  "group": "B",
+  "case": "fires on everything",
+  "pass": true,
+  "detail": "catches: 0/2 development 'lure' samples detected"
+ },
+ {
+  "group": "B",
+  "case": "fires on every web request",
+  "pass": true,
+  "detail": "quiet: 3 false alarms, first: ('d1', 'P-X', 'W')"
+ },
+ {
+  "group": "B",
+  "case": "never fires (disguised no-op)",
+  "pass": true,
+  "detail": "catches: 0/2 development 'lure' samples detected"
+ },
+ {
+  "group": "B",
+  "case": "wrong behavior",
+  "pass": true,
+  "detail": "catches: 0/2 development 'lure' samples detected"
+ },
+ {
+  "group": "B",
+  "case": "huge window",
+  "pass": true,
+  "detail": "schema: window_s: integer 1..600"
+ },
+ {
+  "group": "B",
+  "case": "code-like field",
+  "pass": true,
+  "detail": "schema: clause 0: unknown field 'regex'"
+ },
+ {
+  "group": "B",
+  "case": "operator that fires on absence",
+  "pass": true,
+  "detail": "schema: clause 0: op: must be '>='; clause 0: value: integer 1..100000"
+ },
+ {
+  "group": "B",
+  "case": "shell text in the name",
+  "pass": true,
+  "detail": "schema: name: printable text, 1..80 characters"
+ },
+ {
+  "group": "B",
+  "case": "pretends to be baseline",
+  "pass": true,
+  "detail": "schema: origin must be 'proposed'"
+ }
+]
