@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 # Full loop: capture -> (you attack from Kali) -> save run -> Claude analysis -> controller.
-# Usage: ./run_loop.sh <name> [--auto] [--wait <seconds>]
+# Usage: bash scripts/run_loop.sh <name> [--auto] [--wait <seconds>]
 #   --auto   spawn decoys without asking y/N
 #   --fresh  remove all spawned decoys first (use for evaluation runs, so "decoy deployed" is measured cleanly)
 #   --wait   capture for N seconds instead of waiting for Enter (useful for idle/benign runs)
 # Needs the lab running (lab/up.sh). Stops every tshark.exe on exit.
 set -euo pipefail
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/.."
 
 NAME="${1:-}"; shift || true
-[[ "$NAME" =~ ^[A-Za-z0-9_-]+$ ]] || { echo "Usage: ./run_loop.sh <name> [--auto] [--fresh] [--wait <seconds>]"; exit 1; }
+[[ "$NAME" =~ ^[A-Za-z0-9_-]+$ ]] || { echo "Usage: bash scripts/run_loop.sh <name> [--auto] [--fresh] [--wait <seconds>]"; exit 1; }
 AUTO=""; WAIT=""; FRESH=""
 while [ $# -gt 0 ]; do
   case "$1" in

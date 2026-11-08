@@ -473,7 +473,7 @@ async function viewEval() {
     campaignCard,
     h("p", { class: "legend" }, have
       ? "Rules time-to-detect is capture time from the attacker's first packet; Claude analysis is the time spent analyzing the finished capture. They measure different things. Re-run eval/evaluate.py to refresh."
-      : "No evaluation data yet. Run scenarios with run_loop.sh, then eval/evaluate.py."),
+      : "No evaluation data yet. Run scenarios with scripts/run_loop.sh, then eval/evaluate.py."),
     h("div", { class: "grid two" },
       h("div", { class: "card" }, h("h2", {}, "Scenarios"),
         h("table", {}, h("tbody", {}, [

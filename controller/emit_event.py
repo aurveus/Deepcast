@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Append a progress event to lab/logs/events.jsonl and update lab/logs/run_status.json.
 
-Used by run_loop.sh so the dashboard can show a run while it happens.
+Used by scripts/run_loop.sh so the dashboard can show a run while it happens.
   python controller/emit_event.py <event> [key=value ...]
 
 Events that set the live stage: run_capture_started (capturing), run_saving (saving),

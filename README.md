@@ -18,6 +18,17 @@ Attackers scan, guess passwords and hunt for credentials. Classic defenses mostl
 
 Deception flips that. Nothing legitimate ever touches a trap, so any contact is a high-confidence signal. Deepcast goes one step further and makes the traps **adaptive**: it reads what the attacker is doing and puts the next thing they are looking for in their path.
 
+## See it
+
+The live dashboard (read-only, runs locally) shows every step as it happens.
+
+| | |
+|---|---|
+| ![Overview](docs/img/overview.png)<br>**Overview**: runs analyzed, attackers caught, decoys spawned, latest detections | ![Catch log](docs/img/events.png)<br>**Catch log**: every platform action, grouped by incident |
+| ![Catches](docs/img/sessions.png)<br>**Catches**: one card per attacker, with ATT&CK techniques, evidence and severity | ![MITRE ATT&CK](docs/img/mitre.png)<br>**MITRE ATT&CK**: observed techniques under their tactics |
+| ![Decoys](docs/img/decoys.png)<br>**Decoys**: what the controller started and why | ![Pipeline](docs/img/pipeline.png)<br>**Pipeline**: who decides, who acts, where trust boundaries sit |
+| ![Replay](docs/img/replay.png)<br>**Replay**: play back recorded attacks offline | ![Evaluation](docs/img/eval.png)<br>**Evaluation**: rule baseline vs Claude, scored per scenario |
+
 ## What it does, in one picture
 
 ```
@@ -117,6 +128,7 @@ Testing harder than the happy path broke the platform several times; each was me
 | [`attacks/`](attacks) | Lab-only attack scenarios run from the attacker VM ([scenarios](attacks/README.md)) |
 | [`corpus/`](corpus) | Manifest of the labeled replay corpus (labels, splits, pcap hashes) |
 | [`replays/`](replays) | Three small recorded runs (pcap + saved Claude output) for offline replay |
+| [`scripts/`](scripts) | One-command helpers: self-tests, manual run loop, offline replay |
 | [`docs/`](docs) | [Code map](docs/CODE_MAP.md), [running guide](docs/RUNNING.md), [lessons learned](docs/LESSONS.md) |
 
 **What each script does:** [docs/CODE_MAP.md](docs/CODE_MAP.md).
@@ -130,14 +142,14 @@ cp .env.example .env          # lab addresses, ports, capture interface
 bash lab/up.sh                # honeypots start with one command
 python agent/watcher.py       # continuous monitoring: capture, triage, Claude, controller
 python dashboard/app.py       # http://127.0.0.1:5000
-bash tests.sh                 # self-tests, no lab needed
+bash scripts/tests.sh                 # self-tests, no lab needed
 ```
 
 No lab at hand? The bundled recordings replay offline, with or without Claude:
 
 ```bash
-./replay.sh level2 sshbrute_demo     # saved Claude output -> validation -> controller (offline)
-./replay.sh level1 sshbrute_demo     # re-analyze the bundled pcap with Claude
+bash scripts/replay.sh level2 sshbrute_demo     # saved Claude output -> validation -> controller (offline)
+bash scripts/replay.sh level1 sshbrute_demo     # re-analyze the bundled pcap with Claude
 ```
 
 ## Stack

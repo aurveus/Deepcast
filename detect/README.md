@@ -16,7 +16,7 @@ involve no AI: the rule format, the engine, the labeled corpus and the scorer. T
 | `propose.py` + `proposer_prompt.md` | one `claude -p` call with all tools disabled and a JSON schema; returns one rule + a short rationale |
 | `gate.py` | the promotion gate: schema, catches its attack, adds coverage, zero false alarms on development+validation, zero on holdout benign; promote, history snapshots, rollback |
 | `learn.py` | the loop: find development attacks the rules miss -> evidence -> proposal -> gate; every attempt saved in `runs/` |
-| `injection_test.py` | 21 checks: hostile text cannot reach the model (A) and manipulated or bad proposals cannot pass the gate (B); part of `tests.sh` |
+| `injection_test.py` | 21 checks: hostile text cannot reach the model (A) and manipulated or bad proposals cannot pass the gate (B); part of `scripts/tests.sh` |
 | `matrix.py` | the evaluation matrix (`results.md`): baseline vs baseline+learned vs the Claude path, per attack type and split, plus the false-alarm table |
 | `demo.py` | the offline before/after demo (about a minute): miss -> proposal -> rejected bad rule -> accepted rule -> same attack replayed -> holdout |
 | `hpevents.py` | honeypot-side events: what happens INSIDE an SSH session (login ok/fail, command, download) as counts only, attributed to the real client by matching the session to the nearest SSH connection attempt in the packets; used by the corpus and by `stream.py` (it follows the Cowrie log live) |

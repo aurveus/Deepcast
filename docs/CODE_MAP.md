@@ -141,13 +141,13 @@ The benign `traffic/generator.py` runs on its own VM alongside all of this and w
 | `demo_minute.py` | The live demo: an attacker follows the lure while the platform's reactions are printed and timed. |
 | `results/` | The recorded results. [`README.md`](../eval/README.md) has the method and limits. |
 
-## Top-level scripts
+## `scripts/` and root files
 
 | File | What it does |
 |---|---|
-| `run_loop.sh` | One manual cycle: capture, attack, save, analyze, controller, report. |
-| `replay.sh` | Replays a bundled run offline (level 2, saved Claude output) or re-analyzes its pcap (level 1). |
-| `tests.sh` | Self-tests that need no lab: compiles every script, runs the module self-checks, and checks configuration invariants. |
+| `scripts/run_loop.sh` | One manual cycle: capture, attack, save, analyze, controller, report. |
+| `scripts/replay.sh` | Replays a bundled run offline (level 2, saved Claude output) or re-analyzes its pcap (level 1). |
+| `scripts/tests.sh` | Self-tests that need no lab: compiles every script, runs the module self-checks, and checks configuration invariants. |
 | `.env.example` | Every address, port and path; copy to `.env`. |
 
 ## Data folders

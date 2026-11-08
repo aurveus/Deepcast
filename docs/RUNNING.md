@@ -15,9 +15,9 @@ Reference for building the lab and running each part. For what the project is, s
 - Once, in an administrator PowerShell, add the decoy address pool: `.\lab\add_decoy_ips.ps1`.
 - `bash lab/prewarm.sh` pulls the pinned images (Cowrie 3.1.2, OpenCanary 0.9.10) and builds the decoy images so the first decoy does not wait on a build.
 - If Kali cannot reach a published port, allow inbound from `10.10.10.0/24` in Windows Firewall.
-- Verify: `bash tests.sh` (no lab needed) says ALL PASSED; from Kali `nc -zv 10.10.10.1 2222 8080 21 4445`.
+- Verify: `bash scripts/tests.sh` (no lab needed) says ALL PASSED; from Kali `nc -zv 10.10.10.1 2222 8080 21 4445`.
 
-**Images are pinned, not `latest`:** newer Cowrie releases dropped a module `lab/cowrie_custom/build.py` reads. To move to a newer Cowrie, change the pins in `lab/docker-compose.yml`, `controller/allowlist.json` and `lab/cowrie_custom/build.py` together, then re-run `tests.sh` and `prewarm.sh`.
+**Images are pinned, not `latest`:** newer Cowrie releases dropped a module `lab/cowrie_custom/build.py` reads. To move to a newer Cowrie, change the pins in `lab/docker-compose.yml`, `controller/allowlist.json` and `lab/cowrie_custom/build.py` together, then re-run `scripts/tests.sh` and `prewarm.sh`.
 
 ## Start / stop
 Requires Docker Desktop running and the VMnet1 adapter up (start VMware first; otherwise the port bind to `HOST_IP` fails).
@@ -137,16 +137,16 @@ Every synthetic event is logged on the VM to `/var/log/workstation-sim/ground_tr
 
 Quick test without the VM (host to host, not captured): `python traffic/generator.py --target 10.10.10.1 --ssh-password <GEN_SSH_PASSWORD> --scale 0.05 --duration 45`.
 
-## Replay mode (`replays/`, `replay.sh`)
+## Replay mode (`replays/`, `scripts/replay.sh`)
 `replays/` holds three small, committed sample runs (`portscan_demo`, `sshbrute_demo`, `webprobe_demo`): a trimmed pcap (about 1.2 MB in total, force-added although `*.pcap` is ignored) plus Claude's saved output for it. They make the demo repeatable on any machine, including a fresh clone.
 ```bash
-./replay.sh level2 sshbrute_demo        # offline fallback: saved Claude output -> validation -> controller (no Claude, no internet)
-./replay.sh level1 sshbrute_demo        # re-analyze the bundled pcap with Claude again, then the controller
+bash scripts/replay.sh level2 sshbrute_demo        # offline fallback: saved Claude output -> validation -> controller (no Claude, no internet)
+bash scripts/replay.sh level1 sshbrute_demo        # re-analyze the bundled pcap with Claude again, then the controller
 ```
 Both add events to the event log, so the dashboard shows the replay live. The dashboard's Replay tab plays the same recordings. On a machine with real runs, the samples are excluded from the counters; on a fresh clone with no real runs they fill the dashboard so the demo is not empty.
 
 ## Incident reports (`report/incident_report.py`)
-Every investigated run gets an incident report (HTML + PDF) written next to its `analysis.json`; `run_loop.sh` does this automatically as its last step, and the dashboard's Attack sessions cards link to it.
+Every investigated run gets an incident report (HTML + PDF) written next to its `analysis.json`; `scripts/run_loop.sh` does this automatically as its last step, and the dashboard's Attack sessions cards link to it.
 ```bash
 python report/incident_report.py capture/runs/<run>      # or replays/<name>
 ```
@@ -155,12 +155,12 @@ Contents: summary, timeline, attacker profile, proof, MITRE ATT&CK table, respon
 **Typed commands and themes.** Commands appear as separate bubbles (identical ones share a bubble with a count, at most 40 distinct per source, the rest counted). The HTML report has a light and a dark theme. Opened from a dashboard "Incident report" link it follows the dashboard's Theme button (`?theme=light|dark`); opened directly it follows the browser's light/dark setting. The PDF is always light.
 
 ## Continuous mode (`agent/watcher.py`)
-Always-on monitoring: no manual `run_loop.sh`. Run it in its own terminal (lab up, VMs on):
+Always-on monitoring: no manual `scripts/run_loop.sh`. Run it in its own terminal (lab up, VMs on):
 ```bash
 python agent/watcher.py              # Ctrl+C to stop; --window 30, --no-controller (analyze + report only)
 python agent/watcher.py --offline <pcap> [...]   # replay saved pcaps through the same logic (testing, demo without VMs)
 ```
-Flow: tshark writes 30 s windows to `capture/live/` -> cheap per-source counts -> **triage gate** (5+ distinct ports, 60+ connections to one port, 6+ SSH connections or 60+ HTTP requests over the last 3 minutes) opens an incident for that source -> `agent/analyze.py` -> controller (`--auto`: allowlist, confidence threshold and decoy limits still apply) -> `report/incident_report.py`. While the source stays active the incident is re-analyzed every 2 minutes; it closes after 90 s of silence, and the same source returning within 10 minutes (`WATCH_MERGE`, seconds) continues the same incident (slow scans do this; evaluation campaigns set it to 60 so every scenario is its own incident). A "benign" verdict from Claude closes the incident and silences that source for 5 minutes. The gate is deliberately only a trigger to save Claude calls; the decision is Claude's. Thresholds and timings can be overridden with `WATCH_*` / `GATE_*` values in `.env`. The dashboard shows a "Continuous monitoring" banner and the incidents in Attack sessions as they appear. Do not run it together with `run_loop.sh` (both use the capture interface and the status file).
+Flow: tshark writes 30 s windows to `capture/live/` -> cheap per-source counts -> **triage gate** (5+ distinct ports, 60+ connections to one port, 6+ SSH connections or 60+ HTTP requests over the last 3 minutes) opens an incident for that source -> `agent/analyze.py` -> controller (`--auto`: allowlist, confidence threshold and decoy limits still apply) -> `report/incident_report.py`. While the source stays active the incident is re-analyzed every 2 minutes; it closes after 90 s of silence, and the same source returning within 10 minutes (`WATCH_MERGE`, seconds) continues the same incident (slow scans do this; evaluation campaigns set it to 60 so every scenario is its own incident). A "benign" verdict from Claude closes the incident and silences that source for 5 minutes. The gate is deliberately only a trigger to save Claude calls; the decision is Claude's. Thresholds and timings can be overridden with `WATCH_*` / `GATE_*` values in `.env`. The dashboard shows a "Continuous monitoring" banner and the incidents in Attack sessions as they appear. Do not run it together with `scripts/run_loop.sh` (both use the capture interface and the status file).
 
 ## Automated attacks (host -> Kali over SSH)
 Lets the host start attack scenarios on Kali without typing passwords. One-time setup, by hand (not in a file):
@@ -196,5 +196,5 @@ python eval/run_campaign.py --resume --runs 3     # run only what is missing or 
 Details and scoring rules: `attacks/README.md` (sections 6-7) and `eval/README.md`. Results show on the dashboard's Evaluation tab.
 
 ## Self-tests (no lab needed)
-`bash tests.sh` compiles every script, runs the module self-checks (campaign scoring, session transcripts, attacker memory) and checks the configuration invariants (allowlist matches the schema, scenario names agree across scripts). Run it after any change and on a fresh clone before the demo.
+`bash scripts/tests.sh` compiles every script, runs the module self-checks (campaign scoring, session transcripts, attacker memory) and checks the configuration invariants (allowlist matches the schema, scenario names agree across scripts). Run it after any change and on a fresh clone before the demo.
 

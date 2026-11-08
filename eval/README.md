@@ -4,7 +4,7 @@ Files: `rule_detector.py` (baseline, 3 fixed-threshold rules over the pcap), `ev
 
 ## Protocol (repeat each scenario several times)
 1. Host: `lab/up.sh`, workstation VM running (benign traffic active).
-2. Host: `./run_loop.sh <scenario> --auto --fresh`, then attack from Kali, then press Enter. Scenario names: `portscan`, `slowscan`, `sshbrute`, `webprobe`, and `benign` (no attack: just wait 3-5 minutes).
+2. Host: `bash scripts/run_loop.sh <scenario> --auto --fresh`, then attack from Kali, then press Enter. Scenario names: `portscan`, `slowscan`, `sshbrute`, `webprobe`, and `benign` (no attack: just wait 3-5 minutes).
 3. Attack commands are in `attacks/README.md`.
 4. `python eval/rule_detector.py capture/runs/<run>` is run automatically by `evaluate.py` for runs without `rules.json`.
 5. `python eval/evaluate.py` after the batch; the dashboard's Evaluation tab shows the table.

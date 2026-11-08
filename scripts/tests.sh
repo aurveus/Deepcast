@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # One-command self-test of everything that can be checked WITHOUT the lab running (no Docker, no VMs, no Claude calls).
-# Usage: bash tests.sh        Exit code 0 = all passed.
-cd "$(dirname "$0")" || exit 1
+# Usage: bash scripts/tests.sh        Exit code 0 = all passed.
+cd "$(dirname "$0")/.." || exit 1
 FAIL=0
 ok()   { printf '  ok    %s\n' "$1"; }
 bad()  { printf '  FAIL  %s\n' "$1"; FAIL=1; }

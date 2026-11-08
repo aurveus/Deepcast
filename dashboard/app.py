@@ -133,7 +133,7 @@ def live_capture_counts():
 
 @app.get("/api/status")
 def status():
-    """Current run stage written by run_loop.sh (controller/emit_event.py). Idle if absent or stale."""
+    """Current run stage written by scripts/run_loop.sh (controller/emit_event.py). Idle if absent or stale."""
     f = ROOT / "lab" / "logs" / "run_status.json"
     try:
         st = json.loads(f.read_text(encoding="utf-8"))
